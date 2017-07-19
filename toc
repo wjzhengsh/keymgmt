@@ -1,0 +1,18 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="keymgmt" audience="service" href="/docs/services/keymgmt/index.html"}
+Key Protect
+
+    {: .navgroup id="learn"}
+    index.md
+    about.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    managing-keys.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    troubleshooting.md
+    {: .navgroup-end}
