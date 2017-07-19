@@ -46,7 +46,7 @@ To work with the API, you need to generate your authentication and service crede
 3. Retrieve your {{site.data.keyword.Bluemix_notm}} org and space GUIDs.
 
     ```
-    cf org organization_name --guidelines
+    cf org organization_name --guid
     cf space space_name --guid
     ```
     {: codeblock}
