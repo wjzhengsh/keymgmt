@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-10"
+lastupdated: "2017-07-20"
 
 ---
 
@@ -19,7 +19,7 @@ With {{site.data.keyword.keymanagementservicelong}}, you can manage keys in vari
 {: shortdesc}
 
 ## Reasons to use {{site.data.keyword.keymanagementserviceshort}}
-{: kp_reasons}
+{: #kp_reasons}
 
 You might want to manage keys in the following scenarios:
 
@@ -39,7 +39,7 @@ of your data.</td>
   </tr>
   <tr>
     <td>You are a security admin in an industry, such as finance or legal, that must adhere to governance over how data is protected. You need to grant controlled access of keys without compromising the data that it secures.</td>
-    <td>With the service, you can control user access to manage keys by [assigning different {{site.data.keyword.Bluemix_notm}} roles](https://console.bluemix.net/docs/services/keymgmt/managing.html#viewkeyassignments). For example, you can grant read-only access to users who need to view key creation information without viewing the key material.</td>
+    <td>With the service, you can control user access to manage keys by [assigning different {{site.data.keyword.Bluemix_notm}} roles](managing-keys.html#viewkeyassignments). For example, you can grant read-only access to users who need to view key creation information without viewing the key material.</td>
   <tr>
     <td>As a developer, you can integrate pre-existing applications, such as self-encrypting storage, to {{site.data.keyword.keymanagementserviceshort}}. You can also develop your own apps that integrate with the service.</td>
     <td>Apps on or outside {{site.data.keyword.Bluemix_notm}} can integrate with the {{site.data.keyword.keymanagementserviceshort}} APIs. You can use your own existing keys for your apps. </td>
@@ -51,11 +51,11 @@ of your data.</td>
 </table>
 
 ## How {{site.data.keyword.keymanagementserviceshort}} works
-{: kp_how}
+{: #kp_how}
 
 {{site.data.keyword.keymanagementservicelong_notm}} helps you manage encryption keys throughout your organization by aligning with {{site.data.keyword.Bluemix_notm}} roles.
 
-An IT or security admin needs advanced permissions that an auditor might not. To simplify access, {{site.data.keyword.keymanagementserviceshort}} maps to {{site.data.keyword.Bluemix_notm}} roles so that each role has a different view of the service. To help guide which view and level of access best suits your needs, see [Auditing keys and access](https://console.bluemix.net/docs/services/keymgmt/managing.html#viewkeyassignments).
+An IT or security admin needs advanced permissions that an auditor might not. To simplify access, {{site.data.keyword.keymanagementserviceshort}} maps to {{site.data.keyword.Bluemix_notm}} roles so that each role has a different view of the service. To help guide which view and level of access best suits your needs, see [Auditing keys and access](managing-keys.html#viewkeyassignments).
 
 The following diagram shows how admins, auditors, and developers can interact with keys that are managed in the service.
 
@@ -72,7 +72,7 @@ manage the keys for the cryptography.</dd>
 ![The diagram shows the same components as described in the previous definition list.](images/keys-use-cases.png)
 
 ## {{site.data.keyword.keymanagementserviceshort}} architecture
-{: kp_architecture}
+{: #kp_architecture}
 
 {{site.data.keyword.keymanagementservicelong_notm}} is composed of industry-accepted technologies.
 

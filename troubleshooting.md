@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-10"
+lastupdated: "2017-07-20"
 
 ---
 
@@ -19,7 +19,7 @@ Here are the answers to common troubleshooting questions about using {{site.data
 {: shortdesc}
 
 ## Unable to create or delete keys
-{: unabletomanagekeys}
+{: #unabletomanagekeys}
 
 If you cannot perform {{site.data.keyword.keymanagementserviceshort}} actions, verify that you have the correct authorization.
 
@@ -29,10 +29,10 @@ When you access the {{site.data.keyword.keymanagementserviceshort}} user interfa
 
 ### Resolving the problem
 
-Verify with your space manager that you are assigned the correct role in the applicable space. For more information about roles, see [Auditing keys and access](https://console.bluemix.net/docs/services/keymgmt/managing.html#viewkeyassignments).
+Verify with your space manager that you are assigned the correct role in the applicable space. For more information about roles, see [Auditing keys and access](https://console.bluemix.net/docs/services/keymgmt/managing-keys.html#viewkeyassignments).
 
 ## Convert from beta to general assembly (GA)
-{: ts_planconversion}
+{: #ts_planconversion}
 
 Beta users need to change to the standard pricing model to continue to use the {{site.data.keyword.keymanagementserviceshort}} service.
 
@@ -52,7 +52,7 @@ To change the pricing plan:
 3. To confirm the plan change, click **Save**.
 
 ## Getting help and support for {{site.data.keyword.keymanagementserviceshort}}
-{: ts_gettinghelp}
+{: #ts_gettinghelp}
 
 If you have problems or questions when you are using {{site.data.keyword.keymanagementservicefull_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 
