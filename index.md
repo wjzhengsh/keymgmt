@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-10"
+lastupdated: "2017-07-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2017-07-10"
 {{site.data.keyword.keymanagementservicelong}} helps you provision encrypted keys for apps across {{site.data.keyword.Bluemix_short}}. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by cloud-based hardware security modules (HSMs) that protect against the theft of information.
 {: shortdesc}
 
-{{site.data.keyword.keymanagementserviceshort}} is automatically available to all apps within the space in which it is created. [After you create an instance of the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps){: new_window}, complete the following steps to get up and running:
+{{site.data.keyword.keymanagementserviceshort}} is automatically available to all apps within the space in which it is created. [After you create an instance of the service](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps){: new_window}, complete the following steps to get up and running:
 
 1. To create or upload an existing key, click **Add Key**.
     Specify the key's details:
@@ -51,7 +51,7 @@ What's next:
 Now, you can use your keys to code your apps and services.
 
 - To see an example of how keys store in {{site.data.keyword.keymanagementserviceshort}} can work to encrypt and decrypt data, [check out the sample app in Github ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
-- To find out more about programmatically managing your keys, check out the [{{site.data.keyword.keymanagementserviceshort}} API reference doc ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window} for code samples.
+- To find out more about programmatically managing your keys, check out the [{{site.data.keyword.keymanagementserviceshort}} API reference doc](https://console.ng.bluemix.net/apidocs/639) for code samples.
 
 ## Related Links
 
