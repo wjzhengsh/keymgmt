@@ -13,84 +13,110 @@ lastupdated: "2017-08-03"
 {:pre: .pre}
 {:tip: .tip}
 
-# About {{site.data.keyword.keymanagementserviceshort}}
+# Informazioni su {{site.data.keyword.keymanagementserviceshort}}
 
-With {{site.data.keyword.keymanagementservicelong}}, you can manage keys in various scenarios.
+Con {{site.data.keyword.keymanagementservicelong}}, puoi gestire
+le chiavi in vari scenari.
 {: shortdesc}
 
-## Reasons to use {{site.data.keyword.keymanagementserviceshort}}
+## Motivi per usare {{site.data.keyword.keymanagementserviceshort}}
 {: #kp_reasons}
 
-You might want to manage keys in the following scenarios:
+Potresti voler gestire le chiavi nei seguenti scenari:
 
 <table>
   <tr>
     <th>Scenario</th>
-    <th>Reason</th>
+    <th>Motivo</th>
   </tr>
   <tr>
-    <td>You need to encrypt high volumes of sensitive data, such as medical records, by individual resource.</td>
-    <td>You can integrate the {{site.data.keyword.keymanagementserviceshort}} service with storage solutions, such as [{{site.data.keyword.objectstorageshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/ObjectStorage/index.html), to encrypt your data at rest in the cloud. Each document can be protected by a different key, so you have granular control
-of your data.</td>
+    <td>Hai bisogno di codificare elevati volumi di dati sensibili, come le registrazioni mediche, per risorsa individuale.</td>
+    <td>Puoi integrare il servizio {{site.data.keyword.keymanagementserviceshort}} con soluzioni di archiviazione, come [{{site.data.keyword.objectstorageshort}} ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](https://console.bluemix.net/docs/services/ObjectStorage/index.html "Icona di link esterno") per crittografare i dati inattivi nel cloud. Ogni documento può essere protetto da una chiave differente, in questo modo disponi del controllo
+granulare ai tuoi dati.</td>
   </tr>
   <tr>
-    <td>As an IT admin for a large corporation, you need to integrate, track, and rotate keys for many different service offerings.</td>
-    <td>The {{site.data.keyword.keymanagementserviceshort}} interface simplifies the management of multiple encryption services. With the service, you can manage and sort keys in one centralized location, or you can separate keys by project and house them in different {{site.data.keyword.Bluemix_short}} spaces.</td>
+    <td>Come amministratore IT per una grande azienda, hai bisogno di integrare, tracciare e ruotare
+le chiavi per molte offerte di servizio differenti.</td>
+    <td>L'interfaccia {{site.data.keyword.keymanagementserviceshort}}
+semplifica la gestione di più servizi di codifica. Con il servizio, puoi gestire
+e ordinare le chiavi in un'ubicazione centralizzata o puoi separarle per progetto e posizionarle
+in spazi {{site.data.keyword.Bluemix_short}} differenti.</td>
   </tr>
   <tr>
-    <td>You are a security admin in an industry, such as finance or legal, that must adhere to governance over how data is protected. You need to grant controlled access of keys without compromising the data that it secures.</td>
-    <td>With the service, you can control user access to manage keys by [assigning different {{site.data.keyword.Bluemix_notm}} roles](managing-keys.html#viewkeyassignments). For example, you can grant read-only access to users who need to view key creation information without viewing the key material.</td>
+    <td>Sei un amministratore della sicurezza di una azienda, come un leader finanziario o un avvocato, che deve
+rispettare la governance su come vengono protetti i dati. Devi concedere l'accesso controllato alle chiavi
+senza compromettere la sicurezza dei dati.</td>
+    <td>Con il servizio, puoi controllare l'accesso utente per gestire le chiavi
+[assegnando ruoli {{site.data.keyword.Bluemix_notm}} differenti](managing-keys.html#viewkeyassignments). Ad esempio,
+puoi concedere l'accesso in sola lettura agli utenti che necessitano di visualizzare le informazioni sulla creazione delle chiavi senza
+visualizzare il materiale della chiave.</td>
   <tr>
-    <td>As a developer, you can integrate pre-existing applications, such as self-encrypting storage, to {{site.data.keyword.keymanagementserviceshort}}. You can also develop your own apps that integrate with the service.</td>
-    <td>Apps on or outside {{site.data.keyword.Bluemix_notm}} can integrate with the {{site.data.keyword.keymanagementserviceshort}} APIs. You can use your own existing keys for your apps. </td>
+    <td>Come sviluppatore, puoi integrare le applicazioni pre-esistenti, come l'archiviazione
+con crittografia automatica, in {{site.data.keyword.keymanagementserviceshort}}. Puoi anche
+sviluppare le tue proprie applicazioni da integrare con il servizio.</td>
+    <td>La applicazioni in o al di fuori di {{site.data.keyword.Bluemix_notm}} possono
+essere integrate con le API {{site.data.keyword.keymanagementserviceshort}}. Puoi utilizzare le tue chiavi esistenti per le tue applicazioni. </td>
   </tr>
   <tr>
-    <td>Your development team has stringent policies, and you need a way to generate and rotate keys every 14 days.</td>
-    <td>With {{site.data.keyword.Bluemix_notm}}, you can rapidly generate keys from a hardware security module (HSM) to meet your on-going security needs.</td>
+    <td>Il tuo team di sviluppo ha politiche rigorose e hai bisogno di un modo per generare e ruotare
+le chiavi ogni 14 giorni.</td>
+    <td>Con {{site.data.keyword.Bluemix_notm}},
+puoi generare le chiavi rapidamente da un HSM (hardware security module) per soddisfare i tuoi bisogni di sicurezza
+continuativa.</td>
   </tr>
 </table>
 
-## How {{site.data.keyword.keymanagementserviceshort}} works
+## Come funziona {{site.data.keyword.keymanagementserviceshort}}
 {: #kp_how}
 
-{{site.data.keyword.keymanagementservicelong_notm}} helps you manage encryption keys throughout your organization by aligning with {{site.data.keyword.Bluemix_notm}} roles.
+{{site.data.keyword.keymanagementservicelong_notm}}
+ti aiuta nella gestione delle chiavi di crittografia nella tua organizzazione eseguendo l'allineamento con i ruoli {{site.data.keyword.Bluemix_notm}}.
 
-An IT or security admin needs advanced permissions that an auditor might not. To simplify access, {{site.data.keyword.keymanagementserviceshort}} maps to {{site.data.keyword.Bluemix_notm}} roles so that each role has a different view of the service. To help guide which view and level of access best suits your needs, see [Auditing keys and access](managing-keys.html#viewkeyassignments).
+Un amministratore della sicurezza o IT
+necessita di autorizzazioni avanzate rispetto a un revisore. Per semplificare l'accesso, {{site.data.keyword.keymanagementserviceshort}}
+mappa i ruoli {{site.data.keyword.Bluemix_notm}} in modo che ogni ruolo abbia una visualizzazione diversa
+del servizio. Per agevolare l'orientamento alla visualizzazione e al livello di accesso che meglio rispondono alle tue esigenze, vedi [Controllo delle chiavi e dell'accesso](managing-keys.html#viewkeyassignments).
 
-The following diagram shows how admins, auditors, and developers can interact with keys that are managed in the service.
+Il seguente diagramma mostra come gli amministratori, i revisori e gli sviluppatori possono
+interagire con le chiavi gestite nel servizio.
 
 <dl>
-  <dt>Service integration</dt>
-    <dd>Admins for your {{site.data.keyword.Bluemix_notm}} space
-manage the keys for the cryptography.</dd>
-  <dt>Audits</dt>
-    <dd>Auditors inspect the use of keys and identify suspicious activities.</dd>
-  <dt>Apps</dt>
-    <dd>Developers manage the keys for the cryptography that they code into apps.</dd>
+  <dt>Integrazione dei servizi</dt>
+    <dd>Gli amministratori per il tuo spazio {{site.data.keyword.Bluemix_notm}}
+gestiscono le chiavi per la crittografia.</dd>
+  <dt>Revisioni</dt>
+    <dd>I revisori ispezionano l'utilizzo delle chiavi e identificano le attività sospette.</dd>
+  <dt>Applicazioni</dt>
+    <dd>Gli sviluppatori gestiscono le chiavi per la crittografia che codificano nelle applicazioni.</dd>
 </dl>
 
-![The diagram shows the same components as described in the previous definition list.](images/keys-use-cases.png)
+![Il diagramma mostra gli stessi componenti descritti nell'elenco di definizione precedente.](images/keys-use-cases.png)
 
-## {{site.data.keyword.keymanagementserviceshort}} architecture
+## Architettura {{site.data.keyword.keymanagementserviceshort}}
 {: #kp_architecture}
 
-{{site.data.keyword.keymanagementservicelong_notm}} is composed of industry-accepted technologies.
+{{site.data.keyword.keymanagementservicelong_notm}} si articola
+in tecnologie accettate dal settore.
 
 <dl>
-  <dt>{{site.data.keyword.Bluemix_notm}} server</dt>
-    <dd>Identity, projects, and their tokens from the {{site.data.keyword.Bluemix_notm}} server enable the {{site.data.keyword.keymanagementserviceshort}} service to map resources to keys.</dd>
-  <dt>API for {{site.data.keyword.keymanagementserviceshort}}</dt>
-    <dd>The {{site.data.keyword.keymanagementserviceshort}} REST API drives key creation and management. The service provides encrypted multi-tenancy.</dd>
-  <dt>User interface in {{site.data.keyword.Bluemix_notm}}</dt>
-    <dd>With the {{site.data.keyword.keymanagementserviceshort}} user interface (UI), you can work with your keys securely.</dd>
-  <dt>Hardware security module (HSM)</dt>
-    <dd>Behind the scenes, {{site.data.keyword.IBM_notm}} data centers provide the hardware to protect your keys.</dd>
-  <dt>Database cluster</dt>
-    <dd>You can count on redundant and secure storage of your keys with a clustered database.</dd>
+  <dt>Server {{site.data.keyword.Bluemix_notm}}</dt>
+    <dd>Identità, progetti e i loro token dal server {{site.data.keyword.Bluemix_notm}} che abilitano il servizio
+{{site.data.keyword.keymanagementserviceshort}} ad associare le risorse alle chiavi.</dd>
+  <dt>API per {{site.data.keyword.keymanagementserviceshort}}</dt>
+    <dd>L'API REST {{site.data.keyword.keymanagementserviceshort}}
+ti guida nella creazione e gestione della chiave. Il servizio fornisce una tenancy multipla crittografata..</dd>
+  <dt>Interfaccia utente in {{site.data.keyword.Bluemix_notm}}</dt>
+    <dd>Con l'interfaccia utente (IU) {{site.data.keyword.keymanagementserviceshort}},
+puoi lavorare con le tue chiavi in modo sicuro.</dd>
+  <dt>HSM (Hardware Security Module)</dt>
+    <dd>Dietro le quinte, i data center {{site.data.keyword.IBM_notm}} forniscono l'hardware per proteggere le tue chiavi.</dd>
+  <dt>Cluster database</dt>
+    <dd>Puoi contare su un'archiviazione ridondante e sicura delle tue chiavi con un database in cluster.</dd>
 </dl>
 
-The following diagrams show how {{site.data.keyword.keymanagementserviceshort}} works with the hardware security modules to generate keys compared to how the service stores keys.
+I seguenti diagrammi mostrano come {{site.data.keyword.keymanagementserviceshort}}
+utilizza i moduli di sicurezza hardware per generare le chiavi in confronto a come il servizio archivia le chiavi.
 
-![The diagram shows how keys are generated.](images/generated-key.png)
+![Il diagramma mostra come vengono generate le chiavi.](images/generated-key.png)
 
-![The diagram shows how existing keys are stored.](images/stored-key.png)
+![Il diagramma mostra come vengono archiviate le chiavi esistenti.](images/stored-key.png)

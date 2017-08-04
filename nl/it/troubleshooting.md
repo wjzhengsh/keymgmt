@@ -13,55 +13,67 @@ lastupdated: "2017-08-03"
 {:pre: .pre}
 {:tip: .tip}
 
-# Troubleshooting
+# Risoluzione dei problemi
 
-Here are the answers to common troubleshooting questions about using {{site.data.keyword.keymanagementservicefull}}.
+Sono qui di seguito riportate le risposte alle domande comuni per la risoluzione dei problemi relative all'utilizzo di {{site.data.keyword.keymanagementservicefull}}.
 {: shortdesc}
 
-## Unable to create or delete keys
+## Impossibile creare o eliminare chiavi
 {: #unabletomanagekeys}
 
-If you cannot perform {{site.data.keyword.keymanagementserviceshort}} actions, verify that you have the correct authorization.
+Se non puoi eseguire azioni {{site.data.keyword.keymanagementserviceshort}}, verifica di disporre dell'autorizzazione corretta.
 
-### Symptoms
+### Sintomi
 
-When you access the {{site.data.keyword.keymanagementserviceshort}} user interface, you cannot view the options to add or delete keys.
+Quando accedi all'interfaccia utente
+{{site.data.keyword.keymanagementserviceshort}}, non puoi
+visualizzare le opzioni di aggiunta o eliminazione delle chiavi.
 
-### Resolving the problem
+### Risoluzione del problema
 
-Verify with your space manager that you are assigned the correct role in the applicable space. For more information about roles, see [Auditing keys and access](managing-keys.html#viewkeyassignments).
+Verifica con il tuo responsabile dello spazio che ti abbia assegnato il ruolo corretto nello spazio
+applicabile. Per ulteriori informazioni sui ruoli, vedi [Controllo delle chiavi e dell'accesso](managing-keys.html#viewkeyassignments).
 
-## Convert from beta to general assembly (GA)
+## Conversione dalla beta alla GA (general assembly)
 {: #ts_planconversion}
 
-Beta users need to change to the standard pricing model to continue to use the {{site.data.keyword.keymanagementserviceshort}} service.
+Gli utenti beta devono modificare il modello di prezzi standard per continuare ad utilizzare il servizio {{site.data.keyword.keymanagementserviceshort}}.
 
-### Symptoms
+### Sintomi
 
-If you are a beta user, you need to change your pricing plan to the tiered pricing model to continue storing keys in {{site.data.keyword.keymanagementserviceshort}}.
+Se sei un utente beta, devi modificare il tuo piano dei prezzi al modello dei prezzi a livelli
+per continuare ad archiviare le chiavi in {{site.data.keyword.keymanagementserviceshort}}.
 
-### Resolving the problem
+### Risoluzione del problema
 
-The {{site.data.keyword.keymanagementserviceshort}} service has two pricing models: lite and graduated tiered. As an org or space manager, verify that the graduated tiered model has been selected. If you do not want to migrate to the tiered model, ensure that all keys and service instances are removed before deprecation. [See the {{site.data.keyword.keymanagementserviceshort}} general assembly announcement for more information ![External link icon](../../icons/launch-glyph.svg "External link icon")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+Il servizio {{site.data.keyword.keymanagementserviceshort}}
+dispone di due modelli dei prezzi: lite e a livelli graduale. Come gestore di un'organizzazione o di uno spazio, verifica che
+il modello a livelli graduale sia stato selezionato. Se non desideri eseguire la migrazione a un modello a livelli,
+assicurati che tutte le chiavi e le istanze del servizio siano state rimosse prima che diventi obsoleto. [Consulta l'annuncio GA (general assembly) {{site.data.keyword.keymanagementserviceshort}} per ulteriori informazioni ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")]( "https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
 
-To change the pricing plan:
+Per modificare il piano dei prezzi:
 
-1. Go to the {{site.data.keyword.keymanagementserviceshort}} user interface and select the **Plans** tab.
-2. Select **Graduated Tier Pricing**.
-    The breakdown of cost to active keys that are used per month appears in a table. The tiered model calculates pricing based on the number of active keys per month at the account level.
-3. To confirm the plan change, click **Save**.
+1. Vai all'interfaccia utente di {{site.data.keyword.keymanagementserviceshort}}
+e seleziona la tabella **Piani**.
+2. Seleziona **Prezzi di livello graduale**.
+    L'analisi dettagliata del costo di attivazione delle chiavi
+che vengono utilizzate al mese viene visualizzata in una tabella. Il modello a livelli calcola il prezzo in base al numero di chiavi attive
+al mese per livello dell'account.
+3. Per confermare la modifica del piano, fai clic su **Salva**.
 
-## Getting help and support for {{site.data.keyword.keymanagementserviceshort}}
+## Come ottenere aiuto e supporto per {{site.data.keyword.keymanagementserviceshort}}
 {: #ts_gettinghelp}
 
-If you have problems or questions when you are using {{site.data.keyword.keymanagementservicefull_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
+Se hai dei problemi o delle domande quando stai utilizzando {{site.data.keyword.keymanagementservicefull_notm}},
+puoi ottenere aiuto ricercando le informazioni o facendo delle domande in un forum. Puoi inoltre aprire un ticket di supporto.
 
-When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} development teams.
+Quando stai utilizzando i forum per fare una domanda, contrassegna con una tag la tua domanda in modo che sia visualizzabile dai team di sviluppo
+{{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}.
 
-- If you have technical questions about {{site.data.keyword.keymanagementserviceshort}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} and tag your question with "ibm-bluemix" and "key-protect".
-- For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window} forum. Include the "bluemix"
-and "key-protect" tags.
+- Se hai domande tecniche su {{site.data.keyword.keymanagementserviceshort}}, inserisci la tua domanda in [Stack Overflow ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix "Icona di link esterno"){: new_window} e contrassegnala con le tag "ibm-bluemix" e "key-protect".
+- Per domande sul servizio e sulle istruzioni introduttive, utilizza il forum [IBM developerWorks dW Answers ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix "Icona di link esterno"){: new_window}. Includi le tag "bluemix"
+e "key-protect".
 
-See [Getting help ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/support/index.html#getting-help){: new_window} for more details about using the forums.
+Per ulteriori dettagli sull'utilizzo dei forum, vedi il documento relativo a [come ottenere supporto ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](https://console.bluemix.net/docs/support/index.html#getting-help "Icona di link esterno"){: new_window}.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Contacting support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/support/index.html#contacting-support){: new_window}.
+Per informazioni sull'apertura di un ticket di supporto {{site.data.keyword.IBM_notm}} o sui livelli di supporto e sulle gravità dei ticket, vedi il documento relativo a [come contattare il supporto ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](https://console.bluemix.net/docs/support/index.html#contacting-support "Icona di link esterno"){: new_window}.
