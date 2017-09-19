@@ -70,7 +70,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>key_ID</em></td>
-        <td>The unique identifier for the root key that you used during the initial wrap operation.</td>
+        <td>The unique identifier for the key that you would like to delete.</td>
       </tr>
       <tr>
       <tr>
