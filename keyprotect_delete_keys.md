@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-07"
+lastupdated: "2017-09-19"
 
 ---
 
@@ -44,7 +44,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
 
     ```cURL
     curl -X DELETE \
-      https://ibm-key-protect.edge.bluemix.net/api/v2/keys/key_ID \
+      https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID> \
       -H 'authorization: Bearer <OAuth_token>' \
       -H 'bluemix-org: <organization_GUID>' \
       -H 'bluemix-space: <space_GUID>' \

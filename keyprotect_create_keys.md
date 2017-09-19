@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-18"
+lastupdated: "2017-09-19"
 
 ---
 
@@ -117,7 +117,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>key_material</em></td>
-        <td>The key material, such as an RSA key, that you want to store in {{site.data.keyword.keymanagementserviceshort}}. To generate a new key, omit the <code>payload</code> attribute and <em>key_contents</em> variable.</td>
+        <td>The key material, such as an RSA key, that you want to store in {{site.data.keyword.keymanagementserviceshort}}. To generate a new key, omit the <code>payload</code> attribute and <em>key_material</em> variable.</td>
       </tr>
       <caption style="caption-side:bottom;">Table 1. Variables needed to add keys through the {{site.data.keyword.keymanagementserviceshort}} API</caption>
     </table>
