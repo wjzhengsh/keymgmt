@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-18"
+lastupdated: "2017-09-19"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2017-09-18"
 ## {{site.data.keyword.keymanagementserviceshort}} use cases
 {: #kp_reasons}
 
-Following are use cases for {{site.data.keyword.keymanagmentserviceshort}}:
+Following are use cases for {{site.data.keyword.keymanagementserviceshort}}:
 
 <table>
 <CAPTION>Table 1. {{site.data.keyword.keymanagementserviceshort}} use cases</CAPTION>
@@ -88,7 +88,7 @@ manage the keys for the cryptography.</dd>
   <dt>User interface in {{site.data.keyword.Bluemix_notm}}</dt>
     <dd>With the {{site.data.keyword.keymanagementserviceshort}} user interface (UI), you can securely work with your keys.</dd>
   <dt>Hardware security module (HSM)</dt>
-    <dd>Behind the scenes, {{site.data.keyword.Cloud_notm}} data centers provide the hardware to protect your keys.</dd>
+    <dd>Behind the scenes, {{site.data.keyword.cloud_notm}} data centers provide the hardware to protect your keys.</dd>
   <dt>Database cluster</dt>
     <dd>You can count on redundant and secure storage of your keys with a clustered database.</dd>
 </dl>
