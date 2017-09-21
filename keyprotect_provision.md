@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -24,7 +24,7 @@ You can create a secure instance of {{site.data.keyword.keymanagementservicefull
 
 To provision an instance of {{site.data.keyword.keymanagementserviceshort}} from the {{site.data.keyword.Bluemix_notm}} console, complete the following steps.
 
-1. [Log in to your {{site.data.keyword.Bluemix_notm}} account](https://console.bluemix.net/){: new_window}.
+1. [Log in to your {{site.data.keyword.Bluemix_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/){: new_window}.
 2. Click **Catalog** to view the list of services that are available on {{site.data.keyword.Bluemix_notm}}.
 3. Select the **Services** category, and click the **{{site.data.keyword.keymanagementserviceshort}}** tile.
 5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{site.data.keyword.Bluemix_notm}} org and space where you are logged in.

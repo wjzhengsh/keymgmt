@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-18"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -30,7 +30,7 @@ Following are the steps needed to generate, enter and manage keys within {{site.
 
 Use the following steps to create a new key or upload an existing key.
 
-1. [Log in to the Bluemix console](https://console.bluemix.net/catalog){: new_window}.
+1. [Log in to the Bluemix console.](https://console.bluemix.net/catalog){: new_window}
 2. Hover over the **All Categories** link to make the scroll bar appear. Scroll down to **Services > Security**. A list of your apps and services will display.
 3. Double click your **Key Protect** service instance. Note that under **Actions** you can rename or delete the service.
 
@@ -122,20 +122,14 @@ To see your keys after generating and entering them, follow the steps under [Add
       <caption style="caption-side:bottom;">Table 3. Description of the Keys window</caption>
     </table>
 
-## Deleting keys (optional)
-{: #deletekey }
-
-If you want to delete a key, keep in mind that the key material is not recoverable. Metadata that is associated with the key is kept in the {{site.data.keyword.keymanagementserviceshort}} database. To delete a key, on the **Keys** page click the **Actions** icon in the row of the key and confirm the deletion in the next screen.
-
-
-What's next:
+### What's next
 
 Now, you can use your keys to code your apps and services.
 
 - To see an example of how keys store in {{site.data.keyword.keymanagementserviceshort}} can work to encrypt and decrypt data, [check out the sample app in Github ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
 - To find out more about programmatically managing your keys, check out the [{{site.data.keyword.keymanagementserviceshort}} API reference doc](https://console.ng.bluemix.net/apidocs/639) for code samples.
 
-## Related Links
+### Related Links
 
 - [{{site.data.keyword.keymanagementserviceshort}} REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [{{site.data.keyword.keymanagementserviceshort}} admin REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}

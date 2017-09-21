@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -29,7 +29,7 @@ When you access the {{site.data.keyword.keymanagementserviceshort}} user interfa
 
 ### Resolving the problem
 
-Verify with your administrator that you are assigned the correct role in the applicable space. For more information about roles, see [Roles and permissions](keyprotect_manage_access.html#roles).
+Verify with your administrator that you are assigned the correct role in the applicable space. For more information about roles, see [Roles and permissions](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
 
 ## Convert from beta to general assembly (GA)
 {: #ts_planconversion}
