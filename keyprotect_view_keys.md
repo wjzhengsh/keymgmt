@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -21,7 +21,7 @@ You can view the contents of your encryption keys with {{site.data.keyword.keyma
 ## Viewing keys with the GUI
 {: #gui}
 
-To browse the keys in your service with the {{site.data.keyword.keymanagementserviceshort}} GUI, see [Getting Started with {{site.data.keyword.keymanagementserviceshort}}](index.html#managekey).
+To browse the keys in your service with the {{site.data.keyword.keymanagementserviceshort}} GUI, see [Getting Started with {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html#managekey).
 
 ## Viewing keys with the API
 {: #api}
@@ -29,7 +29,7 @@ To browse the keys in your service with the {{site.data.keyword.keymanagementser
 You can retrieve the contents of your keys by using the {{site.data.keyword.keymanagementserviceshort}} API.
 
 ### Step 1: Retrieve a collection of keys
-{: #get_keys}
+{: #retrieve_keys_api}
 
 For a high-level view, you can browse keys that are managed in your space by making a `GET` call to the following endpoint:
 
@@ -38,7 +38,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
-1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](#authentication_api)
+1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](/docs/services/keymgmt/keyprotect_authentication.html)
 2. Run the following cURL command to view general characteristics about your keys.
 
     ```cURL
@@ -117,7 +117,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
     {:screen}
 
 ### Step 2: Retrieve a key by ID
-{: #get_key}
+{: #retrieve_key_api}
 
 To view detailed information about a specific key, you can make a subsequent `GET` call to the following endpoint:
 
@@ -126,7 +126,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
 ```
 {: codeblock}
 
-1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](#authentication_api)
+1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](/docs/services/keymgmt/keyprotect_authentication.html)
 2. Retrieve the ID of the key you would like to access or manage.
 
     The ID value is used to access detailed information about the key, such as the key material itself. You can retrieve the ID for a specified key by making a `GET v2/keys` request, or by accessing the {{site.data.keyword.keymanagementserviceshort}} GUI.
@@ -169,7 +169,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>key_ID</em></td>
-        <td>The identifier for the key that you retrieved in [step 1](#getkeys_API).</td>
+        <td>The identifier for the key that you retrieved in [step 1](#retrieve_keys_api).</td>
       </tr>
       <caption style="caption-side:bottom;">Table 2. Describes the variables needed to view a specified key through the {{site.data.keyword.keymanagementserviceshort}} API.</caption>
     </table>

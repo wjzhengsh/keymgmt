@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -24,7 +24,7 @@ To work with the API, you need to generate your service and authentication crede
 ## Retrieving your org and space GUIDs
 {: #retrieve_GUIDs}
 
-You can retrieve the identifying information for your {{site.data.keyword.Bluemix_notm}} organization and space with the [{{site.data.keyword.Bluemix_notm}} CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
+You can retrieve the identifying information for your {{site.data.keyword.Bluemix_notm}} organization and space with the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
 
 1. Log in to {{site.data.keyword.Bluemix_notm}} though the {{site.data.keyword.Bluemix_notm}} CLI.
 

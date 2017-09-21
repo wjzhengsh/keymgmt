@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -32,7 +32,7 @@ If you want to try out the service before you add your own keys, check out the [
 ## Creating keys with the GUI
 {: #gui}
 
-To add keys to your service with the {{site.data.keyword.keymanagementserviceshort}} GUI, see [Getting Started with {{site.data.keyword.keymanagementserviceshort}}](index.html#managekey).
+To add keys to your service with the {{site.data.keyword.keymanagementserviceshort}} GUI, see [Getting Started with {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html#addkey).
 
 ## Creating keys with the API
 {: #api}
@@ -46,7 +46,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
-1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service](#authentication_api).
+1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](/docs/services/keymgmt/keyprotect_authentication.html).
 
 2. Call the [{{site.data.keyword.keymanagementserviceshort}} API](https://console.ng.bluemix.net/apidocs/639) with the following cURL command.
 

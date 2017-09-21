@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -85,4 +85,4 @@ To learn more about {{site.data.keyword.Bluemix_notm}} Identity and Access Manag
 Account owners and admins can invite users and set service policies that correspond to the {{site.data.keyword.keymanagementserviceshort}} actions the users can perform.
 
 - For information about assigning user roles in the {{site.data.keyword.Bluemix_notm}} UI, see [Identity and access-enabled service access policies](/docs/iam/iamusermanage.html#iammanidaccser).
-- To learn about granting advanced permissions to access specific encryption keys, see [Managing access to keys with the API](keyprotect_manage_access_api.html).
+- To learn about granting advanced permissions to access specific encryption keys, see [Managing access to keys with the API](/docs/services/keymgmt/keyprotect_manage_access_api.html).

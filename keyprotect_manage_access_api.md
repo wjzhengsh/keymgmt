@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -19,14 +19,14 @@ lastupdated: "2017-09-19"
 With {{site.data.keyword.Bluemix}} Identity and Access Management, you can enable granular access control for your key resources by creating and modifying access policies.
 {: shortdesc}
 
-This page walks you through several scenarios for managing access to your key resources with the [Access Management API](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
+This page walks you through several scenarios for managing access to your key resources with the [Access Management API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
 
 
 Before you begin:
-- [Retrieve your IAM token and space GUID](keyprotect_authentication.html)
-- [Retrieve the key ID to specify the resource](keyprotect_view_keys.html#get_keys)
-- [Retrieve the account ID to specify the scope of access](#retrieve_account_ID)
-- [Retrieve the user ID of the user whose access you would like to modify](#retrieve_user_ID)
+- [Retrieve your IAM token and space GUID](/docs/services/keymgmt/keyprotect_authentication.html)
+- [Retrieve the key ID to specify the resource](/docs/services/keymgmt/keyprotect_view_keys.html)
+- [Retrieve the account ID to specify the scope of access](keyprotect_manage_access_api.html#retrieve_account_ID)
+- [Retrieve the user ID of the user whose access you would like to modify](keyprotect_manage_access_api.html#retrieve_user_ID)
 
 ## Creating a new access policy
 {: #create_policy}
@@ -175,7 +175,7 @@ curl -X GET \
 ## Retrieving the user ID
 {: #retrieve_user_id}
 
-1. [Ask the user to provide his or her IAM token](keyprotect_authentication.html#get_token).
+1. [Ask the user to provide his or her IAM token](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token).
     The IAM token structure is as follows:
 
     ```sh

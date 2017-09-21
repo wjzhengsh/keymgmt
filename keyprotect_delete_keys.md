@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-19"
+lastupdated: "2017-09-21"
 
 ---
 
@@ -23,7 +23,15 @@ You can use {{site.data.keyword.keymanagementservicefull}} to delete an encrypti
 ## Deleting keys with the GUI
 {: #gui}
 
-To delete key resources in your service with the {{site.data.keyword.keymanagementserviceshort}} GUI, see [Getting Started with {{site.data.keyword.keymanagementserviceshort}}](index.html#deletekey).
+If you prefer to delete your key resources using a graphical interface, you can use the {{site.data.keyword.keymanagementserviceshort}} GUI.
+
+[After you create or import your existing keys into the service](/docs/services/keymgmt/keyprotect_create_keys.html), complete the following steps to delete a key:
+
+1. [Log in to the {{site.data.keyword.Bluemix_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/).
+2. From your {{site.data.keyword.Bluemix_notm}} dashboard, select your provisioned instance of {{site.data.keyword.keymanagementserviceshort}}.
+3. Navigate to the **Manage** pane to browse the keys in your service.
+4. Click the &#x22ee; icon to open a list of options for the key you would like to delete.
+5. From the options menu, click **Delete key** and confirm the key deletion in the next screen.
 
 ## Deleting keys with the API
 {: #api}
@@ -34,7 +42,7 @@ To delete a key and its contents, make a `DELETE` call to the following endpoint
 https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
 ```
 
-1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](#authentication_api)
+1. [Retrieve your authorization token, org GUID, and space GUID to work with keys in the service.](/docs/services/keymgmt/keyprotect_authentication.html)
 
 2. Retrieve the ID of the key you would like to delete.
 
