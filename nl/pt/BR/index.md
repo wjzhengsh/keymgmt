@@ -136,6 +136,5 @@ o aplicativo de amostra no Github ![Ícone de link externo](../../icons/launch-g
 
 - [API de REST do {{site.data.keyword.keymanagementserviceshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [API de REST do administrador do {{site.data.keyword.keymanagementserviceshort}} ![Ícone de linkexterno](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-
 - [Oferta Cloud HSM![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
 - [Acordo de Nível de Serviço do {{site.data.keyword.keymanagementservicelong_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

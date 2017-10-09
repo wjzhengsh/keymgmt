@@ -50,7 +50,7 @@ Utilice los siguientes pasos para que Key Protect genere una nueva clave.
       <tr>
         <td>Nombre</td>
         <td>Un alias descriptivo para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude
-a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
+    a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
       </tr>
       <tr>
         <td>Tipo de clave</td>
@@ -67,26 +67,27 @@ a identificar la clave, como por ejemplo para qué se utiliza la clave o con qui
 
 Utilice los pasos siguientes para especificar una clave existente en Key Protect.
 
-1. Especifique lo siguiente bajo **Especifique la clave existente**.     <table>
-      <tr>
-        <th>Campo </th>
-        <th>Descripción</th>
-      </tr>
-      <tr>
-        <td>Nombre</td>
-        <td>Un alias descriptivo para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude
-a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
-      </tr>
-      <tr>
-        <td>Tipo de clave</td>
-        <td>Valores predeterminados a clave estándar. Se utiliza una clave estándar como clave de cifrado de datos para cifrar los datos del texto sin formato a texto cifrado.</td>
-      </tr>
-      <tr>
-        <td>Material clave</td>
-        <td>Material clave puede ser cualquier tipo de datos que desee almacenar en el servicio {{site.data.keyword.keymanagementserviceshort}}, como por ejemplo un certificado o una clave RSA.</td>
-      </tr>
-        <caption style="caption-side:bottom;">Tabla 2. Descripción de cómo Entrar valores de claves existentes</caption>
-    </table>
+1. Especifique lo siguiente bajo **Especifique la clave existente**.     
+    <table>
+        <tr>
+          <th>Campo </th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td>Nombre</td>
+          <td>Un alias descriptivo para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude
+    a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
+        </tr>
+        <tr>
+          <td>Tipo de clave</td>
+          <td>Valores predeterminados a clave estándar. Se utiliza una clave estándar como clave de cifrado de datos para cifrar los datos del texto sin formato a texto cifrado.</td>
+        </tr>
+        <tr>
+          <td>Material clave</td>
+          <td>Material clave puede ser cualquier tipo de datos que desee almacenar en el servicio {{site.data.keyword.keymanagementserviceshort}}, como por ejemplo un certificado o una clave RSA.</td>
+        </tr>
+          <caption style="caption-side:bottom;">Tabla 2. Descripción de cómo Entrar valores de claves existentes</caption>
+      </table>
 
 2. Pulse el botón **Añadir una nueva clave**. Las claves están disponibles inmediatamente.
 3. Copie el identificador de referencia en la fila de la clave. El valor de **ID** es el identificador que puede utilizar en la API {{site.data.keyword.keymanagementserviceshort}}.
@@ -97,32 +98,32 @@ a identificar la clave, como por ejemplo para qué se utiliza la clave o con qui
 Para ver las claves después de generarlas y entrarlas, siga los pasos de [Añadiendo una clave](index.html#addkey). Llegará a la ventana de **Claves**. Sus claves se mostrarán en una orden de fecha de creación con
 la clave más reciente en la parte superior de la lista.
 <table>
-      <tr>
-        <th>Columna </th>
-        <th>Descripción</th>
-      </tr>
-      <tr>
-        <td>Nombre</td>
-        <td>Un alias descriptivo asignado a la clave.</td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>Un ID de clave exclusivo asignado a su clave de Key Protect.</td>
-      </tr>
-      <tr>
-        <td>Estado</td>
-        <td>Uno de los estados clave del National Institute of Standards and Technology (NIST): preactivación, activo, desactivado y destruido.<td>
-      </tr>
-      <tr>
-        <td>Creado</td>
-        <td>Fecha y hora de creación de la clave.</td>
-      </tr>
-      <tr>
-        <td>Tipo</td>
-        <td>El valor predeterminado es clave estándar.</td>
-      </tr>
-      <caption style="caption-side:bottom;">Tabla 3. Descripción de la ventana de Claves </caption>
-    </table>
+  <tr>
+    <th>Columna </th>
+    <th>Descripción</th>
+  </tr>
+  <tr>
+    <td>Nombre</td>
+    <td>Un alias descriptivo asignado a la clave.</td>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td>Un ID de clave exclusivo asignado a su clave de Key Protect.</td>
+  </tr>
+  <tr>
+    <td>Estado</td>
+    <td>Uno de los estados clave del National Institute of Standards and Technology (NIST): preactivación, activo, desactivado y destruido.<td>
+  </tr>
+  <tr>
+    <td>Creado</td>
+    <td>Fecha y hora de creación de la clave.</td>
+  </tr>
+  <tr>
+    <td>Tipo</td>
+    <td>El valor predeterminado es clave estándar.</td>
+  </tr>
+  <caption style="caption-side:bottom;">Tabla 3. Descripción de la ventana de Claves </caption>
+</table>
 
 ### Qué hacer a continuación
 
