@@ -6,13 +6,29 @@ Key Protect
 
     {: .navgroup id="learn"}
     index.md
-    about.md
+    keyprotect_about.md
+
+    {: .topicgroup}
+    Conceptos
+        keyprotect_states.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    managing-keys.md
+    keyprotect_provision.md
+    keyprotect_authentication.md
+
+    {: .topicgroup}
+    Gestionar usuarios y acceder a
+        keyprotect_manage_access.md
+        keyprotect_manage_access_api.md
+
+    {: .topicgroup}
+    Gestión de claves
+        keyprotect_create_keys.md
+        keyprotect_view_keys.md
+        keyprotect_delete_keys.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    troubleshooting.md
+    keyprotect_troubleshooting.md
     {: .navgroup-end}
