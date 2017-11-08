@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,25 +16,25 @@ lastupdated: "2017-09-21"
 # Provisioning the {{site.data.keyword.keymanagementserviceshort}} service
 {: #provision}
 
-You can create a secure instance of {{site.data.keyword.keymanagementservicefull}} by using the {{site.data.keyword.Bluemix_notm}} console or the {{site.data.keyword.Bluemix_notm}} CLI.
+You can create a secure instance of {{site.data.keyword.keymanagementservicefull}} by using the {{site.data.keyword.cloud_notm}} console or the Bluemix CLI.
 {: shortdesc}
 
-## Provisioning from the {{site.data.keyword.Bluemix_notm}} console
+## Provisioning from the {{site.data.keyword.cloud_notm}} console
 {: #gui}
 
-To provision an instance of {{site.data.keyword.keymanagementserviceshort}} from the {{site.data.keyword.Bluemix_notm}} console, complete the following steps.
+To provision an instance of {{site.data.keyword.keymanagementserviceshort}} from the {{site.data.keyword.cloud_notm}} console, complete the following steps.
 
-1. [Log in to your {{site.data.keyword.Bluemix_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/){: new_window}.
-2. Click **Catalog** to view the list of services that are available on {{site.data.keyword.Bluemix_notm}}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/){: new_window}.
+2. Click **Catalog** to view the list of services that are available on {{site.data.keyword.cloud_notm}}.
 3. Select the **Services** category, and click the **{{site.data.keyword.keymanagementserviceshort}}** tile.
-5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{site.data.keyword.Bluemix_notm}} org and space where you are logged in.
+5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{{site.data.keyword.cloud_notm}} org and space where you are logged in.
 
-## Provisioning from the {{site.data.keyword.Bluemix_notm}} CLI
+## Provisioning from the Bluemix CLI
 {: #cli}
 
-You can provision an instance of {{site.data.keyword.keymanagementserviceshort}} by using the {{site.data.keyword.Bluemix_notm}} CLI. [Download and install the command line tool on your system](https://clis.ng.bluemix.net/ui/home.html){: new_window} to complete the following steps.
+You can provision an instance of {{site.data.keyword.keymanagementserviceshort}} by using the Bluemix CLI. [Download and install the command line tool on your system](https://clis.ng.bluemix.net/ui/home.html){: new_window} to complete the following steps.
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Log in to the Bluemix CLI.
 
     ```sh
     bx login [--sso]
@@ -42,7 +42,7 @@ You can provision an instance of {{site.data.keyword.keymanagementserviceshort}}
     {: codeblock}
     **Note**: The `--sso` parameter is required when you log in with a federated ID. If this option is used, go to the link listed in the CLI output to generate a one-time passcode.
 
-2. Select the {{site.data.keyword.Bluemix_notm}} org and space where you would like to create a {{site.data.keyword.keymanagementserviceshort}} service instance.
+2. Select the {{site.data.keyword.cloud_notm}} org and space where you would like to create a {{site.data.keyword.keymanagementserviceshort}} service instance.
 
     You can also use the following command to set your target org and space.
 

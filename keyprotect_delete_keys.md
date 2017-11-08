@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Deleting keys
 
-You can use {{site.data.keyword.keymanagementservicefull}} to delete an encryption key and its contents, if you are an admin for your {{site.data.keyword.Bluemix_notm}} space or {{site.data.keyword.keymanagementserviceshort}} service instance.
+You can use {{site.data.keyword.keymanagementservicefull}} to delete an encryption key and its contents, if you are an admin for your {{site.data.keyword.cloud_notm}} space or {{site.data.keyword.keymanagementserviceshort}} service instance.
 {: shortdesc}
 
 **Important**: When you delete a key, you permanently shred its contents and associated data. The action cannot be reversed. Destroying resources is not recommended for production environments, but might be useful for temporary environments such as testing or QA.
@@ -27,8 +27,8 @@ If you prefer to delete your key resources using a graphical interface, you can 
 
 [After you create or import your existing keys into the service](/docs/services/keymgmt/keyprotect_create_keys.html), complete the following steps to delete a key:
 
-1. [Log in to the {{site.data.keyword.Bluemix_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/).
-2. From your {{site.data.keyword.Bluemix_notm}} dashboard, select your provisioned instance of {{site.data.keyword.keymanagementserviceshort}}.
+1. [Log in to the {{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/).
+2. From your {{site.data.keyword.cloud_notm}} dashboard, select your provisioned instance of {{site.data.keyword.keymanagementserviceshort}}.
 3. Navigate to the **Manage** pane to browse the keys in your service.
 4. Click the &#x22ee; icon to open a list of options for the key you would like to delete.
 5. From the options menu, click **Delete key** and confirm the key deletion in the next screen.
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.Bluemix_notm}} space.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.cloud_notm}} space.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.Bluemix_notm}} org.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.cloud_notm}} org.</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>

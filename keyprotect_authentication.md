@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -24,9 +24,9 @@ To work with the API, you need to generate your service and authentication crede
 ## Retrieving your org and space GUIDs
 {: #retrieve_GUIDs}
 
-You can retrieve the identifying information for your {{site.data.keyword.Bluemix_notm}} organization and space with the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
+You can retrieve the identifying information for your {{site.data.keyword.cloud_notm}} organization and space with the [Bluemix CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
 
-1. Log in to {{site.data.keyword.Bluemix_notm}} though the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Log in to {{site.data.keyword.cloud_notm}} though the Bluemix CLI.
 
     ```
     bx login [--sso]
@@ -35,11 +35,11 @@ You can retrieve the identifying information for your {{site.data.keyword.Bluemi
 
     The `--sso` parameter is required when you log in with a federated ID. If this option is used, go to the link listed in the CLI output to generate a one-time passcode.
 
-2. Select the {{site.data.keyword.Bluemix_notm}} org and space that contains your {{site.data.keyword.keymanagementserviceshort}} service instance.
+2. Select the {{site.data.keyword.cloud_notm}} org and space that contains your {{site.data.keyword.keymanagementserviceshort}} service instance.
 
     Note the names of your org and space in the CLI output. You can also run `bx target` to view this information.
 
-3. Retrieve your {{site.data.keyword.Bluemix_notm}} org and space GUIDs.
+3. Retrieve your {{site.data.keyword.cloud_notm}} org and space GUIDs.
 
     ```
     bx iam org [organization_name] --guid
@@ -53,9 +53,9 @@ You can retrieve the identifying information for your {{site.data.keyword.Bluemi
 
 You can use an authorization token to programmatically manage your keys using the {{site.data.keyword.keymanagementserviceshort}} API.
 
-**Note**: To enable granular access control governed by {{site.data.keyword.Bluemix_notm}} Identity and Access Management, use an IAM token when you make calls to the service.
+**Note**: To enable granular access control governed by {{site.data.keyword.iamshort}}, use an IAM token when you make calls to the service.
 
-1. In the {{site.data.keyword.Bluemix_notm}} CLI, select the org and space that contains your {{site.data.keyword.keymanagementserviceshort}} service.
+1. In the Bluemix CLI, select the org and space that contains your {{site.data.keyword.keymanagementserviceshort}} service.
 
 2. Retrieve and display your authorization tokens.
 
@@ -64,7 +64,7 @@ You can use an authorization token to programmatically manage your keys using th
     ```
     {: codeblock}
 
-    The following truncated example shows the {{site.data.keyword.Bluemix_notm}} token output. The _Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ variable is an example access token.
+    The following truncated example shows the {{site.data.keyword.cloud_notm}} token output. The _Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ variable is an example access token.
 
     ```
     IAM token: Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7...

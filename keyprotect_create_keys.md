@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -89,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.Bluemix_notm}} org. </td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.cloud_notm}} org. </td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.Bluemix_notm}} space.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.cloud_notm}} space.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -124,7 +124,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     A successful response returns the `id` value for your key, along with other metadata. The `id` is a unique identifier that is assigned to your key and is used for subsequent calls.
 
-3. **Optional:** Verify that the key was created by running the following call to get the keys in your {{site.data.keyword.Bluemix_notm}} space.
+3. **Optional:** Verify that the key was created by running the following call to get the keys in your {{site.data.keyword.cloud_notm}} space.
 
     ```cURL
     curl -X GET \

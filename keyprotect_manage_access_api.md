@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # Managing access to keys with the API
 {: #managing-access-api}
 
-With {{site.data.keyword.Bluemix}} Identity and Access Management, you can enable granular access control for your key resources by creating and modifying access policies.
+With {{site.data.keyword.iamlong}}, you can enable granular access control for your key resources by creating and modifying access policies.
 {: shortdesc}
 
 This page walks you through several scenarios for managing access to your key resources with the [Access Management API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
@@ -31,7 +31,7 @@ Before you begin:
 ## Creating a new access policy
 {: #create_policy}
 
-To enable access control for a specific key, you can send a request to {{site.data.keyword.Bluemix_notm}} Identity and Access Management by running the following command. Repeat the command for each access policy.
+To enable access control for a specific key, you can send a request to {{site.data.keyword.iamshort}} by running the following command. Repeat the command for each access policy.
 
 ```cURL
 curl -X POST \
@@ -75,7 +75,7 @@ curl -X GET \
 ## Updating an access policy
 {: #update_policy}
 
-You can use a retrieved policy ID to modify an existing policy for a user. Send a request to {{site.data.keyword.Bluemix_notm}} Identity and Access Management by running the following command:
+You can use a retrieved policy ID to modify an existing policy for a user. Send a request to {{site.data.keyword.iamshort}} by running the following command:
 
 ```cURL
 curl -X PUT \
@@ -119,7 +119,7 @@ curl -X GET \
 ## Deleting an access policy
 {: #delete_policy}
 
-You can use a retrieved policy ID to delete an existing policy for a user. Send a request to {{site.data.keyword.Bluemix_notm}} Identity and Access Management by running the following command:
+You can use a retrieved policy ID to delete an existing policy for a user. Send a request to {{site.data.keyword.iamshort}} by running the following command:
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## Retrieving the account ID
 {: #retrieve_account_id}
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Log in to the Bluemix CLI.
     ```sh
     bx login [--sso]
     ```
