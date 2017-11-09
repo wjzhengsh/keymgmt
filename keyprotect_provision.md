@@ -27,7 +27,7 @@ To provision an instance of {{site.data.keyword.keymanagementserviceshort}} from
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/){: new_window}.
 2. Click **Catalog** to view the list of services that are available on {{site.data.keyword.cloud_notm}}.
 3. Select the **Services** category, and click the **{{site.data.keyword.keymanagementserviceshort}}** tile.
-5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{{site.data.keyword.cloud_notm}} org and space where you are logged in.
+5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{site.data.keyword.cloud_notm}} org and space where you are logged in.
 
 ## Provisioning from the {{site.data.keyword.cloud_notm}} (bx) CLI
 {: #cli}
