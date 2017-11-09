@@ -77,7 +77,7 @@ manage the keys for the cryptography.</dd>
 {{site.data.keyword.keymanagementservicelong_notm}} is composed of industry-accepted technologies.
 
 <dl>
-  <dt>{{site.data.keyword.Bluemix_notm}} server</dt>
+  <dt>{{site.data.keyword.cloud_notm}} server</dt>
     <dd>Identity, projects and their tokens from the {{site.data.keyword.cloud_notm}} server let the {{site.data.keyword.keymanagementserviceshort}} service to map resources to keys.</dd>
   <dt>API for {{site.data.keyword.keymanagementserviceshort}}</dt>
     <dd>The {{site.data.keyword.keymanagementserviceshort}} REST API drives key creation and management. The service provides encrypted multi-tenancy.</dd>

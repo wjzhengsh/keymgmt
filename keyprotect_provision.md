@@ -16,7 +16,7 @@ lastupdated: "2017-11-08"
 # Provisioning the {{site.data.keyword.keymanagementserviceshort}} service
 {: #provision}
 
-You can create a secure instance of {{site.data.keyword.keymanagementservicefull}} by using the {{site.data.keyword.cloud_notm}} console or the Bluemix CLI.
+You can create a secure instance of {{site.data.keyword.keymanagementservicefull}} by using the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} (bx) CLI.
 {: shortdesc}
 
 ## Provisioning from the {{site.data.keyword.cloud_notm}} console
@@ -29,12 +29,12 @@ To provision an instance of {{site.data.keyword.keymanagementserviceshort}} from
 3. Select the **Services** category, and click the **{{site.data.keyword.keymanagementserviceshort}}** tile.
 5. Select a service plan, and click **Create** to provision a {{site.data.keyword.keymanagementserviceshort}} service instance in the {{{site.data.keyword.cloud_notm}} org and space where you are logged in.
 
-## Provisioning from the Bluemix CLI
+## Provisioning from the {{site.data.keyword.cloud_notm}} (bx) CLI
 {: #cli}
 
-You can provision an instance of {{site.data.keyword.keymanagementserviceshort}} by using the Bluemix CLI. [Download and install the command line tool on your system](https://clis.ng.bluemix.net/ui/home.html){: new_window} to complete the following steps.
+You can provision an instance of {{site.data.keyword.keymanagementserviceshort}} by using the {{site.data.keyword.cloud_notm}} (bx) CLI. [Download and install the command line tool on your system](https://clis.ng.bluemix.net/ui/home.html){: new_window} to complete the following steps.
 
-1. Log in to the Bluemix CLI.
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh
     bx login [--sso]
