@@ -54,7 +54,7 @@ You can provision an instance of {{site.data.keyword.keymanagementserviceshort}}
 3. Provision an instance of {{site.data.keyword.keymanagementserviceshort}} within that region, organization, and space.
 
     ```sh
-    bx service create ibm_key_management TieredPricing [instance_name]
+    bx service create kms TieredPricing [instance_name]
     ```
     {: codeblock}
 
