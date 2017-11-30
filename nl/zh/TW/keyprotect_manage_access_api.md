@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # 使用 API 管理金鑰的存取
 {: #managing-access-api}
 
-使用 {{site.data.keyword.Bluemix}} 身分及存取管理，您可以建立及修改存取原則，為金鑰資源啟用精細的存取控制。
+使用 {{site.data.keyword.iamlong}}，您可以建立及修改存取原則，為金鑰資源啟用精細的存取控制。
 {: shortdesc}
 
 此頁面帶領您查看數個情境，使用[存取管理 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window} 管理金鑰資源的存取。
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 建立新的存取原則
 {: #create_policy}
 
-若要啟用特定金鑰的存取控制，您可以藉由執行下列指令，傳送要求至 {{site.data.keyword.Bluemix_notm}} 身分及存取管理。請針對每個存取原則重複指令。
+若要啟用特定金鑰的存取控制，您可以藉由執行下列指令，傳送要求至 {{site.data.keyword.iamshort}}。請針對每個存取原則重複指令。
 
 ```cURL
 curl -X POST \
@@ -75,7 +75,7 @@ curl -X GET \
 ## 更新存取原則
 {: #update_policy}
 
-您可以使用擷取到的原則 ID，以修改使用者的現有原則。藉由執行下列指令，傳送要求至 {{site.data.keyword.Bluemix_notm}} 身分及存取管理。
+您可以使用擷取到的原則 ID，以修改使用者的現有原則。藉由執行下列指令，傳送要求至 {{site.data.keyword.iamshort}}：
 
 ```cURL
 curl -X PUT \
@@ -119,7 +119,7 @@ curl -X GET \
 ## 刪除存取原則
 {: #delete_policy}
 
-您可以使用擷取到的原則 ID，以刪除使用者的現有原則。藉由執行下列指令，傳送要求至 {{site.data.keyword.Bluemix_notm}} 身分及存取管理。
+您可以使用擷取到的原則 ID，以刪除使用者的現有原則。藉由執行下列指令，傳送要求至 {{site.data.keyword.iamshort}}：
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## 擷取帳戶 ID
 {: #retrieve_account_id}
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} CLI。
+1. 登入 Bluemix CLI。
     ```sh
     bx login [--sso]
     ```

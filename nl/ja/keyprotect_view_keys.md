@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -63,16 +63,16 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} スペースに割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} スペースに割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} 組織に割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} 組織に割り当てられた固有 ID。</td>
       </tr>
       <caption style="caption-side:bottom;">表 1. {{site.data.keyword.keymanagementserviceshort}} API を使用して鍵を表示するために必要な変数についての説明</caption>
     </table>
 
-    要求に成功すると、{{site.data.keyword.Bluemix_notm}} スペース内の使用可能な鍵の集合が返されます。
+    要求に成功すると、{{site.data.keyword.cloud_notm}} スペース内の使用可能な鍵の集合が返されます。
 
     ```
     {
@@ -158,11 +158,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} 組織に割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} 組織に割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} スペースに割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} スペースに割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>

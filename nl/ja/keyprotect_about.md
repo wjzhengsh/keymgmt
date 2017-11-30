@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # {{site.data.keyword.keymanagementserviceshort}} の概要
 
-{{site.data.keyword.keymanagementservicefull}} は、{{site.data.keyword.Bluemix_notm}} サービス上のアプリの暗号鍵をプロビジョンするときに役立ちます。鍵のライフサイクルを管理する際に、情報の盗難を防止する FIPS-140 認証のクラウド・ベースのハードウェア・モジュール (HSM) によって鍵が保護されていることを認識していると役立つことがあります。
+{{site.data.keyword.keymanagementservicefull}} は、{{site.data.keyword.cloud_notm}} サービス上のアプリの暗号鍵をプロビジョンするときに役立ちます。鍵のライフサイクルを管理する際に、情報の盗難を防止する FIPS 140-2 レベル 2 認証のクラウド・ベースのハードウェア・モジュール (HSM) によって鍵が保護されていることを認識していると役立つことがあります。
 {: shortdesc}
 
 ## {{site.data.keyword.keymanagementserviceshort}} のユース・ケース
@@ -34,20 +34,20 @@ lastupdated: "2017-09-21"
   </tr>
   <tr>
     <td>大企業の IT 管理者として、数多くのさまざまなサービス・オファリング用の鍵を統合、追跡、および回転させる必要があります。</td>
-    <td>{{site.data.keyword.keymanagementserviceshort}} インターフェースは、複数の暗号化サービスの管理を簡素化します。このサービスを使用すると、鍵の管理や分類を 1 カ所で集中的に行うことも、プロジェクト別に鍵を分離して別々の {{site.data.keyword.Bluemix_short}} スペースに格納することもできます。</td>
+    <td>{{site.data.keyword.keymanagementserviceshort}} インターフェースは、複数の暗号化サービスの管理を簡素化します。このサービスを使用すると、鍵の管理や分類を 1 カ所で集中的に行うことも、プロジェクト別に鍵を分離して別々の {{site.data.keyword.cloud_notm}} スペースに格納することもできます。</td>
   </tr>
   <tr>
     <td>データの保護方法に対するガバナンスを遵守する必要がある、業界 (財務や法律など) のセキュリティー管理者です。保護しているデータを危険にさらすことなく、鍵の制御アクセスを認可する必要があります。</td>
     <td>このサービスを使用すると、[異なる Identity and Access Management の役割を割り当てる](/docs/services/keyprotect_manage_access.html#roles)ことによって、鍵を管理するためのユーザーのアクセス権限を制御できます。例えば、鍵の素材を表示せずに鍵の作成情報を表示する必要があるユーザーに対しては、読み取り専用アクセス権限を付与できます。</td>
   <tr>
     <td>開発者は、自己暗号化ストレージなどの既存のアプリケーションを {{site.data.keyword.keymanagementserviceshort}} に統合できます。また、サービスと統合する独自のアプリを開発することもできます。</td>
-    <td>{{site.data.keyword.Bluemix_notm}} 上、またはその外部のアプリは、
+    <td>{{site.data.keyword.cloud_notm}} 上、またはその外部のアプリは、
 {{site.data.keyword.keymanagementserviceshort}} API と統合できます。
 独自の既存の鍵をご使用のアプリに使用することも可能です。</td>
   </tr>
   <tr>
     <td>開発チームは厳しいポリシーを定めており、14 日ごとに鍵を生成して回転させる手段が必要です。</td>
-    <td>{{site.data.keyword.Bluemix_notm}} を使用すると、ハードウェア・セキュリティー・モジュール (HSM) から迅速に鍵を生成し、継続的にセキュリティーのニーズを満たすことができます。</td>
+    <td>{{site.data.keyword.keymanagementserviceshort}} を使用すると、ハードウェア・セキュリティー・モジュール (HSM) から迅速に鍵を生成し、継続的にセキュリティーのニーズを満たすことができます。</td>
   </tr>
   <caption style="caption-side:bottom;">表 1. {{site.data.keyword.keymanagementserviceshort}} API を使用して鍵を追加するために必要な変数</caption>
 </table>
@@ -55,15 +55,15 @@ lastupdated: "2017-09-21"
 ## {{site.data.keyword.keymanagementserviceshort}} の機能方法
 {: #kp_how}
 
-{{site.data.keyword.keymanagementservicelong_notm}} は、{{site.data.keyword.Bluemix_notm}} Identity and Access Management の役割と協調して、組織全体の暗号鍵を管理するのを支援します。
+{{site.data.keyword.keymanagementservicelong_notm}} は、{{site.data.keyword.iamshort}} の役割と協調して、組織全体の暗号鍵を管理するのを支援します。
 
-IT またはセキュリティーの管理者に必要とされる高度な許可は、監査員には必要がない可能性があります。アクセスを簡素化するために、{{site.data.keyword.keymanagementserviceshort}} を {{site.data.keyword.Bluemix_notm}} Identity and Access Management の役割にマップして、各役割がそれぞれ異なるビューのサービスを持つようにします。どのビューとアクセス・レベルが自分のニーズに最も適しているかを判断するには、[ユーザーおよびアクセス権限の管理](/docs/services/keymgmt/keyprotect_manage_access.html#roles)を参照してください。
+IT またはセキュリティーの管理者に必要とされる高度な許可は、監査員には必要がない可能性があります。アクセスを簡素化するために、{{site.data.keyword.keymanagementserviceshort}} を {{site.data.keyword.iamshort}} の役割にマップして、各役割がそれぞれ異なるビューのサービスを持つようにします。どのビューとアクセス・レベルが自分のニーズに最も適しているかを判断するには、[ユーザーおよびアクセス権限の管理](/docs/services/keymgmt/keyprotect_manage_access.html#roles)を参照してください。
 
 次の図は、管理者、閲覧者、および編集者が、サービスで管理されている鍵とどのように相互作用できるかを示しています。
 
 <dl>
   <dt>サービスの統合</dt>
-    <dd>{{site.data.keyword.Bluemix_notm}} スペースの管理者は、暗号化のために鍵を管理します。</dd>
+    <dd>{{site.data.keyword.cloud_notm}} スペースの管理者は、暗号化のために鍵を管理します。</dd>
   <dt>表示</dt>
     <dd>閲覧者は、鍵の概略にアクセスし、疑わしいアクティビティーを特定します。</dd>
   <dt>アプリ</dt>
@@ -78,11 +78,11 @@ IT またはセキュリティーの管理者に必要とされる高度な許�
 {{site.data.keyword.keymanagementservicelong_notm}} は、業界で認められたテクノロジーで構成されています。
 
 <dl>
-  <dt>{{site.data.keyword.Bluemix_notm}} サーバー</dt>
-    <dd>{{site.data.keyword.Bluemix_notm}} サーバーからの ID、プロジェクト、トークンにより、{{site.data.keyword.keymanagementserviceshort}} サービスはリソースを鍵にマップすることができます。</dd>
+  <dt>{{site.data.keyword.cloud_notm}} サーバー</dt>
+    <dd>{{site.data.keyword.cloud_notm}} サーバーからの ID、プロジェクト、トークンにより、{{site.data.keyword.keymanagementserviceshort}} サービスはリソースを鍵にマップすることができます。</dd>
   <dt>{{site.data.keyword.keymanagementserviceshort}} の API</dt>
     <dd>{{site.data.keyword.keymanagementserviceshort}} REST API は、鍵の作成と管理を駆動します。サービスは暗号化されたマルチテナンシーを提供します。</dd>
-  <dt>{{site.data.keyword.Bluemix_notm}} のユーザー・インターフェース</dt>
+  <dt>{{site.data.keyword.cloud_notm}} のユーザー・インターフェース</dt>
     <dd>{{site.data.keyword.keymanagementserviceshort}} のユーザー・インターフェース (UI) では、安全に鍵の処理を行えます。</dd>
   <dt>ハードウェア・セキュリティー・モジュール (HSM)</dt>
     <dd>{{site.data.keyword.cloud_notm}} データ・センターは、鍵を保護するためのハードウェアを舞台裏で提供しています。</dd>

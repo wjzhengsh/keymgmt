@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2017-09-21"
 # Gestión de acceso a las claves con la API
 {: #managing-access-api}
 
-Con {{site.data.keyword.Bluemix}} Identity and Access Management, puede habilitar el control de acceso granular para recursos clave y crear y modificar las políticas de acceso.
+Con {{site.data.keyword.iamlong}}, puede habilitar el control de acceso granular para recursos clave y crear y modificar las políticas de acceso.
 {: shortdesc}
 
-Esta página le guía a través de varios escenarios para gestionar el acceso a los recursos con la[API de gestión de accesos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
+Esta página le guía a través de varios escenarios para gestionar el acceso a los recursos con la [API de gestión de accesos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
 
 
 Antes de empezar:
@@ -31,18 +31,18 @@ Antes de empezar:
 ## Creación de una nueva política de acceso
 {: #create_policy}
 
-Para habilitar el control de acceso para una clave específica, puede enviar una solicitud a {{site.data.keyword.Bluemix_notm}} Identity and Access Management ejecutando el mandato siguiente. Repita el mandato para cada política de acceso.
+Para habilitar el control de acceso para una clave específica, puede enviar una solicitud a {{site.data.keyword.iamshort}} ejecutando el mandato siguiente. Repita el mandato para cada política de acceso.
 
 ```cURL
 curl -X POST \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -d '{
   "roles": [
     {
-      "id": "crn:v1:bluemix:public:iam::::role:<IAM_role>"
+      "id": "crn:v1:bluemix:public:iam::::role:<rol_IAM>"
     }
   ],
   "resources": [
@@ -50,23 +50,23 @@ curl -X POST \
       "serviceName": "IBM Key Protect",
       "region": "us-south",
       "resourceType": "key",
-      "resource": "<key_ID>",
-      "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "resource": "<ID_clave>",
+      "accountId": "<ID_cuenta>",
+      "spaceId": "<GUID_espacio>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Sustituya `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` y `<key_ID>` con los valores adecuados.
+Sustituya `<ID_cuenta>`, `<ID_usuario>`, `<señal_IAM_Admin>`, `<rol_IAM>`, `<GUID_espacio>` y `<ID_clave>` con los valores adecuados.
 
 **Opcional:** Verifique que la política se ha creado satisfactoriamente.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
   -H 'Accept: application/json' \
 ```
 {: codeblock}
@@ -75,19 +75,19 @@ curl -X GET \
 ## Actualización de una política de acceso
 {: #update_policy}
 
-Puede utilizar un ID de política recuperado para modificar una política existente para un usuario. Envíe una solicitud a {{site.data.keyword.Bluemix_notm}} Identity and Access Management ejecutando el mandato siguiente:
+Puede utilizar un ID de política recuperado para modificar una política existente para un usuario. Envíe una solicitud a {{site.data.keyword.iamshort}} ejecutando el mandato siguiente:
 
 ```cURL
 curl -X PUT \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
-  -H 'If-Match': <ETag_ID> \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies/<ID_política> \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
+  -H 'If-Match': <ID_ETag> \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -d '{
   "roles": [
     {
-      "id": "crn:v1:bluemix:public:iam::::role:<IAM_role>"
+      "id": "crn:v1:bluemix:public:iam::::role:<rol_IAM>"
     }
   ],
   "resources": [
@@ -95,23 +95,23 @@ curl -X PUT \
       "serviceName": "IBM Key Protect",
       "region": "us-south",
       "resourceType": "key",
-      "resource": "<key_ID>",
-      "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "resource": "<ID_clave>",
+      "accountId": "<ID_cuenta>",
+      "spaceId": "<GUID_espacio>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Sustituya `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` y `<key_ID>` con los valores adecuados.
+Sustituya `<ID_cuenta>`, `<ID_usuario>`, `<ID_política>`, `<señal_IAM_Admin>`, `<ID_ETag>`, `<rol_IAM>`, `<GUID_espacio>` y `<ID_clave>` con los valores adecuados.
 
 **Opcional:** Verifique que la política se ha actualizado correctamente.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
   -H 'Accept: application/json' \
 ```
 {: codeblock}
@@ -119,24 +119,24 @@ curl -X GET \
 ## Supresión de una política de acceso
 {: #delete_policy}
 
-Puede utilizar un ID de política recuperado para suprimir una política existente para un usuario. Envíe una solicitud a {{site.data.keyword.Bluemix_notm}} Identity and Access Management ejecutando el mandato siguiente:
+Puede utilizar un ID de política recuperado para suprimir una política existente para un usuario. Envíe una solicitud a {{site.data.keyword.iamshort}} ejecutando el mandato siguiente:
 
 ```cURL
 curl -X DELETE \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies/<ID_política> \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
   -H 'Accept: application/json' \
 ```
 {: codeblock}
 
-Sustituya `<account_ID>`, `<user_ID>`, `<policy_ID>`, y  `<Admin_IAM_token>` con los valores adecuados.
+Sustituya `<ID_cuenta>`, `<ID_usuario>`, `<ID_política>` y  `<señal_IAM_Admin>` con los valores adecuados.
 
 **Opcional:** Verifique la política se ha suprimido satisfactoriamente.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
-  -H 'Authorization: Bearer <Admin_IAM_token>' \
+  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<ID_cuenta>/users/<ID_usuario>/policies \
+  -H 'Authorization: Bearer <señal_IAM_Admin>' \
   -H 'Accept: application/json' \
 ```
 {: codeblock}
@@ -144,7 +144,7 @@ curl -X GET \
 ## Recuperar el ID de la cuenta
 {: #retrieve_account_id}
 
-1. Inicie sesión en la CLI de {{site.data.keyword.Bluemix_notm}}.
+1. Inicie sesión en la CLI de Bluemix.
     ```sh
     bx login [--sso]
     ```
@@ -156,30 +156,30 @@ curl -X GET \
 
     ```sh
     Autenticando...
-    Aceptar
+    Correcto
 
     Seleccione una cuenta (o pulse Intro para omitir):
 
-    1. Ejemplo de cuenta (b6hnh3560ehqjkf89s4ba06i367801e)
+    1. cuenta-ejemplo (b6hnh3560ehqjkf89s4ba06i367801e)
     Especifique un número > 1
-    Cuenta de destino cuenta de muestra (b6hnh3560ehqjkf89s4ba06i367801e)
+    Cuenta de destino cuenta-ejemplo (b6hnh3560ehqjkf89s4ba06i367801e)
 
-    punto final API:   https://api.ng.bluemix.net (versión API: 2.75.0)
-    Región:         us-south
-    Usuario:           admin
-    Cuenta:        sample-account (b6hnh3560ehqjkf89s4ba06i367801e)
+    Punto final de la API:   https://api.ng.bluemix.net (versión API: 2.75.0)
+    Región:                  us-south
+    Usuario:                 admin
+    Cuenta:                  cuenta-ejemplo (b6hnh3560ehqjkf89s4ba06i367801e)
     ```
     {: screen}
 2. Copie el valor de su ID de cuenta.
 
-## Recuperando el ID de usuario 
+## Recuperando el ID de usuario
 {: #retrieve_user_id}
 
 1. [Solicite al usuario proporcionar su señal IAM](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token).
     La estructura de la señal IAM es la siguiente:
 
     ```sh
-    señal IAM: Portador <value>.<value>.<value>
+    IAM token: Bearer <value>.<value>.<value>
     ```
     {: screen}
 

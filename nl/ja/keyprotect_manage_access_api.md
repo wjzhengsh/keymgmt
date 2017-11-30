@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # API を使用した鍵へのアクセス権限の管理
 {: #managing-access-api}
 
-{{site.data.keyword.Bluemix}} Identity and Access Management を使用すると、アクセス・ポリシーを作成および変更することによって、鍵リソースに対する細分化されたアクセス制御を有効にすることができます。
+{{site.data.keyword.iamlong}} を使用すると、アクセス・ポリシーを作成および変更することによって、鍵リソースに対する細分化されたアクセス制御を有効にすることができます。
 {: shortdesc}
 
 このページでは、[Access Management API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window} を使用して鍵リソースへのアクセス権限を管理するためのシナリオをいくつか紹介します。
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 新規アクセス・ポリシーの作成
 {: #create_policy}
 
-特定の鍵に対するアクセス制御を有効にするには、以下のコマンドを実行して、{{site.data.keyword.Bluemix_notm}} Identity and Access Management に要求を送信します。アクセス・ポリシーごとにコマンドを繰り返します。
+特定の鍵に対するアクセス制御を有効にするには、以下のコマンドを実行して、{{site.data.keyword.iamshort}} に要求を送信します。アクセス・ポリシーごとにコマンドを繰り返します。
 
 ```cURL
 curl -X POST \
@@ -75,7 +75,7 @@ curl -X GET \
 ## アクセス・ポリシーの更新
 {: #update_policy}
 
-取得したポリシー ID を使用して、ユーザーの既存のポリシーを変更できます。以下のコマンドを実行して、{{site.data.keyword.Bluemix_notm}} Identity and Access Management に要求を送信します。
+取得したポリシー ID を使用して、ユーザーの既存のポリシーを変更できます。以下のコマンドを実行して、{{site.data.keyword.iamshort}} に要求を送信します。
 
 ```cURL
 curl -X PUT \
@@ -119,7 +119,7 @@ curl -X GET \
 ## アクセス・ポリシーの削除
 {: #delete_policy}
 
-取得したポリシー ID を使用して、ユーザーの既存のポリシーを削除できます。以下のコマンドを実行して、{{site.data.keyword.Bluemix_notm}} Identity and Access Management に要求を送信します。
+取得したポリシー ID を使用して、ユーザーの既存のポリシーを削除できます。以下のコマンドを実行して、{{site.data.keyword.iamshort}} に要求を送信します。
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## アカウント ID の取得
 {: #retrieve_account_id}
 
-1. {{site.data.keyword.Bluemix_notm}} CLI にログインします。
+1. Bluemix CLI にログインします。
     ```sh
     bx login [--sso]
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,25 +16,25 @@ lastupdated: "2017-09-21"
 # 佈建 {{site.data.keyword.keymanagementserviceshort}} 服務
 {: #provision}
 
-您可以使用 {{site.data.keyword.Bluemix_notm}} 主控台或 {{site.data.keyword.Bluemix_notm}} CLI 建立 {{site.data.keyword.keymanagementservicefull}} 的安全實例。
+您可以使用 {{site.data.keyword.cloud_notm}} 主控台或 {{site.data.keyword.cloud_notm}} (bx) CLI 建立 {{site.data.keyword.keymanagementservicefull}} 的安全實例。
 {: shortdesc}
 
-## 從 {{site.data.keyword.Bluemix_notm}} 主控台佈建
+## 從 {{site.data.keyword.cloud_notm}} 主控台佈建
 {: #gui}
 
-若要從 {{site.data.keyword.Bluemix_notm}} 主控台佈建 {{site.data.keyword.keymanagementserviceshort}} 的實例，請完成下列步驟。
+若要從 {{site.data.keyword.cloud_notm}} 主控台佈建 {{site.data.keyword.keymanagementserviceshort}} 的實例，請完成下列步驟。
 
-1. [登入 {{site.data.keyword.Bluemix_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/){: new_window}。
-2. 按一下**型錄**以檢視 {{site.data.keyword.Bluemix_notm}} 上可用的服務清單。
+1. [登入 {{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/){: new_window}。
+2. 按一下**型錄**以檢視 {{site.data.keyword.cloud_notm}} 上可用的服務清單。
 3. 選取**服務**種類，然後按一下 **{{site.data.keyword.keymanagementserviceshort}}** 磚。
-5. 選取服務方案，然後按一下**建立**以在您登入的 {{site.data.keyword.Bluemix_notm}} 組織及空間中佈建 {{site.data.keyword.keymanagementserviceshort}} 服務實例。
+5. 選取服務方案，然後按一下**建立**以在您登入的 {{site.data.keyword.cloud_notm}} 組織及空間中佈建 {{site.data.keyword.keymanagementserviceshort}} 服務實例。
 
-## 從 {{site.data.keyword.Bluemix_notm}} CLI 佈建
+## 從 {{site.data.keyword.cloud_notm}} (bx) CLI 佈建
 {: #cli}
 
-您可以使用 {{site.data.keyword.Bluemix_notm}} CLI 佈建 {{site.data.keyword.keymanagementserviceshort}} 的實例。[在您的系統下載並安裝指令行工具](https://clis.ng.bluemix.net/ui/home.html){: new_window}，以完成下列步驟。
+您可以使用 {{site.data.keyword.cloud_notm}} (bx) CLI 佈建 {{site.data.keyword.keymanagementserviceshort}} 的實例。[在您的系統下載並安裝指令行工具](https://clis.ng.bluemix.net/ui/home.html){: new_window}，以完成下列步驟。
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} CLI。
+1. 登入 {{site.data.keyword.cloud_notm}} CLI。
 
     ```sh
     bx login [--sso]
@@ -42,7 +42,7 @@ lastupdated: "2017-09-21"
     {: codeblock}
     **附註**：當您使用聯合 ID 登入時，需要 `--sso` 參數。如果使用這個選項，請前往 CLI 輸出中所列的鏈結，以產生一次性的通行碼。
 
-2. 選取您要建立 {{site.data.keyword.keymanagementserviceshort}} 服務實例的 {{site.data.keyword.Bluemix_notm}} 組織及空間。
+2. 選取您要建立 {{site.data.keyword.keymanagementserviceshort}} 服務實例的 {{site.data.keyword.cloud_notm}} 組織及空間。
 
     您也可以使用下列指令來設定目標組織及空間。
 
@@ -54,7 +54,7 @@ lastupdated: "2017-09-21"
 3. 在該地區、組織及空間內佈建 {{site.data.keyword.keymanagementserviceshort}} 的實例。
 
     ```sh
-    bx service create ibm_key_management TieredPricing [instance_name]
+    bx service create kms TieredPricing [instance_name]
     ```
     {: codeblock}
 

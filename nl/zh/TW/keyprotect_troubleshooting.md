@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -42,7 +42,7 @@ lastupdated: "2017-09-21"
 
 ### 解決問題
 
-{{site.data.keyword.keymanagementserviceshort}} 服務有兩種定價模型：輕量型和累進分層式。身為管理者，請確認已選取累進分層式模型。如果您不想要移轉到分層式模型，請確定所有金鑰和服務實例在淘汰之前已移除。[如需相關資訊，請參閱 {{site.data.keyword.keymanagementserviceshort}} 一般組件公告 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/" "https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}。
+{{site.data.keyword.keymanagementserviceshort}} 服務有兩種定價模型：輕量型和累進分層式。身為管理者，請確認已選取累進分層式模型。如果您不想要移轉到分層式模型，請確定所有金鑰和服務實例在淘汰之前已移除。[如需相關資訊，請參閱 {{site.data.keyword.keymanagementserviceshort}} 一般組件公告 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}。
 
 若要變更定價方案，請執行下列動作：
 
@@ -55,7 +55,7 @@ lastupdated: "2017-09-21"
 
 如果您在使用 {{site.data.keyword.keymanagementservicefull_notm}} 時發生問題或有疑問，可以搜尋資訊或透過討論區提問來取得協助。您也可以開立支援問題單。
 
-使用討論區提問時，請標記您的問題，以便 {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} 開發團隊能看到它。
+使用討論區提問時，請標記您的問題，以便 {{site.data.keyword.cloud_notm}} 開發團隊能看到它。
 
 - 如果您有使用 {{site.data.keyword.keymanagementserviceshort}} 的相關技術問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window}，並使用 "ibm-bluemix" 和 "key-protect" 來標記您的問題。
 - 若是服務及開始使用指示的相關問題，請使用 [IBM developerWorks dW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window} 討論區。請包含 "bluemix" 和 "key-protect" 標籤。

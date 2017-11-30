@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # 刪除金鑰
 
-如果您是 {{site.data.keyword.Bluemix_notm}} 空間或 {{site.data.keyword.keymanagementserviceshort}} 服務實例的管理者，可以使用 {{site.data.keyword.keymanagementservicefull}} 來刪除加密金鑰及其內容。
+如果您是 {{site.data.keyword.cloud_notm}} 空間或 {{site.data.keyword.keymanagementserviceshort}} 服務實例的管理者，可以使用 {{site.data.keyword.keymanagementservicefull}} 來刪除加密金鑰及其內容。
 {: shortdesc}
 
 **重要事項**：當您刪除金鑰時，會永久地清除其內容和相關聯的資料。無法回復此動作。不建議針對正式作業環境破壞資源，但可能適用於測試或 QA 等暫時性環境。
@@ -27,10 +27,10 @@ lastupdated: "2017-09-21"
 
 [在建立金鑰或將現有金鑰匯入到服務之後](/docs/services/keymgmt/keyprotect_create_keys.html)，請完成下列步驟來刪除金鑰：
 
-1. [登入 {{site.data.keyword.Bluemix_notm}} 主控台 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/)。
-2. 從 {{site.data.keyword.Bluemix_notm}} 儀表板，選取 {{site.data.keyword.keymanagementserviceshort}} 的佈建實例。
+1. [登入 {{site.data.keyword.cloud_notm}} 主控台 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/)。
+2. 從 {{site.data.keyword.cloud_notm}} 儀表板，選取 {{site.data.keyword.keymanagementserviceshort}} 的佈建實例。
 3. 導覽至**管理**窗格以瀏覽服務中的金鑰。
-4. 按一下圖示以開啟您要刪除之金鑰的選項清單。
+4. 按一下垂直的省略符號圖示以開啟您要刪除之金鑰的選項清單。
 5. 從選項功能表，按一下**刪除金鑰**並在下一個畫面中確認刪除金鑰。
 
 ## 使用 API 刪除金鑰
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 空間的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 空間的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 組織的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 組織的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>

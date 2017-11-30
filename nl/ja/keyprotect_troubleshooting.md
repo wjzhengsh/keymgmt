@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -55,7 +55,7 @@ lastupdated: "2017-09-21"
 
 {{site.data.keyword.keymanagementservicefull_notm}} の使用に関して問題や質問がある場合は、情報を検索したり、フォーラムで質問したりして、支援を得ることができます。サポート・チケットを開くこともできます。
 
-フォーラムを使用して質問するときは、{{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} 開発チームの目に止まるように、質問にタグを付けてください。
+フォーラムを使用して質問するときは、{{site.data.keyword.cloud_notm}} 開発チームの目に止まるように、質問にタグを付けてください。
 
 
 - {{site.data.keyword.keymanagementserviceshort}} について技術的な質問がある場合は、[Stack Overflow ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} に質問を投稿し、その質問に「ibm-bluemix」と「key-protect」のタグを付けてください。

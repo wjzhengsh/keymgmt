@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -62,16 +62,16 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 空間的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 空間的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 組織的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 組織的唯一 ID。</td>
       </tr>
       <caption style="caption-side:bottom;">表 1. 說明透過 {{site.data.keyword.keymanagementserviceshort}} API 檢視金鑰所需的變數。</caption>
     </table>
 
-    成功要求會傳回您的 {{site.data.keyword.Bluemix_notm}} 空間中可用的金鑰集合。
+    成功要求會傳回您的 {{site.data.keyword.cloud_notm}} 空間中可用的金鑰集合。
 
     ```
     {
@@ -156,11 +156,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 組織的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 組織的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 空間的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 空間的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>

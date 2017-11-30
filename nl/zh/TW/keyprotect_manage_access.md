@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # 使用身分及存取管理來管理使用者存取
 {: #managing-access-iam}
 
-{{site.data.keyword.keymanagementservicefull}} 支援由 {{site.data.keyword.Bluemix_notm}} 身分及存取管理控管的集中式存取控制系統，可協助您管理使用者和加密金鑰的存取。
+{{site.data.keyword.keymanagementservicefull}} 支援由 {{site.data.keyword.iamlong}} 控管的集中式存取控制系統，可協助您管理使用者和加密金鑰的存取。
 {: shortdesc}
 
 一項良好的作法是在您邀請新使用者加入帳戶或服務時授與存取權。例如，請考量下列準則：
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 角色及許可權
 {: #roles}
 
-使用 {{site.data.keyword.Bluemix_notm}} 身分及存取管理 (IAM)，您可以設定原則，以定義您的團隊成員的存取範圍。
+使用 {{site.data.keyword.iamshort}} (IAM)，您可以設定原則，以定義您的團隊成員的存取範圍。
 
 為了簡化存取，{{site.data.keyword.keymanagementserviceshort}} 會與 IAM 角色一致，讓每個使用者根據使用者獲得指派的角色，而有不同的服務視圖。如果您是服務的安全管理者，可以指派對應至您想要授與給團隊成員之特定 {{site.data.keyword.keymanagementserviceshort}} 許可權的 IAM 角色。
 
@@ -78,11 +78,11 @@ lastupdated: "2017-09-21"
 
 **附註**：IAM 使用者角色提供服務或服務實例層次的存取權。[Cloud Foundry 角色](/docs/iam/users_roles.html#cfroles)是分開的，並且定義組織或空間層次的存取權。
 
-若要進一步瞭解 {{site.data.keyword.Bluemix_notm}} 身分及存取管理，請參閱[使用者角色及許可權](/docs/iam/users_roles.html#iamusermanpol)。
+若要進一步瞭解 {{site.data.keyword.iamshort}}，請參閱[使用者角色及許可權](/docs/iam/users_roles.html#iamusermanpol)。
 
 ### 下一步為何？
 
 帳戶擁有者及管理者可以邀請使用者，以及設定對應於使用者可執行之 {{site.data.keyword.keymanagementserviceshort}} 動作的服務原則。
 
-- 如需在 {{site.data.keyword.Bluemix_notm}} 使用者介面中指派使用者角色的相關資訊，請參閱[已啟用身分及存取之服務的存取原則](/docs/iam/iamusermanage.html#iammanidaccser)。
+- 如需在 {{site.data.keyword.cloud_notm}} 使用者介面中指派使用者角色的相關資訊，請參閱[已啟用身分及存取之服務的存取原則](/docs/iam/iamusermanage.html#iammanidaccser)。
 - 若要瞭解授與進階許可權以存取特定加密金鑰，請參閱[使用 API 管理金鑰的存取](/docs/services/keymgmt/keyprotect_manage_access_api.html)。

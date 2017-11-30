@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # 開始使用 {{site.data.keyword.keymanagementserviceshort}}
 
-以下是在 {{site.data.keyword.keymanagementservicelong}} 內產生、輸入和管理金鑰所需的步驟。
+以下是在 {{site.data.keyword.keymanagementservicefull}} 內產生、輸入和管理金鑰所需的步驟。
 {: shortdesc}
 
 ## 必要條件
@@ -30,18 +30,18 @@ lastupdated: "2017-09-21"
 
 請使用下列步驟來建立新的金鑰，或上傳現有金鑰。
 
-1. [登入 Bluemix 主控台。](https://console.bluemix.net/catalog){: new_window}
+1. [登入 {{site.data.keyword.cloud_notm}} 主控台。](https://console.bluemix.net/catalog){: new_window}
 2. 將滑鼠游標移到**所有種類**鏈結，以顯示捲軸。向下捲動至**服務 > 安全**。會顯示應用程式及服務的清單。
-3. 按兩下 **Key Protect** 服務實例。請注意，在**動作**下，您可以重新命名或刪除服務。
+3. 按兩下 **{{site.data.keyword.keymanagementserviceshort}}** 服務實例。請注意，在**動作**下，您可以重新命名或刪除服務。
 
 如果您第一次輸入或產生金鑰，將會自動到**新增金鑰**頁面。**產生新金鑰**用來在 {{site.data.keyword.keymanagementserviceshort}} 中產生全新的金鑰，而**輸入現有服務**用來將現有金鑰輸入到服務中。
 
 ### 產生金鑰
 {: #genkey }
 
-請使用下列步驟，讓 Key Protect 產生新的金鑰。
+請使用下列步驟，讓 {{site.data.keyword.keymanagementserviceshort}} 產生新的金鑰。
 
-1. 在**產生新金鑰**下輸入下列各項，讓 Key Protect 建立新的金鑰。
+1. 在**產生新金鑰**下輸入下列各項，讓 {{site.data.keyword.keymanagementserviceshort}} 建立新的金鑰。
     <table>
       <tr>
         <th>欄位</th>
@@ -105,7 +105,7 @@ lastupdated: "2017-09-21"
       </tr>
       <tr>
         <td>ID</td>
-        <td>Key Protect 指派給您的金鑰的唯一金鑰 ID。</td>
+        <td>{{site.data.keyword.keymanagementserviceshort}} 指派給您的金鑰的唯一金鑰 ID。</td>
       </tr>
       <tr>
         <td>狀態</td>
@@ -133,5 +133,5 @@ lastupdated: "2017-09-21"
 
 - [{{site.data.keyword.keymanagementserviceshort}} REST API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [{{site.data.keyword.keymanagementserviceshort}} 管理 REST API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [Cloud HSM 供應項目 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
+- [{{site.data.keyword.cloud_notm}} HSM 供應項目 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
 - [{{site.data.keyword.keymanagementservicelong_notm}} 服務水準合約 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # {{site.data.keyword.keymanagementserviceshort}} の概説
 
-{{site.data.keyword.keymanagementservicelong}} 内の鍵の生成、入力、および管理を行うために必要な手順を以下に示します。
+{{site.data.keyword.keymanagementservicefull}} 内の鍵の生成、入力、および管理を行うために必要な手順を以下に示します。
 {: shortdesc}
 
 ## 前提条件
@@ -30,18 +30,18 @@ lastupdated: "2017-09-21"
 
 以下の手順を使用して、新しい鍵を作成するか、既存の鍵をアップロードします。
 
-1. [Bluemix コンソールにログインします。](https://console.bluemix.net/catalog){: new_window}
+1. [{{site.data.keyword.cloud_notm}} コンソールにログインします。](https://console.bluemix.net/catalog){: new_window}
 2. **「すべてのカテゴリー」**リンクの上にカーソルを移動して、スクロール・バーを表示します。**「サービス」>「セキュリティー」**にスクロールダウンします。アプリおよびサービスのリストが表示されます。
-3. **Key Protect** サービス・インスタンスをダブルクリックします。**「アクション」**の下で、サービスの名前変更や削除を行えます。
+3. **{{site.data.keyword.keymanagementserviceshort}}** サービス・インスタンスをダブルクリックします。**「アクション」**の下で、サービスの名前変更や削除を行えます。
 
 初めて鍵を入力または生成している場合は、**「新しい鍵の追加 (Add a new key)」**ページが自動的に表示されます。{{site.data.keyword.keymanagementserviceshort}} に真新しい鍵を生成するには**「新しい鍵の生成 (Generate New Key)」**を使用し、既存の鍵をサービスに入力するには**「既存の鍵の入力 (Enter Existing Key)」**を使用します。
 
 ### 鍵の生成
 {: #genkey }
 
-以下の手順を使用して、Key Protect で新しい鍵を生成します。
+以下の手順を使用して、{{site.data.keyword.keymanagementserviceshort}} で新しい鍵を生成します。
 
-1. Key Protect で新しい鍵を作成するために、**「新しい鍵の生成 (Generate new key)」**の下で以下を入力します。<table>
+1. {{site.data.keyword.keymanagementserviceshort}} で新しい鍵を作成するために、**「新しい鍵の生成 (Generate new key)」**で以下を入力します。<table>
       <tr>
         <th>フィールド</th>
         <th>説明</th>
@@ -103,7 +103,7 @@ lastupdated: "2017-09-21"
       </tr>
       <tr>
         <td>ID</td>
-        <td>Key Protect によって鍵に割り当てられた固有の鍵 ID。</td>
+        <td>{{site.data.keyword.keymanagementserviceshort}} によって鍵に割り当てられた固有の鍵 ID。</td>
       </tr>
       <tr>
         <td>状況</td>
@@ -131,5 +131,5 @@ lastupdated: "2017-09-21"
 
 - [{{site.data.keyword.keymanagementserviceshort}} REST API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [{{site.data.keyword.keymanagementserviceshort}} 管理 REST API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [クラウド HSM オファリング ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
+- [{{site.data.keyword.cloud_notm}} HSM オファリング ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
 - [{{site.data.keyword.keymanagementservicelong_notm}}サービス・レベル・アグリーメント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

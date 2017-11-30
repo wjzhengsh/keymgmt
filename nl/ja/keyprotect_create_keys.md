@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,8 @@ lastupdated: "2017-09-21"
 
 # 鍵の作成
 
-{{site.data.keyword.keymanagementservicefull}} を使用して、鍵のライフサイクルを管理できます。{: shortdesc}
+{{site.data.keyword.keymanagementservicefull}} を使用して、鍵のライフサイクルを管理できます。
+{: shortdesc}
 
 コードの開発時、鍵は安全に管理してください。例えば、他の安全なコーディング手法に加えて、以下のガイドラインを考慮してください。
 
@@ -88,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} 組織に割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} 組織に割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} スペースに割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} スペースに割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -123,7 +124,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     正常な応答では、鍵の `id` 値を、他のメタデータと共に返します。`id` は、鍵に割り当てられた固有 ID であり、以降の呼び出しで使用されます。
 
-3. **オプション:** 次の呼び出しを実行して、{{site.data.keyword.Bluemix_notm}} スペース内の鍵を取得することにより、鍵が作成されたことを確認します。
+3. **オプション:** 次の呼び出しを実行して、{{site.data.keyword.cloud_notm}} スペース内の鍵を取得することにより、鍵が作成されたことを確認します。
 
     ```cURL
     curl -X GET \

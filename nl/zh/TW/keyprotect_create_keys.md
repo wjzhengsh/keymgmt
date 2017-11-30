@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2017-09-21"
 - 將金鑰嵌入您的程式碼時請考量安全問題。
 - 只在對您的應用程式及資源進行程式化存取時才建立金鑰。不要在可以授與更簡單的[使用者許可權 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/admin/patterns.html#userroles){: new_window} 時建立金鑰。
 - 輪換金鑰並移除未用的金鑰。
-- 對機密作業使用多重因素鑑別。
+- 對機密作業使用多因子鑑別。
 - 使每一個應用程式具有各自金鑰，隔離應用程式。
 - 考量在傳送高度機密性資訊時使用程式化 API。
 
@@ -89,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 組織的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 組織的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指派給您的 {{site.data.keyword.Bluemix_notm}} 空間的唯一 ID。</td>
+        <td>指派給您的 {{site.data.keyword.cloud_notm}} 空間的唯一 ID。</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -124,7 +124,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     成功回應會傳回您金鑰的 `id` 值，以及其他 meta 資料。`id` 是指派給您的金鑰的唯一 ID，並用於後續的呼叫。
 
-3. **選用項目：**藉由執行下列呼叫取得 {{site.data.keyword.Bluemix_notm}} 空間中的金鑰，確認已建立金鑰。
+3. **選用項目：**藉由執行下列呼叫取得 {{site.data.keyword.cloud_notm}} 空間中的金鑰，確認已建立金鑰。
 
     ```cURL
     curl -X GET \

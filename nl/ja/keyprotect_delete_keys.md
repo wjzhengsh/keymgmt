@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # 鍵の削除
 
-{{site.data.keyword.Bluemix_notm}} スペースまたは {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスの管理者は、{{site.data.keyword.keymanagementservicefull}} を使用して暗号鍵とその内容を削除できます。
+{{site.data.keyword.cloud_notm}} スペースまたは {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスの管理者は、{{site.data.keyword.keymanagementservicefull}} を使用して暗号鍵とその内容を削除できます。
 {: shortdesc}
 
 **重要**: 鍵を削除すると、その内容と関連データが完全に廃棄されます。このアクションは、元に戻すことはできません。リソースを破棄することは、実稼働環境ではお勧めできませんが、テストや QA などの一時的な環境には便利な場合があります。
@@ -27,10 +27,10 @@ lastupdated: "2017-09-21"
 
 [サービス内に鍵を作成するか、既存の鍵をインポートした後](/docs/services/keymgmt/keyprotect_create_keys.html)、鍵を削除するには以下の手順を実行します。
 
-1. [{{site.data.keyword.Bluemix_notm}} コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) にログインします。
-2. {{site.data.keyword.Bluemix_notm}} ダッシュボードで、{{site.data.keyword.keymanagementserviceshort}} のプロビジョン済みインスタンスを選択します。
+1. [{{site.data.keyword.cloud_notm}} コンソール ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) にログインします。
+2. {{site.data.keyword.cloud_notm}} ダッシュボードで、{{site.data.keyword.keymanagementserviceshort}} のプロビジョン済みインスタンスを選択します。
 3. **「管理」**ペインに移動し、サービスの鍵を表示します。
-4. ⋮ アイコンをクリックして、削除する鍵に関するオプションのリストを開きます。
+4. 垂直省略符号アイコンをクリックして、削除する鍵に関するオプションのリストを開きます。
 5. オプション・メニューから、**「鍵の削除 (Delete key)」**をクリックし、次の画面で鍵の削除を確認します。
 
 ## API を使用した鍵の削除
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} スペースに割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} スペースに割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>{{site.data.keyword.Bluemix_notm}} 組織に割り当てられた固有 ID。</td>
+        <td>{{site.data.keyword.cloud_notm}} 組織に割り当てられた固有 ID。</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>

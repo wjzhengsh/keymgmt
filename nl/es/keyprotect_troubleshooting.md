@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -57,7 +57,7 @@ Para cambiar el plan de precios:
 
 Si tiene problemas o preguntas relacionadas con el uso de {{site.data.keyword.keymanagementservicefull_notm}}, puede obtener ayuda buscando información o realizando preguntas mediante un foro. También puede abrir una incidencia de soporte.
 
-Cuando utilice foros para hacer una pregunta, etiquete su pregunta para que la vean los equipos de desarrollo de {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}.
+Cuando utilice foros para hacer una pregunta, etiquete su pregunta para que la vean los equipos de desarrollo de {{site.data.keyword.cloud_notm}}.
 
 - Si tiene preguntas técnicas sobre {{site.data.keyword.keymanagementserviceshort}}, publique su pregunta en [Stack Overflow ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} y etiquete su pregunta con "ibm-bluemix" y "key-protect".
 - Para preguntas sobre el servicio y para obtener instrucciones para empezar, utilice el foro [IBM developerWorks dW Answers ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window}. Incluya las etiquetas "bluemix" y "key-protect".
