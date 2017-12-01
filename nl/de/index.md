@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Einführung in {{site.data.keyword.keymanagementserviceshort}}
 
-Im Folgenden sind die Schritte aufgeführt, die zum Generieren, zur Eingabe und zum Management von Schlüsseln in {{site.data.keyword.keymanagementservicelong}} ausgeführt werden müssen.
+Im Folgenden sind die Schritte aufgeführt, die zum Generieren, zur Eingabe und zum Management von Schlüsseln in {{site.data.keyword.keymanagementservicefull}} ausgeführt werden müssen.
 {: shortdesc}
 
 ## Voraussetzungen
@@ -30,18 +30,18 @@ Im Folgenden sind die Schritte aufgeführt, die zum Generieren, zur Eingabe und 
 
 Führen Sie die folgenden Schritte aus, um einen neuen Schlüssel zu erstellen oder einen vorhandenen Schlüssel hochzuladen.
 
-1. [Melden Sie sich bei der Bluemix-Konsole an.](https://console.bluemix.net/catalog){: new_window}
+1. [Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole an.](https://console.bluemix.net/catalog){: new_window}
 2. Positionieren Sie den Mauszeiger auf dem Link **Alle Kategorien**, um die Schiebeleiste einzublenden. Blättern Sie nach unten bis zu **Services > Sicherheit**. Daraufhin wird eine Liste Ihrer Apps und Services angezeigt.
-3. Doppelklicken Sie auf die Serviceinstanz für **Key Protect**. Beachten Sie hierbei, dass der Service unter **Aktionen** umbenannt oder gelöscht werden kann.
+3. Klicken Sie doppelt auf die **{{site.data.keyword.keymanagementserviceshort}}**-Serviceinstanz. Beachten Sie hierbei, dass der Service unter **Aktionen** umbenannt oder gelöscht werden kann.
 
 Wenn Sie einen Schlüssel zum ersten Mal eingeben oder generieren, dann wird automatisch die Seite **Neuen Schlüssel hinzufügen** aufgerufen. Die Option **Neuen Schlüssel generieren** wird verwendet, um einen neuen Schlüssel in {{site.data.keyword.keymanagementserviceshort}} zu generieren, und die Option **Vorhandenen Schlüssel eingeben** wird verwendet, um einen bereits vorhandenen Schlüssel in den Service einzugeben.
 
 ### Schlüssel generieren
 {: #genkey }
 
-Führen Sie die folgenden Schritte aus, um einen neuen Schlüssel mit Key Protect zu generieren.
+Führen Sie die folgenden Schritte aus, um einen neuen Schlüssel mit {{site.data.keyword.keymanagementserviceshort}} zu generieren.
 
-1. Geben Sie unter **Neuen Schlüssel generieren** Folgendes ein, damit Key Protect einen neuen Schlüssel generiert.
+1. Geben Sie unter **Neuen Schlüssel generieren** Folgendes ein, damit {{site.data.keyword.keymanagementserviceshort}} einen neuen Schlüssel generiert.
     <table>
       <tr>
         <th>Feld</th>
@@ -105,7 +105,7 @@ Um die von Ihnen generierten und eingegebenen Schlüssel anzuzeigen, müssen Sie
       </tr>
       <tr>
         <td>ID</td>
-        <td>Eine eindeutige Schlüssel-ID, die Ihrem Schlüssel von Key Protect zugewiesen wurde.</td>
+        <td>Eine eindeutige Schlüssel-ID, die Ihrem Schlüssel von {{site.data.keyword.keymanagementserviceshort}} zugewiesen wurde.</td>
       </tr>
       <tr>
         <td>Status</td>
@@ -133,5 +133,5 @@ Sie können Ihre Schlüssel nun verwenden, um Ihre Apps und Services zu codieren
 
 - [{{site.data.keyword.keymanagementserviceshort}}-REST-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [{{site.data.keyword.keymanagementserviceshort}}-Admin-REST-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [Cloud-HSM-Angebot ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
+- [{{site.data.keyword.cloud_notm}}-HSM-Angebot ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
 - [{{site.data.keyword.keymanagementservicelong_notm}} Service Level Agreement ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

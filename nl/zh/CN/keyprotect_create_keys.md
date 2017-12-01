@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -89,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指定给您的 {{site.data.keyword.Bluemix_notm}} 组织的唯一标识。</td>
+        <td>指定给您的 {{site.data.keyword.cloud_notm}} 组织的唯一标识。</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指定给您的 {{site.data.keyword.Bluemix_notm}} 空间的唯一标识。</td>
+        <td>指定给您的 {{site.data.keyword.cloud_notm}} 空间的唯一标识。</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -124,7 +124,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     成功的响应返回密钥的 `id` 值以及其他元数据。`id` 是分配给密钥的唯一标识，用于后续调用。
 
-3. **可选：**通过运行以下调用获取 {{site.data.keyword.Bluemix_notm}} 空间中的密钥，以验证是否创建了密钥。
+3. **可选：**通过运行以下调用获取 {{site.data.keyword.cloud_notm}} 空间中的密钥，以验证是否创建了密钥。
 
     ```cURL
     curl -X GET \

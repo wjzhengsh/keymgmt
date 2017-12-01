@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Schlüssel löschen
 
-Sie können {{site.data.keyword.keymanagementservicefull}} verwenden, um einen Verschlüsselungsschlüssel und seinen Inhalt zu löschen, wenn Sie der Administrator Ihres {{site.data.keyword.Bluemix_notm}}-Bereichs oder der {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz sind.
+Sie können {{site.data.keyword.keymanagementservicefull}} verwenden, um einen Verschlüsselungsschlüssel und seinen Inhalt zu löschen, wenn Sie der Administrator Ihres {{site.data.keyword.cloud_notm}}-Bereichs oder der {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz sind.
 {: shortdesc}
 
 **Wichtig**: Wenn Sie einen Schlüssel löschen, dann werden sein Inhalt und die zugehörigen Daten permanent zerstört. Die Aktion kann nicht rückgängig gemacht werden. Das Löschen von Ressourcen wird in Produktionsumgebungen nicht empfohlen. Diese Vorgehensweise kann jedoch in temporären Umgebungen (z. B. in Testumgebungen oder QA-Umgebungen) von Nutzen sein.
@@ -27,10 +27,10 @@ Wenn Sie die Löschung von Schlüsselressourcen über eine grafische Oberfläche
 
 [Nach dem Erstellen oder Importieren der vorhandenen Schlüssel in den Service](/docs/services/keymgmt/keyprotect_create_keys.html) müssen Sie die folgenden Schritte ausführen, um einen Schlüssel zu löschen:
 
-1. [Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/) an.
-2. Wählen Sie im {{site.data.keyword.Bluemix_notm}}-Dashboard die bereitgestellte Instanz von {{site.data.keyword.keymanagementserviceshort}} aus.
+1. [Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/) an.
+2. Wählen Sie im {{site.data.keyword.cloud_notm}}-Dashboard die bereitgestellte Instanz von {{site.data.keyword.keymanagementserviceshort}} aus.
 3. Navigieren Sie zum Fenster **Verwalten**, um die Schlüssel in Ihrem Service zu suchen.
-4. Klicken Sie auf das Symbol, um eine Liste der Optionen für den Schlüssel zu öffnen, der gelöscht werden soll.
+4. Klicken Sie auf das Symbol mit den senkrechten Auslassungszeichen, um eine Liste der Optionen für den Schlüssel zu öffnen, der gelöscht werden soll.
 5. Klicken Sie im Auswahlmenü auf **Schlüssel löschen** und bestätigen Sie die Schlüssellöschung in der nächsten Anzeige.
 
 ## Schlüssel mit API löschen
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.cloud_notm}}-Bereich zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.Bluemix_notm}}-Organisation zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.cloud_notm}}-Organisation zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>

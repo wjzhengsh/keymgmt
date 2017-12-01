@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # 使用 Identity and Access Management 管理用户访问权
 {: #managing-access-iam}
 
-{{site.data.keyword.keymanagementservicefull}} 支持集中访问由 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 管理的控制系统，以帮助您管理加密密钥的用户和访问权。
+{{site.data.keyword.keymanagementservicefull}} 支持由 {{site.data.keyword.iamlong}} 管理的集中访问控制系统，可帮助您管理加密密钥的用户和访问权。
 {: shortdesc}
 
 最佳作法是在您邀请新用户加入帐户或服务时，授予访问许可权。例如，考虑以下准则：
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 角色和许可权
 {: #roles}
 
-使用 {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)，您可以设置策略，以定义团队成员的访问作用域。
+使用 {{site.data.keyword.iamshort}} (IAM) 可以设置策略，以定义团队成员的访问作用域。
 
 为了简化访问，{{site.data.keyword.keymanagementserviceshort}} 与 IAM 角色保持一致，以便每个用户根据用户的角色，具有服务的不同视图。如果您是服务的安全管理员，那么您可以分配 IAM 角色，其对应于您要授权团队成员的特定 {{site.data.keyword.keymanagementserviceshort}} 许可权。
 
@@ -78,11 +78,11 @@ lastupdated: "2017-09-21"
 
 **注**：IAM 用户角色在服务或服务实例级别提供访问权。[Cloud Foundry 角色](/docs/iam/users_roles.html#cfroles)是分开的，在组织或空间级别定义访问权。
 
-要了解有关 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 的更多信息，请检查[用户角色和许可权](/docs/iam/users_roles.html#iamusermanpol)。
+要了解有关 {{site.data.keyword.iamshort}} 的信息，请查看[用户角色和许可权](/docs/iam/users_roles.html#iamusermanpol)。
 
 ### 后续工作
 
 帐户所有者和管理员可以邀请用户并设置对应于用户可以执行的 {{site.data.keyword.keymanagementserviceshort}} 操作的服务策略。
 
-- 有关在 {{site.data.keyword.Bluemix_notm}} UI 中分配用户角色的的更多信息，请参阅[启用身份和访问权的服务访问策略](/docs/iam/iamusermanage.html#iammanidaccser)。
+- 有关在 {{site.data.keyword.cloud_notm}} UI 中分配用户角色的的更多信息，请参阅[启用身份和访问权的服务访问策略](/docs/iam/iamusermanage.html#iammanidaccser)。
 - 要了解授予高级许可权以访问特定加密密钥的更多信息，请参阅[使用 API 管理密钥的访问权](/docs/services/keymgmt/keyprotect_manage_access_api.html)。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -89,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.Bluemix_notm}}-Organisation zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.cloud_notm}}-Organisation zugewiesen ist. </td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich zugewiesen ist. </td>
+        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.cloud_notm}}-Bereich zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -113,7 +113,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>YYYY-MM-DD</em><br><em>HH:MM:SS.SS</em></td>
-        <td>Optional: Der Zeitpunkt (Datum und Uhrzeit), zu dem der Schlüssel im System abläuft, im RFC-3339-Format. Wenn das Attribut <code>expirationDate</code> fehlt, bleibt der Schlüssel unbegrenzt gültig.</td>
+        <td>Optional: Der Zeitpunkt (Datum und Uhrzeit), zu dem der Schlüssel im System abläuft, im RFC-3339-Format. Wenn das Attribut <code>expirationDate</code> fehlt, bleibt der Schlüssel unbegrenzt gültig. </td>
       </tr>
       <tr>
         <td><em>key_material</em></td>
@@ -124,7 +124,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     In einer erfolgreichen Antwort werden der Wert für `id` Ihres Schlüssel sowie weitere Metadaten zurückgegeben. In `id` wird eine eindeutige Kennung angegeben, die Ihrem Schlüssel zugewiesen wurde und die für nachfolgende Aufrufe verwendet wird.
 
-3. **Optional:** Stellen Sie sicher, dass der Schlüssel durch Ausführen des folgenden Aufrufs zum Abrufen der Schlüssel in Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich erstellt wurde.
+3. **Optional:** Stellen Sie sicher, dass der Schlüssel durch Ausführen des folgenden Aufrufs zum Abrufen der Schlüssel in Ihrem {{site.data.keyword.cloud_notm}}-Bereich erstellt wurde.
 
     ```cURL
     curl -X GET \

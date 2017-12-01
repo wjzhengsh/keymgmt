@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2017-09-21"
 # Zugriff auf Schlüssel mit API verwalten
 {: #managing-access-api}
 
-Mit {{site.data.keyword.Bluemix}} Identity and Access Management können Sie die differenzierte Zugriffssteuerung für Ihre Schlüsselressourcen aktivieren, indem Sie die Zugriffsrichtlinien erstellen und ändern.
+Mit {{site.data.keyword.iamlong}} können Sie die differenzierte Zugriffssteuerung für Ihre Schlüsselressourcen aktivieren, indem Sie die Zugriffsrichtlinien erstellen und ändern.
 {: shortdesc}
 
-Auf dieser Seite werden Sie durch verschiedene Szenarios zur Verwaltung des Zugriffs auf Ihre Schlüsselressourcen mithilfe der [API für das Zugriffsmanagement ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window} geführt. 
+Auf dieser Seite werden Sie durch verschiedene Szenarios zur Verwaltung des Zugriffs auf Ihre Schlüsselressourcen mithilfe der [API für das Zugriffsmanagement ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window} geführt.
 
 
 Vorbereitende Schritte:
@@ -31,7 +31,7 @@ Vorbereitende Schritte:
 ## Neue Zugriffsrichtlinie erstellen
 {: #create_policy}
 
-Zur Aktivierung der Zugriffssteuerung für einen bestimmten Schlüssel können Sie eine Anforderung an {{site.data.keyword.Bluemix_notm}} Identity and Access Management senden, indem Sie den folgenden Befehl ausführen. Wiederholen Sie den Befehl für jede Zugriffsrichtlinie. 
+Zur Aktivierung der Zugriffssteuerung für einen bestimmten Schlüssel können Sie eine Anforderung an {{site.data.keyword.iamshort}} senden, indem Sie den folgenden Befehl ausführen. Wiederholen Sie den Befehl für jede Zugriffsrichtlinie.
 
 ```cURL
 curl -X POST \
@@ -59,9 +59,9 @@ curl -X POST \
 ```
 {: codeblock}
 
-Ersetzen Sie `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte. 
+Ersetzen Sie `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte.
 
-**Optional:** Überprüfen Sie, ob die Richtlinie erfolgreich erstellt wurde. 
+**Optional:** Überprüfen Sie, ob die Richtlinie erfolgreich erstellt wurde.
 
 ```cURL
 curl -X GET \
@@ -75,7 +75,7 @@ curl -X GET \
 ## Zugriffsrichtlinie aktualisieren
 {: #update_policy}
 
-Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtlinie für einen Benutzer zu ändern. Senden Sie eine Anforderung an {{site.data.keyword.Bluemix_notm}} Identity and Access Management, indem Sie den folgenden Befehl ausführen:
+Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtlinie für einen Benutzer zu ändern. Senden Sie eine Anforderung an {{site.data.keyword.iamshort}}, indem Sie den folgenden Befehl ausführen:
 
 ```cURL
 curl -X PUT \
@@ -104,7 +104,7 @@ curl -X PUT \
 ```
 {: codeblock}
 
-Ersetzen Sie `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte. 
+Ersetzen Sie `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte.
 
 **Optional:** Überprüfen Sie, ob die Richtlinie erfolgreich aktualisiert wurde.
 
@@ -119,7 +119,7 @@ curl -X GET \
 ## Zugriffsrichtlinie löschen
 {: #delete_policy}
 
-Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtlinie für einen Benutzer zu löschen. Senden Sie eine Anforderung an {{site.data.keyword.Bluemix_notm}} Identity and Access Management, indem Sie den folgenden Befehl ausführen:
+Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtlinie für einen Benutzer zu löschen. Senden Sie eine Anforderung an {{site.data.keyword.iamshort}}, indem Sie den folgenden Befehl ausführen:
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## Konto-ID abrufen
 {: #retrieve_account_id}
 
-1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-CLI an.
+1. Melden Sie sich bei der Bluemix-CLI an.
     ```sh
     bx login [--sso]
     ```

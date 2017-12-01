@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -63,16 +63,16 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.cloud_notm}}-Bereich zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.Bluemix_notm}}-Organisation zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.cloud_notm}}-Organisation zugewiesen ist.</td>
       </tr>
       <caption style="caption-side:bottom;">Tabelle 1. Beschreibt die Variablen, die zum Anzeigen von Schlüsseln über die {{site.data.keyword.keymanagementserviceshort}}-API erforderlich sind.</caption>
     </table>
 
-    Eine erfolgreiche Anforderung gibt eine Gruppe von Schlüsseln zurück, die in Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich vorhanden sind.
+    Eine erfolgreiche Anforderung gibt eine Gruppe von Schlüsseln zurück, die in Ihrem {{site.data.keyword.cloud_notm}}-Bereich vorhanden sind.
 
     ```
     {
@@ -157,11 +157,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.Bluemix_notm}}-Organisation zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrer {{site.data.keyword.cloud_notm}}-Organisation zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.Bluemix_notm}}-Bereich zugewiesen ist.</td>
+        <td>Die eindeutige ID, die Ihrem {{site.data.keyword.cloud_notm}}-Bereich zugewiesen ist.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>

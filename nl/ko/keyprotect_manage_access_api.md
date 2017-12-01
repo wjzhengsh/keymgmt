@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2017-09-21"
 # API로 키에 대한 액세스 관리
 {: #managing-access-api}
 
-{{site.data.keyword.Bluemix}} Identity and Access Management를 사용하면, 액세스 정책을 작성 및 수정하여 키 리소스에 대해 세분화된 액세스 제어를 사용할 수 있습니다.
+{{site.data.keyword.iamlong}}를 사용하면 액세스 정책의 작성과 수정을 통해 키 리소스에 대한 세부 단위의 액세스 제어를 사용할 수 있습니다.
 {: shortdesc}
 
-이 페이지에서는 [액세스 관리 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}를 사용하여 키 리소스에 대한 액세스를 관리하기 위한 다양한 시나리오를 안내합니다. 
+이 페이지에서는 [액세스 관리 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}를 사용하여 키 리소스에 대한 액세스를 관리하기 위한 다양한 시나리오를 안내합니다.
 
 
 시작하기 전에:
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 새 액세스 정책 작성
 {: #create_policy}
 
-특정 키에 대한 액세스 제어를 사용하기 위해 다음 명령을 실행하여 {{site.data.keyword.Bluemix_notm}} Identity and Access Management에 요청을 전송할 수 있습니다. 각각의 액세스 정책마다 명령을 반복 실행하십시오. 
+특정 키에 대한 액세스 제어를 사용하기 위해 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송할 수 있습니다. 각각의 액세스 정책마다 명령을 반복 실행하십시오.
 
 ```cURL
 curl -X POST \
@@ -59,9 +59,9 @@ curl -X POST \
 ```
 {: codeblock}
 
-`<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오. 
+`<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오.
 
-**선택사항:** 정책 작성이 완료되었는지 확인하십시오. 
+**선택사항:** 정책 작성이 완료되었는지 확인하십시오.
 
 ```cURL
 curl -X GET \
@@ -75,7 +75,7 @@ curl -X GET \
 ## 액세스 정책 업데이트
 {: #update_policy}
 
-검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 수정할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.Bluemix_notm}} Identity and Access Management에 요청을 전송하십시오. 
+검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 수정할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오. 
 
 ```cURL
 curl -X PUT \
@@ -104,9 +104,9 @@ curl -X PUT \
 ```
 {: codeblock}
 
-`<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오. 
+`<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오.
 
-**선택사항:** 정책 업데이트가 완료되었는지 확인하십시오. 
+**선택사항:** 정책 업데이트가 완료되었는지 확인하십시오.
 
 ```cURL
 curl -X GET \
@@ -119,7 +119,7 @@ curl -X GET \
 ## 액세스 정책 삭제
 {: #delete_policy}
 
-검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 삭제할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.Bluemix_notm}} Identity and Access Management에 요청을 전송하십시오. 
+검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 삭제할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오. 
 
 ```cURL
 curl -X DELETE \
@@ -129,9 +129,9 @@ curl -X DELETE \
 ```
 {: codeblock}
 
-`<account_ID>`, `<user_ID>`, `<policy_ID>` 및 `<Admin_IAM_token>`을 적절한 값으로 대체하십시오. 
+`<account_ID>`, `<user_ID>`, `<policy_ID>` 및 `<Admin_IAM_token>`을 적절한 값으로 대체하십시오.
 
-**선택사항:** 정책 삭제가 완료되었는지 확인하십시오. 
+**선택사항:** 정책 삭제가 완료되었는지 확인하십시오.
 
 ```cURL
 curl -X GET \
@@ -144,15 +144,15 @@ curl -X GET \
 ## 계정 ID 검색
 {: #retrieve_account_id}
 
-1. {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오. 
+1. Bluemix CLI에 로그인하십시오. 
     ```sh
     bx login [--sso]
     ```
     {: codeblock}
 
-    **참고**: `--sso` 매개변수는 연합 ID로 로그인할 때 필요합니다. 이 옵션을 사용하는 경우에는 CLI 출력에 나열된 링크로 이동하여 일회성 패스코드를 생성하십시오. 
+    **참고**: `--sso` 매개변수는 연합 ID로 로그인할 때 필요합니다. 이 옵션을 사용하는 경우에는 CLI 출력에 나열된 링크로 이동하여 일회성 패스코드를 생성하십시오.
 
-    결과에 계정에 대한 식별 정보가 표시됩니다. 
+    결과에 계정에 대한 식별 정보가 표시됩니다.
 
     ```sh
     Authenticating...
@@ -170,20 +170,20 @@ curl -X GET \
     Account:        sample-account (b6hnh3560ehqjkf89s4ba06i367801e)
     ```
     {: screen}
-2. 계정 ID에 대한 값을 복사하십시오. 
+2. 계정 ID에 대한 값을 복사하십시오.
 
 ## 사용자 ID 검색
 {: #retrieve_user_id}
 
 1. [자체 IAM 토큰을 제공하도록 사용자에게 요청](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token)하십시오.
-    IAM 토큰 구조는 다음과 같습니다. 
+    IAM 토큰 구조는 다음과 같습니다.
 
     ```sh
     IAM token: Bearer <value>.<value>.<value>
     ```
     {: screen}
 
-2. 중간 값을 복사하고 다음 명령을 실행하십시오. 
+2. 중간 값을 복사하고 다음 명령을 실행하십시오.
     ```sh
     echo -n "<value>" | base64 --decode
     ```
@@ -214,4 +214,4 @@ curl -X GET \
    ```
    {: screen}
 
-4. `id` 특성의 값을 복사하십시오. 
+4. `id` 특성의 값을 복사하십시오.

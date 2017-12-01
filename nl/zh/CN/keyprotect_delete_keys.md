@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # 删除密钥
 
-如果您是 {{site.data.keyword.Bluemix_notm}} 空间或 {{site.data.keyword.keymanagementserviceshort}} 服务实例的管理员，那么您可以使用 {{site.data.keyword.keymanagementservicefull}} 来删除加密密钥及其内容。
+如果您是 {{site.data.keyword.cloud_notm}} 空间或 {{site.data.keyword.keymanagementserviceshort}} 服务实例的管理员，那么您可以使用 {{site.data.keyword.keymanagementservicefull}} 来删除加密密钥及其内容。
 {: shortdesc}
 
 **重要事项**：当您删除密钥时，您会永久地销毁其内容和相关联的数据。该操作无法撤销。不建议对生产环境进行销毁资源操作，但是对临时环境（如测试或 QA）可能很有用。
@@ -27,10 +27,10 @@ lastupdated: "2017-09-21"
 
 [在您创建密钥或将现有密钥导入服务后](/docs/services/keymgmt/keyprotect_create_keys.html)，请完成以下步骤以删除密钥：
 
-1. [登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/)。
-2. 从 {{site.data.keyword.Bluemix_notm}} 仪表板，选择 {{site.data.keyword.keymanagementserviceshort}} 的已供应实例。
+1. [登录到 {{site.data.keyword.cloud_notm}} 控制台 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/)。
+2. 从 {{site.data.keyword.cloud_notm}} 仪表板，选择 {{site.data.keyword.keymanagementserviceshort}} 的已供应实例。
 3. 导航到**管理**窗格以在服务中浏览密钥。
-4. 单击图标以针对您要删除的密钥，打开选项列表
+4. 单击垂直省略符图标以针对您要删除的密钥，打开选项列表。
 5. 从选项菜单中，单击**删除密钥**并在下一个屏幕确认密钥删除。
 
 ## 使用 API 删除密钥
@@ -42,7 +42,7 @@ lastupdated: "2017-09-21"
 https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
 ```
 
-1. [检索授权令牌、组织 GUID 和空间 GUID 以在服务中使用密钥。](/docs/services/keymgmt/keyprotect_authentication.html)
+1. [检索授权令牌、组织 GUID 和空间 GUID 以在该服务中使用密钥。](/docs/services/keymgmt/keyprotect_authentication.html)
 
 2. 检索您要删除的密钥的标识。
 
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>指定给您的 {{site.data.keyword.Bluemix_notm}} 空间的唯一标识。</td>
+        <td>指定给您的 {{site.data.keyword.cloud_notm}} 空间的唯一标识。</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>指定给您的 {{site.data.keyword.Bluemix_notm}} 组织的唯一标识。</td>
+        <td>指定给您的 {{site.data.keyword.cloud_notm}} 组织的唯一标识。</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -55,7 +55,7 @@ Beta 用户需要更改为标准定价模型，才能继续使用 {{site.data.ke
 
 如果您在使用 {{site.data.keyword.keymanagementservicefull_notm}} 时有任何疑问或遇到任何问题，您可以在论坛中搜索相关信息或进行提问来获取帮助。还可以提交支持凭单。
 
-使用论坛进行提问时，请使用适当的标记来标注您的问题，以方便 {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} 开发团队识别。
+使用论坛进行提问时，请使用适当的标记来标注您的问题，以方便 {{site.data.keyword.cloud_notm}} 开发团队识别。
 
 - 如果有关于 {{site.data.keyword.keymanagementserviceshort}} 的技术问题，请将您的问题发布到 [Stack Overflow ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} 上，并使用“ibm-bluemix”和“key-protect”标记您的问题。
 - 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window} 论坛。请包括“bluemix”和“key-protect”标记。

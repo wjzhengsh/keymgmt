@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # 使用 API 管理密钥的访问权
 {: #managing-access-api}
 
-使用 {{site.data.keyword.Bluemix}} Identity and Access Management，您可以通过创建和修改访问策略，对密钥资源启用精确的访问控制。
+使用 {{site.data.keyword.iamlong}} 可以通过创建和修改访问策略，对密钥资源启用精确的访问控制。
 {: shortdesc}
 
 此页面将引导您完成几个方案，以使用[访问管理 API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}，来管理密钥资源的访问权。
@@ -31,7 +31,7 @@ lastupdated: "2017-09-21"
 ## 创建新访问策略
 {: #create_policy}
 
-要启用特定密钥的访问控制，您可以通过运行以下命令，向 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 发送请求。针对每个访问策略，重复该命令。
+要启用特定密钥的访问控制，您可以通过运行以下命令，向 {{site.data.keyword.iamshort}} 发送请求。针对每个访问策略，重复该命令。
 
 ```cURL
 curl -X POST \
@@ -59,7 +59,7 @@ curl -X POST \
 ```
 {: codeblock}
 
-将 `<account_ID>`、`<user_ID>`、`<Admin_IAM_token>`、`<IAM_role>`、`<space_GUID>` 和 `<key_ID>` 替换为相应的值。
+将 `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` 和 `<key_ID>` 替换为相应的值。
 
 **可选：**验证已成功创建策略。
 
@@ -75,7 +75,7 @@ curl -X GET \
 ## 更新访问策略
 {: #update_policy}
 
-您可以使用检索到的策略标识，为用户修改现有策略。通过运行以下命令，向 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 发送请求：
+您可以使用检索到的策略标识，为用户修改现有策略。通过运行以下命令，向 {{site.data.keyword.iamshort}} 发送请求：
 
 ```cURL
 curl -X PUT \
@@ -104,7 +104,7 @@ curl -X PUT \
 ```
 {: codeblock}
 
-将 `<account_ID>`、`<user_ID>`、`<policy_ID>`、`<Admin_IAM_token>`、`<ETag_ID>`、`<IAM_role>`、`<space_GUID>` 和 `<key_ID>` 替换为相应的值。
+将 `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` 和 `<key_ID>` 替换为相应的值。
 
 **可选：**验证已成功更新策略。
 
@@ -119,7 +119,7 @@ curl -X GET \
 ## 删除访问策略
 {: #delete_policy}
 
-您可以使用检索到的策略标识，为用户删除现有策略。通过运行以下命令，向 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 发送请求：
+您可以使用检索到的策略标识，为用户删除现有策略。通过运行以下命令，向 {{site.data.keyword.iamshort}} 发送请求：
 
 ```cURL
 curl -X DELETE \
@@ -129,7 +129,7 @@ curl -X DELETE \
 ```
 {: codeblock}
 
-将 `<account_ID>`、`<user_ID>`、`<policy_ID>` 和 `<Admin_IAM_token>` 替换为相应的值。
+将 `<account_ID>`, `<user_ID>`, `<policy_ID>` 和 `<Admin_IAM_token>` 替换为相应的值。
 
 **可选：**验证已成功删除策略。
 
@@ -144,7 +144,7 @@ curl -X GET \
 ## 检索帐户标识
 {: #retrieve_account_id}
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}} CLI。
+1. 登录到 Bluemix CLI。
     ```sh
     bx login [--sso]
     ```

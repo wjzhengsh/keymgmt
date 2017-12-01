@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -24,9 +24,9 @@ lastupdated: "2017-09-21"
 ## 检索组织和空间 GUID
 {: #retrieve_GUIDs}
 
-您可以使用 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) 检索 {{site.data.keyword.Bluemix_notm}} 组织和空间的识别信息。
+您可以使用 [{{site.data.keyword.cloud_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) 检索 {{site.data.keyword.cloud_notm}} 组织和空间的识别信息。
 
-1. 通过 {{site.data.keyword.Bluemix_notm}} CLI 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 通过 {{site.data.keyword.cloud_notm}} (bx) CLI 登录到 {{site.data.keyword.cloud_notm}}。
 
     ```
     bx login [--sso]
@@ -35,11 +35,11 @@ lastupdated: "2017-09-21"
 
     使用联合标识登录时需要 `--sso` 参数。如果使用此选项，请转至 CLI 输出中列出的链接以生成一次性密码。
 
-2. 选择包含您的 {{site.data.keyword.keymanagementserviceshort}} 服务实例的 {{site.data.keyword.Bluemix_notm}} 组织和空间。
+2. 选择包含您的 {{site.data.keyword.keymanagementserviceshort}} 服务实例的 {{site.data.keyword.cloud_notm}} 组织和空间。
 
     请记下 CLI 输出中您的组织和空间的名称。也可以运行 `bx target` 来查看此信息。
 
-3. 检索您的 {{site.data.keyword.Bluemix_notm}} 组织和空间 GUID。
+3. 检索您的 {{site.data.keyword.cloud_notm}} 组织和空间 GUID。
 
     ```
     bx iam org [organization_name] --guid
@@ -53,9 +53,9 @@ lastupdated: "2017-09-21"
 
 您可以使用授权令牌，通过 {{site.data.keyword.keymanagementserviceshort}} API，以编程方式管理密钥。
 
-**注**：要启用 {{site.data.keyword.Bluemix_notm}} Identity and Access Management 管理的精确访问控制，请在调用服务时使用 IAM 令牌。
+**注**：要启用 {{site.data.keyword.iamshort}} 管理的精确访问控制，请在调用服务时使用 IAM 令牌。
 
-1. 在 {{site.data.keyword.Bluemix_notm}} CLI 中，选择包含 {{site.data.keyword.keymanagementserviceshort}} 服务的组织和空间。
+1. 在 {{site.data.keyword.cloud_notm}} CLI 中，选择包含 {{site.data.keyword.keymanagementserviceshort}} 服务的组织和空间。
 
 2. 检索并显示授权令牌。
 
@@ -64,7 +64,7 @@ lastupdated: "2017-09-21"
     ```
     {: codeblock}
 
-    下列截断示例显示 {{site.data.keyword.Bluemix_notm}} 令牌输出。_Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ 变量是示例访问令牌。
+    下列截断示例显示 {{site.data.keyword.cloud_notm}} 令牌输出。_Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ 变量是示例访问令牌。
 
     ```
     IAM token: Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7...
