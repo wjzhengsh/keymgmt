@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # Gerenciando o acesso de usuário com o Identity and Access Management
 {: #managing-access-iam}
 
-O {{site.data.keyword.keymanagementservicefull}} suporta um sistema de controle de acesso centralizado, governado pelo {{site.data.keyword.Bluemix_notm}} Identity and Access Management, para ajudá-lo a gerenciar os usuários e o acesso para suas chaves de criptografia.
+O {{site.data.keyword.keymanagementservicefull}} suporta um sistema de controle de acesso centralizado, governado pelo {{site.data.keyword.iamlong}}, para ajudar a gerenciar usuários e o acesso às suas chaves de criptografia.
 {: shortdesc}
 
 Uma boa prática é conceder permissões de acesso à medida que você convida novos usuários à sua conta ou serviço. Por exemplo, considere as diretrizes a seguir:
@@ -31,7 +31,7 @@ Uma boa prática é conceder permissões de acesso à medida que você convida n
 ## Funções e permissões
 {: #roles}
 
-Com o {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM), é possível configurar políticas que definem o escopo de acesso para membros de sua equipe.
+Com o {{site.data.keyword.iamshort}} (IAM), é possível configurar as políticas que definem o escopo de acesso para membros de sua equipe.
 
 Para simplificar o acesso, o {{site.data.keyword.keymanagementserviceshort}} é alinhado com as funções do IAM para que cada usuário tenha uma visualização diferente do serviço, de acordo com a função à qual o usuário é designado. Se você é um administrador de segurança para o seu serviço, é possível atribuir funções do IAM que correspondam às permissões específicas do {{site.data.keyword.keymanagementserviceshort}} que deseja conceder a membros de sua equipe.
 
@@ -78,11 +78,11 @@ A tabela a seguir mostra como as funções de identidade e acesso são mapeadas 
 
 **Nota**: as funções de usuário do IAM fornecem acesso no nível de serviço ou de instância de serviço. As [funções do Cloud Foundry](/docs/iam/users_roles.html#cfroles) são separadas e definem o acesso no nível da organização ou do espaço.
 
-Para saber mais sobre o {{site.data.keyword.Bluemix_notm}} Identity and Access Management, verifique [Funções e permissões de usuário](/docs/iam/users_roles.html#iamusermanpol).
+Para saber mais sobre o {{site.data.keyword.iamshort}}, confira [Funções e permissões do usuário](/docs/iam/users_roles.html#iamusermanpol).
 
 ### O que vem a seguir
 
 Os proprietários e administradores de conta podem convidar usuários e configurar políticas de serviço que correspondem às ações do {{site.data.keyword.keymanagementserviceshort}} que os usuários podem executar.
 
-- Para obter informações sobre como designar funções de usuário na UI do {{site.data.keyword.Bluemix_notm}}, veja [Políticas de acesso de serviço ativadas para identidade e acesso](/docs/iam/iamusermanage.html#iammanidaccser).
+- Para obter informações sobre como designar funções de usuário na UI do {{site.data.keyword.cloud_notm}}, veja [Políticas de acesso de serviço ativadas para identidade e acesso](/docs/iam/iamusermanage.html#iammanidaccser).
 - Para aprender sobre como conceder permissões avançadas para acessar chaves de criptografia específicas, veja [Gerenciando acesso a chaves com a API](/docs/services/keymgmt/keyprotect_manage_access_api.html).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -63,16 +63,16 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <caption style="caption-side:bottom;">Tableau 2. Variables requises pour afficher les clés via l'API {{site.data.keyword.keymanagementserviceshort}}.</caption>
     </table>
 
-    Une demande réussie renvoie une collection de clés disponibles dans votre espace {{site.data.keyword.Bluemix_notm}}.
+    Une demande réussie renvoie une collection de clés disponibles dans votre espace {{site.data.keyword.cloud_notm}}.
 
     ```
     {
@@ -157,11 +157,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -197,4 +197,4 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
     ```
     {:screen}
 
-    Pour obtenir une description détaillée des paramètres disponibles, consultez la {{site.data.keyword.keymanagementserviceshort}} [documentation de référence de l'API REST ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    Pour obtenir une description détaillée des paramètres disponibles, consultez la {{site.data.keyword.keymanagementserviceshort}} [documentation de référence de l'API REST ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.ng.bluemix.net/apidocs/639){: new_window}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2017-09-21"
 # Gestion de l'accès aux clés avec l'API
 {: #managing-access-api}
 
-{{site.data.keyword.Bluemix}} Identity and Access Management permet d'activer un contrôle d'accès granulaire à vos ressources de clé en créant et modifiant des règles d'accès.
+{{site.data.keyword.iamlong}} permet d'activer un contrôle d'accès granulaire à vos ressources de clé en créant et modifiant des règles d'accès.
 {: shortdesc}
 
-Cette page vous indique plusieurs scénarios pour gérer l'accès à vos ressources de clé avec l'[API Access Management ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
+Cette page vous indique plusieurs scénarios pour gérer l'accès à vos ressources de clé avec l'[API Access Management ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
 
 
 Avant de commencer :
@@ -31,7 +31,7 @@ Avant de commencer :
 ## Création d'une règle d'accès
 {: #create_policy}
 
-Pour activer le contrôle d'accès pour une clé spécifique, vous pouvez envoyer une demande à {{site.data.keyword.Bluemix_notm}} Identity and Access Management en exécutant la commande ci-dessous. Répétez la commande pour chaque règle d'accès. 
+Pour activer le contrôle d'accès pour une clé spécifique, vous pouvez envoyer une demande à {{site.data.keyword.iamshort}} en exécutant la commande ci-dessous. Répétez la commande pour chaque règle d'accès.
 
 ```cURL
 curl -X POST \
@@ -75,7 +75,7 @@ curl -X GET \
 ## Mise à jour d'une règle d'accès
 {: #update_policy}
 
-Vous pouvez utiliser un identificateur de règle extrait pour modifier une règle existante pour un utilisateur. Envoyez une demande à {{site.data.keyword.Bluemix_notm}} Identity and Access Management en exécutant la commande suivante :
+Vous pouvez utiliser un identificateur de règle extrait pour modifier une règle existante pour un utilisateur. Envoyez une demande à {{site.data.keyword.iamshort}} en exécutant la commande suivante :
 
 ```cURL
 curl -X PUT \
@@ -119,7 +119,7 @@ curl -X GET \
 ## Suppression d'une règle d'accès
 {: #delete_policy}
 
-Vous pouvez utiliser un identificateur de règle extrait pour supprimer une règle existante pour un utilisateur. Envoyez une demande à {{site.data.keyword.Bluemix_notm}} Identity and Access Management en exécutant la commande suivante :
+Vous pouvez utiliser un identificateur de règle extrait pour supprimer une règle existante pour un utilisateur. Envoyez une demande à {{site.data.keyword.iamshort}} en exécutant la commande suivante :
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## Extraction de l'ID de compte
 {: #retrieve_account_id}
 
-1. Connectez-vous à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à l'interface de ligne de commande IBM Cloud.
     ```sh
     bx login [--sso]
     ```

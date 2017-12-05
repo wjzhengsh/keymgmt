@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -18,7 +18,8 @@ lastupdated: "2017-09-21"
 É possível gerenciar o ciclo de vida de suas chaves usando o {{site.data.keyword.keymanagementservicefull}}.
 {: shortdesc}
 
-Uma boa prática é gerenciar suas chaves com segurança conforme você desenvolve seu código. Por exemplo, pense sobre as diretrizes a seguir, juntamente com outras práticas de codificação segura.
+Uma boa prática é gerenciar suas chaves com segurança conforme
+você desenvolve seu código. Por exemplo, pense sobre as diretrizes a seguir, juntamente com outras práticas de codificação segura.
 
 - Considere as implicações de segurança ao integrar chaves em seu código.
 - Crie chaves somente para acesso programático para seus apps e recursos. Não crie chaves quando puder conceder [permissões de usuário ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/docs/admin/patterns.html#userroles){: new_window} mais simples.
@@ -89,11 +90,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.cloud_notm}}. </td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -124,7 +125,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
     Uma resposta bem-sucedida retorna o valor `id` para sua chave, juntamente com outros metadados. O `id` é um identificador exclusivo designado à sua chave e usado para chamadas subsequentes.
 
-3. **Opcional:** verifique se a chave foi criada executando a chamada a seguir para obter as chaves em seu espaço do {{site.data.keyword.Bluemix_notm}}.
+3. **Opcional:** verifique se a chave foi criada executando a chamada a seguir para obter as chaves em seu espaço do {{site.data.keyword.cloud_notm}}.
 
     ```cURL
     curl -X GET \

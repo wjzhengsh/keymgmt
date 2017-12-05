@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -25,9 +25,9 @@ Para trabalhar com a API, é necessário gerar suas credenciais de serviço e au
 ## Recuperando seus GUIDs de organização e espaço
 {: #retrieve_GUIDs}
 
-É possível recuperar as informações de identificação para a sua organização e o seu espaço do {{site.data.keyword.Bluemix_notm}} com a CLI do [{{site.data.keyword.Bluemix_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
+É possível recuperar informações de identificação para sua organização e espaço do {{site.data.keyword.cloud_notm}} com a CLI do [{{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started).
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}} por meio da CLI do {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.cloud_notm}} por meio da CLI do {{site.data.keyword.cloud_notm}} (bx).
 
     ```
     bx login [--sso]
@@ -36,11 +36,11 @@ Para trabalhar com a API, é necessário gerar suas credenciais de serviço e au
 
     O parâmetro `--sso` é necessário quando você efetua login com um ID federado. Se essa opção for usada, acesse o link listado na saída da CLI para gerar uma senha descartável.
 
-2. Selecione a organização e o espaço do {{site.data.keyword.Bluemix_notm}} que contêm a sua instância de serviço {{site.data.keyword.keymanagementserviceshort}}.
+2. Selecione a organização e o espaço do {{site.data.keyword.cloud_notm}} que contêm a sua instância de serviço {{site.data.keyword.keymanagementserviceshort}}.
 
     Observe os nomes de sua organização e o espaço na saída da CLI. Também é possível executar o `bx target` para visualizar essas informações.
 
-3. Recupere a sua organização do {{site.data.keyword.Bluemix_notm}} e
+3. Recupere a sua organização do {{site.data.keyword.cloud_notm}} e
 GUIDs de espaço.
 
     ```
@@ -55,9 +55,9 @@ GUIDs de espaço.
 
 É possível usar um token de autorização para gerenciar programaticamente suas chaves usando a API do {{site.data.keyword.keymanagementserviceshort}}.
 
-**Nota**: para ativar o controle de acesso granular governado pelo {{site.data.keyword.Bluemix_notm}} Identity and Access Management, use um token do IAM quando fizer chamadas para o serviço.
+**Nota**: para permitir o controle de acesso granular governado pelo {{site.data.keyword.iamshort}}, use um token IAM ao fazer chamadas para o serviço.
 
-1. Na CLI do {{site.data.keyword.Bluemix_notm}}, selecione a organização e o espaço que contêm seu serviço {{site.data.keyword.keymanagementserviceshort}}.
+1. Na CLI do {{site.data.keyword.cloud_notm}}, selecione a organização e o espaço que contêm seu serviço {{site.data.keyword.keymanagementserviceshort}}.
 
 2. Recupere e exiba seus tokens de autorização.
 
@@ -66,7 +66,7 @@ GUIDs de espaço.
     ```
     {: codeblock}
 
-    O exemplo truncado a seguir mostra a saída de token do {{site.data.keyword.Bluemix_notm}}. A variável _Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ é um token de acesso de exemplo.
+    O exemplo truncado a seguir mostra a saída de token do {{site.data.keyword.cloud_notm}}. A variável _Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ é um token de acesso de exemplo.
 
     ```
     Token do IAM: Portador mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7...

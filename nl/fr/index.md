@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Initiation à {{site.data.keyword.keymanagementserviceshort}}
 
-Vous trouverez ci-dessous les étapes requises pour générer, saisir et gérer des clés dans {{site.data.keyword.keymanagementservicelong}}.
+Vous trouverez ci-dessous les étapes requises pour générer, saisir et gérer des clés dans {{site.data.keyword.keymanagementservicefull}}.
 {: shortdesc}
 
 ## Conditions préalables requises
@@ -30,21 +30,21 @@ Vous trouverez ci-dessous les étapes requises pour générer, saisir et gérer 
 
 Procédez comme suit pour créer une clé ou télécharger une clé existante.
 
-1. [Connectez-vous à la console Bluemix.](https://console.bluemix.net/catalog){: new_window}
+1. [Connectez-vous à la console {{site.data.keyword.cloud_notm}}.](https://console.bluemix.net/catalog){: new_window}
 2. Survolez le lien **Toutes les catégories** pour faire apparaître la barre de défilement. Faites défiler l'écran jusqu'à **Services > Sécurité**. Une liste de vos applications et services s'affiche.
-3. Cliquez deux fois sur votre instance de service **Key Protect**. Notez que vous pouvez renommer ou supprimer le service sous **Actions**.
+3. Cliquez deux fois sur votre instance de service **{{site.data.keyword.keymanagementserviceshort}}**. Notez que vous pouvez renommer ou supprimer le service sous **Actions**.
 
 Vous êtes automatiquement redirigé vers la page **Ajouter une nouvelle clé** si vous saisissez ou générez une clé pour la première fois. L'option **Générer une nouvelle clé** est utilisée pour générer une toute nouvelle clé dans {{site.data.keyword.keymanagementserviceshort}}, tandis que **Saisir une clé existante** permet de saisir une clé existante dans le service.
 
 ### Génération d'une clé
 {: #genkey }
 
-Procédez comme suit pour que Key Protect génère une nouvelle clé.
+Procédez comme suit pour que {{site.data.keyword.keymanagementserviceshort}} génère une nouvelle clé.
 
-1. Saisissez les informations suivantes sous **Générer une nouvelle clé** pour que Key Protect crée une nouvelle clé.
+1. Saisissez les informations suivantes sout **Générer une nouvelle clé** pour que {{site.data.keyword.keymanagementserviceshort}} crée un nouvelle clé.
     <table>
       <tr>
-        <th>Zone </th>
+        <th>Zone</th>
         <th>Description</th>
       </tr>
       <tr>
@@ -69,7 +69,7 @@ Procédez comme suit pour saisir une clé existante dans Key Protect.
 1. Entrez les informations suivantes sous **Saisir une clé existante**.
     <table>
       <tr>
-        <th>Zone </th>
+        <th>Zone</th>
         <th>Description</th>
       </tr>
       <tr>
@@ -105,7 +105,7 @@ Pour afficher vos clés une fois que vous les avez générées et saisies, suive
       </tr>
       <tr>
         <td>ID</td>
-        <td>ID de clé unique affecté à votre clé par Key Protect.</td>
+        <td>ID de clé unique affecté à votre clé par {{site.data.keyword.keymanagementserviceshort}}.</td>
       </tr>
       <tr>
         <td>Statut</td>
@@ -117,7 +117,7 @@ Pour afficher vos clés une fois que vous les avez générées et saisies, suive
       </tr>
       <tr>
         <td>Type</td>
-        <td>La valeur par défaut est une clé standard. </td>
+        <td>La valeur par défaut est une clé standard.</td>
       </tr>
       <caption style="caption-side:bottom;">Tableau 3. Description de la fenêtre Clés</caption>
     </table>
@@ -126,12 +126,12 @@ Pour afficher vos clés une fois que vous les avez générées et saisies, suive
 
 Vous pouvez désormais utiliser vos clés pour coder vos applications et services.
 
-- Pour consulter un exemple de la manière dont le magasin de clés dans {{site.data.keyword.keymanagementserviceshort}} peut être utilisé pour chiffrer et déchiffrer des données, reportez-vous à l'[exemple d'application dans Github ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
+- Pour consulter un exemple de la manière dont le magasin de clés dans {{site.data.keyword.keymanagementserviceshort}} peut être utilisé pour chiffrer et déchiffrer des données, reportez-vous à l'[exemple d'application dans Github ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
 - Pour plus d'informations sur la gestion de vos clés par voie de programmation, reportez-vous à la [documentation de référence de l'API {{site.data.keyword.keymanagementserviceshort}}](https://console.ng.bluemix.net/apidocs/639) pour consulter des exemples de code.
 
 ### Liens connexes
 
-- [API REST {{site.data.keyword.keymanagementserviceshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}
-- [API REST admin de {{site.data.keyword.keymanagementserviceshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [Offre HSM sur le cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
-- [{{site.data.keyword.keymanagementservicelong_notm}} Accord sur les niveaux de service ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}
+- [API REST {{site.data.keyword.keymanagementserviceshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.ng.bluemix.net/apidocs/639){: new_window}
+- [API REST admin de {{site.data.keyword.keymanagementserviceshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
+- [Offre {{site.data.keyword.cloud_notm}} HSM ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
+- [{{site.data.keyword.keymanagementservicelong_notm}} Accord sur les niveaux de service ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

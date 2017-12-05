@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -21,13 +21,13 @@ Vous pouvez gérer le cycle de vie de vos clés à l'aide d'{{site.data.keyword.
 Il est recommandé de gérer vos clés de manière sécurisée lors de la phase de développement de votre code. Pensez par exemple aux instructions suivantes, parmi d'autres pratiques de codage sécurisées.
 
 - Lorsque vous intégrez des clés à votre code, tenez compte des implications sur la sécurité.
-- Créez des clés uniquement en vue d'un accès par programmation à vos applis et ressources. Ne créez pas de clés lorsque vous pouvez accorder des [droits utilisateur![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/admin/patterns.html#userroles){: new_window}, plus simples.
+- Créez des clés uniquement en vue d'un accès par programmation à vos applis et ressources. Ne créez pas de clés lorsque vous pouvez accorder des [droits utilisateur![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/docs/admin/patterns.html#userroles){: new_window}, plus simples.
 - Renouvelez les clés et supprimez les clés non utilisées.
 - Utilisez l'authentification multi-facteur pour les opérations sensibles.
 - Isolez les applications en définissant des clés distinctes pour chacune.
 - Envisagez d'utiliser l'API par programmation quand vous transférez des informations très sensibles.
 
-Si vous désirez essayer le service avant d'ajouter vos propres clés, examinez l'[exemple d'application ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
+Si vous désirez essayer le service avant d'ajouter vos propres clés, examinez l'[exemple d'application ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
 
 ## Création de clés avec l'interface graphique utilisateur
 {: #gui}
@@ -89,11 +89,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre organisation {{site.data.keyword.cloud_notm}}. </td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.Bluemix_notm}}. </td>
+        <td>Identificateur unique qui est affecté à votre espace {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -101,7 +101,7 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>return_preference</em></td>
-        <td><p>En-tête qui modifie le comportement du serveur pour les opérations <code>POST</code> et <code>DELETE</code>. </p><p>Si cette option est définie sur <code>return=minimal</code>, le service renvoie uniquement les métadonnées de clé, telles que le nom de la clé et la valeur <code>id</code>, dans la section entity-body de la réponse. Si cette option est définie sur <code>return=representation</code>, le service renvoie à la fois le matériel relatif à la clé et ses métadonnées. </p></td>
+        <td><p>En-tête qui modifie le comportement du serveur pour les opérations <code>POST</code> et <code>DELETE</code>.</p><p>Si cette option est définie sur <code>return=minimal</code>, le service renvoie uniquement les métadonnées de clé, telles que le nom de la clé et la valeur <code>id</code>, dans la section entity-body de la réponse. Si cette option est définie sur <code>return=representation</code>, le service renvoie à la fois le matériel relatif à la clé et ses métadonnées.</p></td>
       </tr>
       <tr>
         <td><em>key_alias</em></td>
@@ -117,17 +117,17 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>key_material</em></td>
-        <td>Matériel relatif à la clé, comme une clé RSA, que vous voulez stocker dans {{site.data.keyword.keymanagementserviceshort}}. Pour générer une nouvelle clé, omettez l'attribut <code>payload</code> et la variable <em>key_material</em>. </td>
+        <td>Matériel relatif à la clé, comme une clé RSA, que vous voulez stocker dans {{site.data.keyword.keymanagementserviceshort}}. Pour générer une nouvelle clé, omettez l'attribut <code>payload</code> et la variable <em>key_material</em>.</td>
       </tr>
       <caption style="caption-side:bottom;">Tableau 1. Variables requises pour ajouter des clés via l'API {{site.data.keyword.keymanagementserviceshort}}</caption>
     </table>
 
-    Une réponse réussie renvoie la valeur `id` pour votre clé, ainsi que d'autres métadonnées. `id` est un identificateur unique qui est affecté à votre clé et utilisé pour les appels ultérieurs. 
+    Une réponse réussie renvoie la valeur `id` pour votre clé, ainsi que d'autres métadonnées. `id` est un identificateur unique qui est affecté à votre clé et utilisé pour les appels ultérieurs.
 
-3. **Facultatif :** vérifiez que la clé a été a créée en exécutant l'appel ci-après pour obtenir les clés de votre espace {{site.data.keyword.Bluemix_notm}}.
+3. **Facultatif :** vérifiez que la clé a été a créée en exécutant l'appel ci-après pour obtenir les clés de votre espace {{site.data.keyword.cloud_notm}}.
 
     ```cURL
-*    curl -X GET \
+    *    curl -X GET \
       https://ibm-key-protect.edge.bluemix.net/api/v2/keys \
       -H 'accept: application/vnd.ibm.collection+json' \
       -H 'authorization: Bearer <OAuth-token>' \
@@ -138,6 +138,6 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
 
 ### Etapes suivantes
 
-Vous pouvez désormais utiliser vos clés pour coder vos applications et services. 
+Vous pouvez désormais utiliser vos clés pour coder vos applications et services.
 
-- Pour obtenir tous les détails relatifs à chaque demande et réponse REST, consultez la {{site.data.keyword.keymanagementserviceshort}} [documentation de référence de l'API REST ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+- Pour obtenir tous les détails relatifs à chaque demande et réponse REST, consultez la {{site.data.keyword.keymanagementserviceshort}} [documentation de référence de l'API REST ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.ng.bluemix.net/apidocs/639){: new_window}.

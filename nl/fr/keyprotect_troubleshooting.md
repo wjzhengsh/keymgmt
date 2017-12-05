@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -44,7 +44,7 @@ Si vous êtes un utilisateur de la version bêta, vous devez changer votre modè
 
 ### Résolution du problème
 
-Le service {{site.data.keyword.keymanagementserviceshort}} propose deux modèles de tarification : un modèle léger et un modèle de tarification à tranches graduées. En tant qu'administrateur, vérifiez que le modèle à tranches graduées a été sélectionné. Si vous ne souhaitez pas migrer vers le modèle de tarification différenciée, assurez-vous que toutes les clés et instances de service sont supprimées avant qu'elles ne deviennent obsolètes. [Pour plus d'informations, consultez l'annonce de disponibilité générale {{site.data.keyword.keymanagementserviceshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+Le service {{site.data.keyword.keymanagementserviceshort}} propose deux modèles de tarification : un modèle léger et un modèle de tarification à tranches graduées. En tant qu'administrateur, vérifiez que le modèle à tranches graduées a été sélectionné. Si vous ne souhaitez pas migrer vers le modèle de tarification différenciée, assurez-vous que toutes les clés et instances de service sont supprimées avant qu'elles ne deviennent obsolètes. Pour plus d'informations, consultez l'[annonce de disponibilité générale {{site.data.keyword.keymanagementserviceshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
 
 Pour changer de modèle de tarification :
 
@@ -58,11 +58,11 @@ Pour changer de modèle de tarification :
 
 Si vous rencontrez des problèmes ou des questions lors de l'utilisation d'{{site.data.keyword.keymanagementservicefull_notm}}, vous pouvez rechercher des informations ou poser des questions via un forum. Vous pouvez également ouvrir un ticket de demande de service.
 
-Quand vous utilisez les forums pour poser une question, prenez soin d'étiqueter cette dernière de façon à ce qu'elle soit vue par les équipes de développement {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}.
+Quand vous utilisez les forums pour poser une question, prenez soin d'étiqueter cette dernière de façon à ce qu'elle soit vue par les équipes de développement {{site.data.keyword.cloud_notm}}.
 
-- En cas de questions d'ordre technique sur {{site.data.keyword.keymanagementserviceshort}}, postez votre question sur le forum [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} en lui adjoignant les balises "ibm-bluemix" et "key-protect".
-- Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window} forum. Incluez les balises "bluemix" et "key-protect".
+- En cas de questions d'ordre technique sur {{site.data.keyword.keymanagementserviceshort}}, postez votre question sur le forum [Stack Overflow ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} en lui adjoignant les balises "ibm-bluemix" et "key-protect".
+- Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window} forum. Incluez les balises "bluemix" et "key-protect".
 
-Pour plus d'informations sur l'utilisation des forums, voir la rubrique expliquant [comment obtenir de l'aide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/support/index.html#getting-help){: new_window}.
+Pour plus d'informations sur l'utilisation des forums, voir la rubrique expliquant [comment obtenir de l'aide ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/docs/support/index.html#getting-help){: new_window}.
 
-Pour plus d'informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}}, sur les niveaux de support disponibles ou les niveaux de gravité des tickets, voir la rubrique expliquant [comment contacter le support![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/support/index.html#contacting-support){: new_window}.
+Pour plus d'informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}}, sur les niveaux de support disponibles ou les niveaux de gravité des tickets, voir la rubrique expliquant [comment contacter le support![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/docs/support/index.html#contacting-support){: new_window}.

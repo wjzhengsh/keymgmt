@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -63,16 +63,16 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <caption style="caption-side:bottom;">Tabela 1. Descreve as variáveis necessárias para visualizar chaves por meio da API do {{site.data.keyword.keymanagementserviceshort}}.</caption>
     </table>
 
-    Uma solicitação bem-sucedida retorna uma coleção de chaves disponíveis em seu espaço do {{site.data.keyword.Bluemix_notm}}.
+    Uma solicitação bem-sucedida retorna uma coleção de chaves disponíveis em seu espaço do {{site.data.keyword.cloud_notm}}.
 
     ```
     {
@@ -146,7 +146,6 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
 
     Substitua as variáveis na solicitação de exemplo de acordo com a tabela a seguir.
 
-
     <table>
       <tr>
         <th>Variável</th>
@@ -158,11 +157,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>

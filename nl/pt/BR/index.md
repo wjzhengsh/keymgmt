@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Introdução ao {{site.data.keyword.keymanagementserviceshort}}
 
-A seguir estão as etapas necessárias para gerar, inserir e gerenciar chaves no {{site.data.keyword.keymanagementservicelong}}.
+A seguir estão as etapas necessárias para gerar, inserir e gerenciar chaves no {{site.data.keyword.keymanagementservicefull}}.
 {: shortdesc}
 
 ## Pré-requisito
@@ -30,19 +30,19 @@ O {{site.data.keyword.keymanagementserviceshort}} está disponível para serviç
 
 Use as etapas a seguir para criar uma nova chave ou fazer upload de uma chave existente.
 
-1. [Efetue login no console do Bluemix.](https://console.bluemix.net/catalog){: new_window}
+1. [Efetue login no console do {{site.data.keyword.cloud_notm}}.](https://console.bluemix.net/catalog){: new_window}
 2. Passe o mouse sobre o link **Todas as categorias** para fazer a barra de rolagem aparecer. Role para baixo até **Serviços > Segurança**. Uma lista de seus apps e serviços será exibida.
-3. Clique duas vezes em sua instância de serviço **Key Protect**. Observe que, em **Ações**, é possível renomear ou excluir o serviço.
+3. Dê um clique duplo em sua instância de serviço do **{{site.data.keyword.keymanagementserviceshort}}**. Observe que, em **Ações**, é possível renomear ou excluir o serviço.
 
 Você estará automaticamente na página **Incluir uma nova chave** se estiver inserindo ou gerando uma chave pela primeira vez. **Gerar nova chave** é usado para gerar uma nova chave no {{site.data.keyword.keymanagementserviceshort}} e **Inserir chave existente** é usado para inserir uma chave existente no serviço.
 
 ### Gerando uma chave
 {: #genkey }
 
-Use as etapas a seguir para que o Key Protect gere uma nova chave.
+Use as etapas a seguir para que o {{site.data.keyword.keymanagementserviceshort}} gere uma nova chave.
 
-1. Insira o seguinte em **Gerar nova chave** para que o Key Protect crie uma nova chave.
-    <table>
+1. Insira o seguinte em **Gerar nova chave** para que o {{site.data.keyword.keymanagementserviceshort}} crie uma nova chave.
+<table>
       <tr>
         <th>Campo</th>
         <th>Descrição</th>
@@ -107,7 +107,7 @@ Para ver suas chaves depois de gerar e inseri-las, siga as etapas em [Incluindo 
       </tr>
       <tr>
         <td>ID</td>
-        <td>Um ID de chave exclusiva designado à sua chave pelo Key Protect.</td>
+        <td>Um ID de chave exclusiva designado à sua chave pelo {{site.data.keyword.keymanagementserviceshort}}.</td>
       </tr>
       <tr>
         <td>Barra de Status</td>
@@ -136,5 +136,6 @@ o aplicativo de amostra no Github ![Ícone de link externo](../../icons/launch-g
 
 - [API de REST do {{site.data.keyword.keymanagementserviceshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.ng.bluemix.net/apidocs/639){: new_window}
 - [API de REST do administrador do {{site.data.keyword.keymanagementserviceshort}} ![Ícone de linkexterno](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [Oferta Cloud HSM![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
+
+- [{{site.data.keyword.cloud_notm}} Oferta HSM ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
 - [Acordo de Nível de Serviço do {{site.data.keyword.keymanagementservicelong_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}

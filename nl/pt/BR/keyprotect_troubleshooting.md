@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -56,7 +56,7 @@ Para mudar o plano de precificação:
 
 Se tiver problemas ou perguntas quando estiver usando o {{site.data.keyword.keymanagementservicefull_notm}}, será possível obter ajuda procurando informações ou fazendo perguntas por meio de um fórum. Também é possível abrir um chamado de suporte.
 
-Quando estiver usando os fóruns para fazer uma pergunta, identifique sua pergunta para que ela seja vista pela equipe de desenvolvimento do {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}.
+Quando estiver usando os fóruns para fazer uma pergunta, identifique sua pergunta para que ela seja vista pela equipe de desenvolvimento do {{site.data.keyword.cloud_notm}}.
 
 - Se você tiver questões técnicas sobre o {{site.data.keyword.keymanagementserviceshort}}, poste sua pergunta no [Stack Overflow ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://stackoverflow.com/search?q=key-protect+ibm-bluemix){: new_window} e identifique-a com as tags "ibm-bluemix" e "key-protect".
 - Para perguntas sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/key-protect/?smartspace=bluemix){: new_window}. Inclua as tags "bluemix"

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2017-09-21"
 # Gerenciando acesso a chaves com a API
 {: #managing-access-api}
 
-Com o {{site.data.keyword.Bluemix}} Identity and Access Management, é possível ativar o controle de acesso granular para seus recursos de chave criando e modificando políticas de acesso.
+Com o {{site.data.keyword.iamlong}}, é possível ativar o controle de acesso granular para seus recursos de chave, criando e modificando as políticas de acesso.
 {: shortdesc}
 
 Esta página conduz pelos vários cenários para gerenciar o acesso aos recursos de chave com a [API de gerenciamento de acesso![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
@@ -31,7 +31,7 @@ Antes de começar:
 ## Criando uma nova política de acesso
 {: #create_policy}
 
-Para ativar o controle de acesso para uma chave específica, é possível enviar uma solicitação para o {{site.data.keyword.Bluemix_notm}} Identity and Access Management executando o comando a seguir. Repita o comando para cada política de acesso.
+Para ativar o controle de acesso para uma chave específica, é possível enviar uma solicitação para {{site.data.keyword.iamshort}} executando o comando a seguir. Repita o comando para cada política de acesso.
 
 ```cURL
 curl -X POST \
@@ -75,7 +75,7 @@ curl -X GET \
 ## Atualizando uma política de acesso
 {: #update_policy}
 
-É possível usar um ID de política recuperado para modificar uma política existente para um usuário. Envie uma solicitação para o {{site.data.keyword.Bluemix_notm}} Identity and Access Management executando o comando a seguir:
+É possível usar um ID de política recuperado para modificar uma política existente para um usuário. Envie uma solicitação para {{site.data.keyword.iamshort}} executando o comando a seguir:
 
 ```cURL
 curl -X PUT \
@@ -119,7 +119,7 @@ curl -X GET \
 ## Excluindo uma política de acesso
 {: #delete_policy}
 
-É possível usar um ID de política recuperado para excluir uma política existente para um usuário. Envie uma solicitação para o {{site.data.keyword.Bluemix_notm}} Identity and Access Management executando o comando a seguir:
+É possível usar um ID de política recuperado para excluir uma política existente para um usuário. Envie uma solicitação para {{site.data.keyword.iamshort}} executando o comando a seguir:
 
 ```cURL
 curl -X DELETE \
@@ -144,7 +144,7 @@ curl -X GET \
 ## Recuperando o ID da conta
 {: #retrieve_account_id}
 
-1. Efetue login na CLI do {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login na CLI do Bluemix.
     ```sh
     bx login [--sso]
     ```

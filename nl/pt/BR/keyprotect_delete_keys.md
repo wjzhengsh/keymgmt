@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-21"
 
 # Excluindo chaves
 
-É possível usar o {{site.data.keyword.keymanagementservicefull}} para excluir uma chave de criptografia e seus conteúdos, se você é um administrador para o espaço do {{site.data.keyword.Bluemix_notm}} ou instância de serviço {{site.data.keyword.keymanagementserviceshort}}.
+É possível usar o {{site.data.keyword.keymanagementservicefull}} para excluir uma chave de criptografia e seus conteúdos, se você é um administrador para o espaço do {{site.data.keyword.cloud_notm}} ou instância de serviço {{site.data.keyword.keymanagementserviceshort}}.
 {: shortdesc}
 
 **Importante**: ao excluir uma chave, você fragmenta permanentemente seus conteúdos e dados associados. A ação não pode ser invertida. A destruição de recursos não é recomendada para ambientes de produção, mas pode ser útil para ambientes temporários, como de teste ou QA.
@@ -27,10 +27,10 @@ Se você preferir excluir seus recursos de chave usando uma interface gráfica, 
 
 [Depois de criar ou importar suas chaves existentes para o serviço](/docs/services/keymgmt/keyprotect_create_keys.html), conclua as etapas a seguir para excluir uma chave:
 
-1. [Efetue login no console do {{site.data.keyword.Bluemix_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/).
-2. No painel do {{site.data.keyword.Bluemix_notm}}, selecione sua instância provisionada do {{site.data.keyword.keymanagementserviceshort}}.
+1. [Efetue login no console do {{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/).
+2. No painel do {{site.data.keyword.cloud_notm}}, selecione sua instância provisionada do {{site.data.keyword.keymanagementserviceshort}}.
 3. Navegue para a área de janela **Gerenciar** para procurar as chaves em seu serviço.
-4. Clique no ícone ⋮ para abrir uma lista de opções para a chave que você gostaria de excluir.
+4. Clique no ícone de reticências vertical para abrir uma lista de opções para a chave que você gostaria de excluir.
 5. No menu de opções, clique em **Excluir chave** e confirme a exclusão da chave na próxima tela.
 
 ## Excluindo chaves com a API
@@ -70,11 +70,11 @@ https://ibm-key-protect.edge.bluemix.net/api/v2/keys/<key_ID>
       </tr>
       <tr>
         <td><em>space_GUID</em></td>
-        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado ao seu espaço do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>organization_GUID</em></td>
-        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.Bluemix_notm}}.</td>
+        <td>O identificador exclusivo que é designado à sua organização do {{site.data.keyword.cloud_notm}}.</td>
       </tr>
       <tr>
         <td><em>key_ID</em></td>
