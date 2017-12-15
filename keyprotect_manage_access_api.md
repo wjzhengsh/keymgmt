@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -16,14 +16,14 @@ lastupdated: "2017-11-08"
 # Managing access to keys with the API
 {: #managing-access-api}
 
-With {{site.data.keyword.iamlong}}, you can enable granular access control for your key resources by creating and modifying access policies.
+With {{site.data.keyword.iamlong}}, you can enable granular access control for your encryption keys by creating and modifying access policies.
 {: shortdesc}
 
 This page walks you through several scenarios for managing access to your key resources with the [Access Management API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
 
 
 Before you begin:
-- [Retrieve your IAM token and space GUID](/docs/services/keymgmt/keyprotect_authentication.html)
+- [Retrieve your IAM token and instance ID](/docs/services/keymgmt/keyprotect_authentication.html)
 - [Retrieve the key ID to specify the resource](/docs/services/keymgmt/keyprotect_view_keys.html)
 - [Retrieve the account ID to specify the scope of access](keyprotect_manage_access_api.html#retrieve_account_ID)
 - [Retrieve the user ID of the user whose access you would like to modify](keyprotect_manage_access_api.html#retrieve_user_ID)
@@ -35,7 +35,7 @@ To enable access control for a specific key, you can send a request to {{site.da
 
 ```cURL
 curl -X POST \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -48,24 +48,27 @@ curl -X POST \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Replace `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` and `<key_ID>` with the appropriate values.
+If you need to manage access to keys within a specified Cloud Foundry org and space, replace `serviceInstance` with `organizationId` and `spaceId`. To learn more, see the [Access Management API reference doc ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}. 
+{: tip}
+
+Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
 
 **Optional:** Verify that the policy was successfully created.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -79,7 +82,7 @@ You can use a retrieved policy ID to modify an existing policy for a user. Send 
 
 ```cURL
 curl -X PUT \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'If-Match': <ETag_ID> \
   -H 'Content-Type: application/json' \
@@ -93,24 +96,24 @@ curl -X PUT \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Replace `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` and `<key_ID>` with the appropriate values.
+Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
 
 **Optional:** Verify that the policy was successfully updated.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -123,7 +126,7 @@ You can use a retrieved policy ID to delete an existing policy for a user. Send 
 
 ```cURL
 curl -X DELETE \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -135,7 +138,7 @@ Replace `<account_ID>`, `<user_ID>`, `<policy_ID>`, and  `<Admin_IAM_token>` wit
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -144,7 +147,7 @@ curl -X GET \
 ## Retrieving the account ID
 {: #retrieve_account_id}
 
-1. Log in to the Bluemix CLI.
+1. Log in to the {{site.data.keyword.cloud_notm}} (bx) CLI.
     ```sh
     bx login [--sso]
     ```

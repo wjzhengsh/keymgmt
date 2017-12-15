@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -42,7 +42,7 @@ If you are a beta user, you need to change your pricing plan to the tiered prici
 
 ### Resolving the problem
 
-The {{site.data.keyword.keymanagementserviceshort}} service has two pricing models: lite and graduated tiered. As an administrator, verify that the graduated tiered model has been selected. If you do not want to migrate to the tiered model, ensure that all keys and service instances are removed before deprecation. [See the {{site.data.keyword.keymanagementserviceshort}} general assembly announcement for more information ![External link icon](../../icons/launch-glyph.svg "External link icon")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+The {{site.data.keyword.keymanagementserviceshort}} service has two pricing models: lite and graduated tiered. As an administrator, verify that the graduated tiered model has been selected. If you do not want to migrate to the tiered model, ensure that all keys and service instances are removed before deprecation. [See the {{site.data.keyword.keymanagementserviceshort}} general assembly announcement for more information ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}.
 
 To change the pricing plan:
 

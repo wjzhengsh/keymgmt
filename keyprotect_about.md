@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -14,23 +14,28 @@ lastupdated: "2017-11-08"
 {:tip: .tip}
 
 # About {{site.data.keyword.keymanagementserviceshort}}
+{: #about}
 
-{{site.data.keyword.keymanagementservicefull}} helps you provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 2 certified cloud-based hardware modules (HSMs) that protect against theft of information.
+{{site.data.keyword.keymanagementservicefull}} helps you provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) that protect against the theft of information.
 {: shortdesc}
 
-## {{site.data.keyword.keymanagementserviceshort}} use cases
+## Reasons to use the service
 {: #kp_reasons}
 
-Following are use cases for {{site.data.keyword.keymanagementserviceshort}}:
+You might need to manage keys in the following scenarios:
 
 <table>
   <tr>
-    <th>Use case</th>
-    <th>Solution</th>
+    <th>Scenario</th>
+    <th>Reasons</th>
   </tr>
   <tr>
     <td>You need to encrypt high volumes of sensitive data, such as medical records, by individual resource.</td>
-    <td>You can integrate the {{site.data.keyword.keymanagementserviceshort}} service with storage solutions, such as [{{site.data.keyword.objectstorageshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/ObjectStorage/index.html), to encrypt your data-at-rest in the cloud. Each document can be protected by a different key, so you have granular control of your data.</td>
+    <td>You can integrate the {{site.data.keyword.keymanagementserviceshort}} service with storage solutions, such as [{{site.data.keyword.objectstorageshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/ObjectStorage/index.html), to encrypt your data at rest in the cloud. Each document can be protected by a different key, so you have granular control of your data.</td>
+  </tr>
+  <tr>
+    <td>You want to perform envelope encryption as you move data into the cloud. You need to bring your own master encryption key, so you can achieve full control of other keys that encrypt your data at rest.</td>
+    <td>With {{site.data.keyword.keymanagementserviceshort}}, you can [wrap your data encryption keys with a highly secure root key](/docs/services/keymgmt/keyprotect_envelope.html). You can bring your own root keys or create them in the service.</td>
   </tr>
   <tr>
     <td>As an IT admin for a large corporation, you need to integrate, track and rotate keys for many different service offerings.</td>
@@ -45,28 +50,27 @@ Following are use cases for {{site.data.keyword.keymanagementserviceshort}}:
   </tr>
   <tr>
     <td>Your development team has stringent policies, and you need a way to generate and rotate keys every 14 days.</td>
-    <td>With {{site.data.keyword.keymanagementserviceshort}}, you can rapidly generate keys from a hardware security module (HSM) to meet your on-going security needs.</td>
+    <td>With {{site.data.keyword.cloud_notm}}, you can rapidly generate keys from a hardware security module (HSM) to meet your on-going security needs.</td>
   </tr>
-  <caption style="caption-side:bottom;">Table 1. Variables needed to add keys through the {{site.data.keyword.keymanagementserviceshort}} API</caption>
 </table>
 
 ## How {{site.data.keyword.keymanagementserviceshort}} works
 {: #kp_how}
 
-{{site.data.keyword.keymanagementservicelong_notm}} helps you manage encryption keys throughout your organization by aligning with {{site.data.keyword.iamshort}} roles.
+{{site.data.keyword.keymanagementservicelong_notm}} helps you manage encryption keys throughout your organization by aligning with {{site.data.keyword.cloud_notm}} Identity and Access Management roles.
 
-An IT or security admin needs advanced permissions that an auditor might not. To simplify access, {{site.data.keyword.keymanagementserviceshort}} maps to {{site.data.keyword.iamshort}} roles so that each role has a different view of the service. To help guide which view and level of access best suits your needs, see [Managing users and access](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
+An IT or security admin needs advanced permissions that an auditor might not. To simplify access, {{site.data.keyword.keymanagementserviceshort}} maps to {{site.data.keyword.cloud_notm}} Identity and Access Management roles so that each role has a different view of the service. To help guide which view and level of access best suits your needs, see [Managing users and access](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
 
-The following diagram shows how administrators, viewers and editors can interact with keys that are managed in the service.
+The following diagram shows how managers, readers, and writers can interact with keys that are managed in the service.
 
 <dl>
   <dt>Service integration</dt>
-    <dd>Admins for your {{site.data.keyword.cloud_notm}} space
+    <dd>Managers for your {{site.data.keyword.keymanagementserviceshort}} service instance
 manage the keys for the cryptography.</dd>
-  <dt>View</dt>
-    <dd>Viewers access a high-level view of keys and identify suspicious activities.</dd>
+  <dt>Audits</dt>
+    <dd>Readers access a high-level view of keys and identify suspicious activities.</dd>
   <dt>Apps</dt>
-    <dd>Editors manage the keys for the cryptography that they code into apps.</dd>
+    <dd>Writers manage the keys for the cryptography that they code into apps.</dd>
 </dl>
 
 ![The diagram shows the same components as described in the previous definition list.](images/keys-use-cases.png)
@@ -78,7 +82,7 @@ manage the keys for the cryptography.</dd>
 
 <dl>
   <dt>{{site.data.keyword.cloud_notm}} server</dt>
-    <dd>Identity, projects and their tokens from the {{site.data.keyword.cloud_notm}} server let the {{site.data.keyword.keymanagementserviceshort}} service to map resources to keys.</dd>
+    <dd>Identity, projects, and their tokens from the {{site.data.keyword.cloud_notm}} server let the {{site.data.keyword.keymanagementserviceshort}} service map resources to keys.</dd>
   <dt>API for {{site.data.keyword.keymanagementserviceshort}}</dt>
     <dd>The {{site.data.keyword.keymanagementserviceshort}} REST API drives key creation and management. The service provides encrypted multi-tenancy.</dd>
   <dt>User interface in {{site.data.keyword.cloud_notm}}</dt>
