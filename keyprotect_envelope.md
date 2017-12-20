@@ -30,7 +30,7 @@ Envelope encryption is the practice of encrypting data with a data encryption ke
   </tr>
   <tr>
     <td>Confidentiality and integrity protection</td>
-    <td>{{site.data.keyword.keymanagementserviceshort}} uses the AES in Galois/Counter Mode (GCM) to create keys, and the AES in Synthetic Initialization Vector (SIV) mode to protect keys. When you create keys in the service, {{site.data.keyword.keymanagementserviceshort}} generates them within the trust boundary of {{site.data.keyword.cloud_notm}} hardware security modules (HSMs), so only you have access to your encryption keys.</td>
+    <td>{{site.data.keyword.keymanagementserviceshort}} uses the Advanced Encryption Standard (AES) algorithm in Galois/Counter Mode (GCM) to create and protect keys. When you create keys in the service, {{site.data.keyword.keymanagementserviceshort}} generates them within the trust boundary of {{site.data.keyword.cloud_notm}} hardware security modules (HSMs), so only you have access to your encryption keys.</td>
   </tr>
   <tr>
     <td>Cryptographic shredding of data</td>
@@ -94,7 +94,7 @@ The following table describes the inputs needed to perform a key wrap operation:
     <caption style="caption-side:bottom;">Table 2. Inputs required for key wrapping in {{site.data.keyword.keymanagementserviceshort}}</caption>
 </table>
 
-If you send a wrap request without specifying the plaintext to encrypt, the AES-GCM encryption algorithm generates and converts a plaintext to an unintelligible form of data called a ciphertext. This process outputs a 256-bit DEK with new key material. The system then uses the AES-SIV key-wrapping algorithm, which wraps the DEK and its key material with the specified root key. A successful wrap operation returns a base64 encoded wrapped DEK that you can store in a {{site.data.keyword.cloud_notm}} app or service. 
+If you send a wrap request without specifying the plaintext to encrypt, the AES-GCM encryption algorithm generates and converts a plaintext to an unintelligible form of data called a ciphertext. This process outputs a 256-bit DEK with new key material. The system then uses an AES key-wrapping algorithm, which wraps the DEK and its key material with the specified root key. A successful wrap operation returns a base64 encoded wrapped DEK that you can store in a {{site.data.keyword.cloud_notm}} app or service. 
 
 ## Unwrapping keys
 {: #unwrapping}
