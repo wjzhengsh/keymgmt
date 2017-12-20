@@ -52,7 +52,6 @@ If you are managing your {{site.data.keyword.keymanagementserviceshort}} resourc
     <caption style="caption-side:bottom;">Table 2. Available endpoints for the {{site.data.keyword.keymanagementserviceshort}} API</caption>
 </table>
 
-For {{site.data.keyword.keymanagementserviceshort}} service instances that exist within a Cloud Foundry organization or space, you can use the legacy `https://ibm-key-protect.edge.bluemix.net` endpoint to interact with the {{site.data.keyword.keymanagementserviceshort}} API.
-{: tip}
+**Note:** For {{site.data.keyword.keymanagementserviceshort}} service instances that exist within a Cloud Foundry org or space, use the legacy `https://ibm-key-protect.edge.bluemix.net` endpoint to interact with the {{site.data.keyword.keymanagementserviceshort}} API.
 
 For information about authenticating with {{site.data.keyword.keymanagementserviceshort}}, see [Accessing the API](/docs/services/keymgmt/keyprotect_authentication.html).
