@@ -88,7 +88,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
     ```
     {: codeblock}
 
-    If you need to add keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. See [Forming an API Request](/docs/services/keymgmt/keyprotect_authentication#form_api_request) for code samples.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.

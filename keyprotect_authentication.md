@@ -67,9 +67,6 @@ Complete the following steps to retrieve an access token:
 
 You can retrieve the identifying information for your {{site.data.keyword.keymanagementserviceshort}} service instance by using the [{{site.data.keyword.cloud_notm}} (bx) CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}. Use an instance ID to manage your encryption keys within a specified instance of {{site.data.keyword.keymanagementserviceshort}} in your account. 
 
-If your service instance exists within a Cloud Foundry org and space, retrieve your org and space GUIDs to interact with the {{site.data.keyword.keymanagementserviceshort}} API. You can retrieve your org and space GUIDs by running the `bx iam org <organization_name> --guid` and `bx iam space <space_name> --guid` commands in the {{site.data.keyword.cloud_notm}} (bx) CLI.
-{: tip}
-
 1. Log in to {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.cloud_notm}} (bx) CLI.
 
     ```sh

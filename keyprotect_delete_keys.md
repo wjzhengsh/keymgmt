@@ -62,7 +62,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>
     ```
     {: codeblock}
   
-    If you need to delete keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. See [Forming an API Request](/docs/services/keymgmt/keyprotect_authentication#form_api_request) for code samples.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.
@@ -91,7 +91,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>
       <caption style="caption-side:bottom;">Table 1. Describes the variables needed to delete keys through the {{site.data.keyword.keymanagementserviceshort}} API.</caption>
     </table>
 
-    If the _return_preference_ variable is set to `return=representation`, the details of the `DELETE` request are returned in the response entity-body. The following JSON object shows an example returned value.
+    If the _return_preference_ variable is set to `return=representation`, the details of the `DELETE` request are returned in the response entity-body. <!--After you delete a key, it enters the `Deactivated` key state. After 24 hours, if a key is not reinstated, the key transitions to the `Destroyed` state. The key contents are permanently erased and no longer accessible.--> The following JSON object shows an example returned value.
     ```
     {
       "metadata": {

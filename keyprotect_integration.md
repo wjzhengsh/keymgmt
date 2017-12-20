@@ -83,8 +83,6 @@ To add envelope encryption to your storage bucket:
 1. From your {{site.data.keyword.cos_full_notm}} dashboard, click **Create bucket**.
 2. Specify the bucket's details.
 3. In the **Advanced Configuration** section, select **Add {{site.data.keyword.keymanagementserviceshort}} Keys**.
-
-    If the **Advanced Configuration** options aren't available during bucket creation, [remember to grant access between the services by creating an authorization](/docs/iam/authorizations.html#serviceauth). 
 4. From the list of {{site.data.keyword.keymanagementserviceshort}} service instances, select the instance that contains the root key that you want to use for key wrapping.
 5. For **Key Name**, select the alias of the root key.
 6. Click **Create** to confirm the bucket creation.
