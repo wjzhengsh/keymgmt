@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -13,10 +13,10 @@ lastupdated: "2017-11-08"
 {:pre: .pre}
 {:tip: .tip}
 
-# {{site.data.keyword.keymanagementserviceshort}} サービスのプロビジョニング
+# サービスのプロビジョニング
 {: #provision}
 
-{{site.data.keyword.cloud_notm}} コンソールまたは {{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.keymanagementservicefull}} のセキュア・インスタンスを作成できます。
+{{site.data.keyword.cloud_notm}} コンソールまたは {{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.keymanagementservicefull}} のインスタンスを作成できます。
 {: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} コンソールからのプロビジョニング
@@ -26,49 +26,92 @@ lastupdated: "2017-11-08"
 
 1. [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/){: new_window} にログインします。
 2. **「カタログ」**をクリックして、{{site.data.keyword.cloud_notm}} 上で使用可能なサービスのリストを表示します。
-3. **「サービス」**カテゴリーを選択して、**{{site.data.keyword.keymanagementserviceshort}}** タイルをクリックします。
-5. サービス・プランを選択し、**「作成」**をクリックして、ログインしている {{site.data.keyword.cloud_notm}} 組織およびスペース内の {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスをプロビジョンします。
+3. 「すべてのカテゴリー」ナビゲーション・ペインで、**「プラットフォーム」**までスクロールし、**「セキュリティー」**カテゴリーをクリックします。
+4. サービスのリストで、**「{{site.data.keyword.keymanagementserviceshort}}」**タイルをクリックします。
+5. サービス・プランを選択し、**「作成」**をクリックして、ログインしているアカウント、地域、およびリソース・グループ内の {{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンします。
 
 ## {{site.data.keyword.cloud_notm}} (bx) CLI からのプロビジョニング
 {: #cli}
 
-{{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンできます。[コマンド・ライン・ツールをダウンロードしてシステムにインストール](https://clis.ng.bluemix.net/ui/home.html){: new_window}し、以下の手順を実行します。
+{{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンできます。 
 
-1. {{site.data.keyword.cloud_notm}} CLI にログインします。
+### アカウント内のサービス・インスタンスの作成
+{: #provision_acct_lvl}
 
-    ```sh
-    bx login [--sso]
-    ```
-    {: codeblock}
-    **注:** フェデレーテッド ID を使用してログインする場合は、`--sso` パラメーターが必要です。このオプションを使用する場合、CLI 出力にリストされたリンクにアクセスして、ワンタイム・パスコードを生成します。2. {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスを作成する {{site.data.keyword.cloud_notm}} 組織およびスペースを選択します。
+[{{site.data.keyword.iamlong}} 役割](/docs/iam/users_roles.html#iamusermanpol)を使用して暗号鍵に簡単にアクセスできるようにするには、アカウント内に {{site.data.keyword.keymanagementserviceshort}} サービスのインスタンスを 1 つ以上作成して、組織とスペースを指定しなくても済むようにします。 
 
-    次のコマンドを使用して、ターゲット組織およびスペースを設定することもできます。
+1. [{{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.cloud_notm}} にログインします。](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}
 
     ```sh
-    bx target [-o organization_name] [-s space_name]
+    bx login 
     ```
-    {: codeblock}
+    {: pre}
+    **注:** ログインに失敗した場合は、`bx login --sso` コマンドを実行して、再試行してください。フェデレーテッド ID を使用してログインする場合は、`--sso` パラメーターが必要です。 このオプションを使用する場合、CLI 出力にリストされたリンクにアクセスして、ワンタイム・パスコードを生成します。
 
-3. その地域、組織、およびスペース内の {{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンします。
+2. {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスを作成するアカウント、地域、およびリソース・グループを選択します。
+
+    次のコマンドを使用して、ターゲットの地域およびリソース・グループを設定できます。
 
     ```sh
-    bx service create kms TieredPricing [instance_name]
+    bx target -r <region_name> -g <resource_group_name>
     ```
-    {: codeblock}
+    {: pre}
 
-    _instance_name_ を、サービス・インスタンスの固有の別名に置き換えます。
+3. そのアカウントおよびリソース・グループ内の {{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンします。
 
-4. サービス・インスタンスが正常に作成されたことを確認します。
+    ```sh
+    bx resource service-instance-create <instance_name> kms tiered-pricing
+    ```
+    {: pre}
+
+    `<instance_name>` を、サービス・インスタンスの固有の別名に置き換えます。
+
+4. オプション: サービス・インスタンスが正常に作成されたことを確認します。
+
+    ```sh
+    bx resource service-instances
+    ```
+    {: pre}
+
+### 組織およびスペース内のサービス・インスタンスの作成
+{: #provision_space_lvl}
+
+[Cloud Foundry 役割](/docs/iam/users_roles.html#cfroles)を使用して暗号鍵へのアクセス権限を管理するには、指定された組織とスペース内に {{site.data.keyword.keymanagementserviceshort}} サービスのインスタンスを作成します。  
+
+1. [{{site.data.keyword.cloud_notm}} (bx) CLI を使用して、{{site.data.keyword.cloud_notm}} にログインします。](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}
+
+    ```sh
+    bx login 
+    ```
+    {: pre}
+    **注:** ログインに失敗した場合は、`bx login --sso` コマンドを実行して、再試行してください。フェデレーテッド ID を使用してログインする場合は、`--sso` パラメーターが必要です。 このオプションを使用する場合、CLI 出力にリストされたリンクにアクセスして、ワンタイム・パスコードを生成します。
+
+2. {{site.data.keyword.keymanagementserviceshort}} サービス・インスタンスを作成するアカウント、地域、組織、およびスペースを選択します。
+
+    次のコマンドを使用して、ターゲットの地域、組織、およびスペースを設定できます。
+
+    ```sh
+    bx target -r <region> -o <organization_name> -s <space_name>
+    ```
+    {: pre}
+
+3. そのアカウント、地域、組織、およびスペース内の {{site.data.keyword.keymanagementserviceshort}} のインスタンスをプロビジョンします。
+
+    ```sh
+    bx service create kms tiered-pricing <instance_name>
+    ```
+    {: pre}
+
+    `<instance_name>` を、サービス・インスタンスの固有の別名に置き換えます。
+4. オプション: サービス・インスタンスが正常に作成されたことを確認します。
 
     ```sh
     bx service list
     ```
-    {: codeblock}
+    {: pre}
 
 
 ### 次に行うこと
-
-これで、鍵を使用してアプリやサービスをコーディングできるようになりました。
 
 - {{site.data.keyword.keymanagementserviceshort}} に保管されている鍵を使用してデータを暗号化および暗号化解除する方法の例は、[GitHub にあるサンプル・アプリで確認してください ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}。
 - プログラムでの鍵の管理について詳しくは、[{{site.data.keyword.keymanagementserviceshort}} API リファレンス資料に記載されているコード・サンプル ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.ng.bluemix.net/apidocs/639){: new_window} を確認してください。

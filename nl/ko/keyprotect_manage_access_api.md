@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -16,14 +16,14 @@ lastupdated: "2017-11-08"
 # API로 키에 대한 액세스 관리
 {: #managing-access-api}
 
-{{site.data.keyword.iamlong}}를 사용하면 액세스 정책의 작성과 수정을 통해 키 리소스에 대한 세부 단위의 액세스 제어를 사용할 수 있습니다.
+{{site.data.keyword.iamlong}}를 사용하면 액세스 정책의 작성과 수정을 통해 암호화 키에 대한 세부 단위의 액세스 제어를 사용할 수 있습니다.
 {: shortdesc}
 
 이 페이지에서는 [액세스 관리 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}를 사용하여 키 리소스에 대한 액세스를 관리하기 위한 다양한 시나리오를 안내합니다.
 
 
 시작하기 전에:
-- [IAM 토큰 및 영역 GUID 검색](/docs/services/keymgmt/keyprotect_authentication.html)
+- [IAM 토큰 및 인스턴스 ID 검색](/docs/services/keymgmt/keyprotect_authentication.html)
 - [리소스를 지정하기 위한 키 ID 검색](/docs/services/keymgmt/keyprotect_view_keys.html)
 - [액세스 범위를 지정하기 위한 계정 ID 검색](keyprotect_manage_access_api.html#retrieve_account_ID)
 - [해당 액세스 권한이 수정될 사용자의 사용자 ID 검색](keyprotect_manage_access_api.html#retrieve_user_ID)
@@ -35,7 +35,7 @@ lastupdated: "2017-11-08"
 
 ```cURL
 curl -X POST \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -48,24 +48,27 @@ curl -X POST \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-`<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오.
+지정된 Cloud Foundry 조직 및 영역 내 키에 대한 액세스를 관리해야 하는 경우, `serviceInstance`를 `organizationId` 및 `spaceId`로 바꾸십시오. 자세히 보려면 [액세스 관리 API 참조 문서![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}를 참조하십시오.
+{: tip}
+
+`<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` 및 `<key_ID>`을 적절한 값으로 대체하십시오.
 
 **선택사항:** 정책 작성이 완료되었는지 확인하십시오.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -75,11 +78,11 @@ curl -X GET \
 ## 액세스 정책 업데이트
 {: #update_policy}
 
-검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 수정할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오. 
+검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 수정할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오.
 
 ```cURL
 curl -X PUT \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'If-Match': <ETag_ID> \
   -H 'Content-Type: application/json' \
@@ -93,24 +96,24 @@ curl -X PUT \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-`<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오.
+`<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` 및 `<key_ID>`를 적절한 값으로 대체하십시오.
 
 **선택사항:** 정책 업데이트가 완료되었는지 확인하십시오.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -119,11 +122,11 @@ curl -X GET \
 ## 액세스 정책 삭제
 {: #delete_policy}
 
-검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 삭제할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오. 
+검색된 정책 ID를 사용하여 사용자에 대한 기존 정책을 삭제할 수 있습니다. 다음 명령을 실행하여 {{site.data.keyword.iamshort}}에 요청을 전송하십시오.
 
 ```cURL
 curl -X DELETE \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -135,7 +138,7 @@ curl -X DELETE \
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -144,7 +147,7 @@ curl -X GET \
 ## 계정 ID 검색
 {: #retrieve_account_id}
 
-1. Bluemix CLI에 로그인하십시오. 
+1. {{site.data.keyword.cloud_notm}} (bx) CLI에 로그인하십시오.
     ```sh
     bx login [--sso]
     ```

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with AI Text Handler 1.0.0 -->
 <ExtractedAITHs>
-<ExtractedAITH file="/images/generated-key.ai">
+<ExtractedAITH file="/generated-key.ai">
 <text>データ・センター</text>
 <text></text>
 <text>管理者</text>
@@ -16,19 +16,42 @@
 <text>Key Protect</text>
 <text></text>
 </ExtractedAITH>
-<ExtractedAITH file="/images/keys-use-cases.ai">
+<ExtractedAITH file="/key-states.ai">
+<text>アクティブ</text>
+<text>鍵の状態</text>
+<text>アクティブ化前</text>
+<text>非アクティブ化</text>
+<text>破棄</text>
+</ExtractedAITH>
+<ExtractedAITH file="/keys-use-cases.ai">
 <text>Key Protect</text>
 <text>鍵を使用するアプリまたはサービスをプロビジョンし、Key Protect から鍵 ID を提供します。</text>
 <text>管理者</text>
 <text>Key Protect で暗号鍵を
 作成します。</text>
-<text>編集者</text>
-<text>閲覧者</text>
+<text>作成者</text>
+<text>読者</text>
 <text>鍵の概略にアクセスし、疑わしいアクティビティーを特定します。
 </text>
 <text>アプリまたはサービス</text>
 </ExtractedAITH>
-<ExtractedAITH file="/images/stored-key.ai">
+<ExtractedAITH file="/kp-cos-envelope.ai">
+<text>エンベロープ暗号化</text>
+<text>クラウド・オブジェクト・ストレージ</text>
+<text>非暗号化データ</text>
+<text>AES アルゴリズム</text>
+<text>暗号化データ</text>
+<text>データ暗号化鍵 (DEK)</text>
+<text>Key Protect のルート鍵</text>
+<text>クラウド・オブジェクト・ストレージからの DEK</text>
+<text>Key Protect</text>
+<text>AES アルゴリズム</text>
+<text>ラップされた DEK</text>
+<text>ストレージ内のラップされたデータ</text>
+<text>Key Protect のルート鍵が
+クラウド・オブジェクト・ストレージに保管されたデータを保護</text>
+</ExtractedAITH>
+<ExtractedAITH file="/stored-key.ai">
 <text></text>
 <text>ラップされた鍵</text>
 <text></text>

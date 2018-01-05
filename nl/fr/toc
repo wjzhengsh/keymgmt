@@ -11,6 +11,9 @@ Key Protect
     {: .topicgroup}
     Concepts
         keyprotect_states.md
+        keyprotect_envelope.md
+
+    keyprotect_integration.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -23,12 +26,30 @@ Key Protect
         keyprotect_manage_access_api.md
 
     {: .topicgroup}
+    Création de clés
+        keyprotect_create_root.md
+        keyprotect_create_standard.md
+    
+    {: .topicgroup}
+    Importation de clés
+        keyprotect_import_root.md
+        keyprotect_import_standard.md
+
+    {: .topicgroup}
     Gestion des clés
-        keyprotect_create_keys.md
         keyprotect_view_keys.md
+        keyprotect_wrap_keys.md
+        keyprotect_unwrap_keys.md
         keyprotect_delete_keys.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [Référence d'API](https://console.bluemix.net/apidocs/639){: new_window}
+    keyprotect_regions.md
+    keyprotect_links.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     keyprotect_troubleshooting.md
+    keyprotect_FAQs.md
     {: .navgroup-end}

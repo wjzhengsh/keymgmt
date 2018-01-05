@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -16,14 +16,14 @@ lastupdated: "2017-11-08"
 # Zugriff auf Schlüssel mit API verwalten
 {: #managing-access-api}
 
-Mit {{site.data.keyword.iamlong}} können Sie die differenzierte Zugriffssteuerung für Ihre Schlüsselressourcen aktivieren, indem Sie die Zugriffsrichtlinien erstellen und ändern.
+Mit {{site.data.keyword.iamlong}} können Sie die differenzierte Zugriffssteuerung für Ihre Verschlüsselungsschlüssel aktivieren, indem Sie die Zugriffsrichtlinien erstellen und ändern.
 {: shortdesc}
 
 Auf dieser Seite werden Sie durch verschiedene Szenarios zur Verwaltung des Zugriffs auf Ihre Schlüsselressourcen mithilfe der [API für das Zugriffsmanagement ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window} geführt.
 
 
 Vorbereitende Schritte:
-- [IAM-Token und Bereichs-GUID abrufen](/docs/services/keymgmt/keyprotect_authentication.html)
+- [IAM-Token und Instanz-ID abrufen](/docs/services/keymgmt/keyprotect_authentication.html)
 - [Schlüssel-ID zur Angabe der Ressourcen abrufen](/docs/services/keymgmt/keyprotect_view_keys.html)
 - [Konto-ID zur Angabe des Geltungsbereichs für den Zugriff abrufen](keyprotect_manage_access_api.html#retrieve_account_ID)
 - [Benutzer-ID des Benutzers abrufen, dessen Zugriff geändert werden soll](keyprotect_manage_access_api.html#retrieve_user_ID)
@@ -35,7 +35,7 @@ Zur Aktivierung der Zugriffssteuerung für einen bestimmten Schlüssel können S
 
 ```cURL
 curl -X POST \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -48,24 +48,27 @@ curl -X POST \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Ersetzen Sie `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte.
+Wenn Sie den Zugriff auf Schlüssel in bestimmten Cloud Foundry-Organisationen oder -Bereichen verwalten müssen, ersetzen Sie `serviceInstance` durch `organizationId` und `spaceId`. Weitere Informationen finden Sie in der [Access Management API-Referenzdokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}.
+{: tip}
+
+Ersetzen Sie `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` und `<key_ID>` durch die entsprechenden Werte.
 
 **Optional:** Überprüfen Sie, ob die Richtlinie erfolgreich erstellt wurde.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -79,7 +82,7 @@ Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtli
 
 ```cURL
 curl -X PUT \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'If-Match': <ETag_ID> \
   -H 'Content-Type: application/json' \
@@ -93,24 +96,24 @@ curl -X PUT \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-Ersetzen Sie `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` und `<key_ID>` durch die entsprechenden Werte.
+Ersetzen Sie `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` und `<key_ID>` durch die entsprechenden Werte.
 
 **Optional:** Überprüfen Sie, ob die Richtlinie erfolgreich aktualisiert wurde.
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -123,7 +126,7 @@ Sie können eine abgerufene Richtlinien-ID verwenden, um eine vorhandene Richtli
 
 ```cURL
 curl -X DELETE \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -135,7 +138,7 @@ Ersetzen Sie `<account_ID>`, `<user_ID>`, `<policy_ID>` und `<Admin_IAM_token>` 
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -144,7 +147,7 @@ curl -X GET \
 ## Konto-ID abrufen
 {: #retrieve_account_id}
 
-1. Melden Sie sich bei der Bluemix-CLI an.
+1. Melden Sie sich über die {{site.data.keyword.cloud_notm}}-CLI (bx) an.
     ```sh
     bx login [--sso]
     ```

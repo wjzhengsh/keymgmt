@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -43,7 +43,7 @@ Si es usuario de la versión beta, debe cambiar su plan de precios al modelo de 
 
 ### Resolución del problema
 
-El servicio {{site.data.keyword.keymanagementserviceshort}} tiene dos modelos de precios: Lite y por niveles graduados. Como administrador, verifique que el modelo escalonado gradual ha sido seleccionado. Si no desea migrar al modelo por niveles, asegúrese de que todas las claves e instancias de servicio se hayan eliminado antes de entrar en desuso. [Consulte el anuncio de disponibilidad general de {{site.data.keyword.keymanagementserviceshort}} para obtener más información ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/" "https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+El servicio {{site.data.keyword.keymanagementserviceshort}} tiene dos modelos de precios: Lite y por niveles graduados. Como administrador, verifique que el modelo escalonado gradual ha sido seleccionado. Si no desea migrar al modelo por niveles, asegúrese de que todas las claves e instancias de servicio se hayan eliminado antes de entrar en desuso. [Consulte el anuncio de disponibilidad general de {{site.data.keyword.keymanagementserviceshort}} para obtener más información ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}.
 
 Para cambiar el plan de precios:
 

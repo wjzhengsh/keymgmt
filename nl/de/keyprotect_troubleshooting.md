@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -42,7 +42,7 @@ Wenn Sie ein Benutzer der Betaversion sind, müssen Sie Ihren Preistarif ändern
 
 ### Problemlösung
 
-Der Service {{site.data.keyword.keymanagementserviceshort}} verfügt über zwei Preismodelle: ein Lite-Modell und ein Modell der gestaffelten Preisstruktur. Als Administrator müssen Sie prüfen, ob das Modell der gestaffelten Tier-Preisstruktur ausgewählt wurde. Wenn Sie keine Migration auf das gestaffelte Modell durchführen möchten, müssen Sie sicherstellen, dass alle Schlüssel und Serviceinstanzen vor der Einstellung der Unterstützung entfernt werden. [Weitere Informationen finden Sie in der {{site.data.keyword.keymanagementserviceshort}}-GA-Ankündigung ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/" "https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+Der Service {{site.data.keyword.keymanagementserviceshort}} verfügt über zwei Preismodelle: ein Lite-Modell und ein Modell der gestaffelten Preisstruktur. Als Administrator müssen Sie prüfen, ob das Modell der gestaffelten Tier-Preisstruktur ausgewählt wurde. Wenn Sie keine Migration auf das gestaffelte Modell durchführen möchten, müssen Sie sicherstellen, dass alle Schlüssel und Serviceinstanzen vor der Einstellung der Unterstützung entfernt werden. [Weitere Informationen finden Sie in der {{site.data.keyword.keymanagementserviceshort}} GA-Ankündigung zu ![Symbol für externen Link](../../icons/launch-glyph.svg "")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}.
 
 Gehen Sie wie folgt vor, um den Preistarif zu ändern:
 

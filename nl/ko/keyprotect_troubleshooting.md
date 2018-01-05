@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -42,7 +42,7 @@ lastupdated: "2017-11-08"
 
 ### 문제점 해결
 
-{{site.data.keyword.keymanagementserviceshort}} 서비스에는 라이트 및 누진 계층의 두 가지 가격 책정 모델이 있습니다. 관리자로서 누진 계층 모델이 선택되었는지 확인하십시오. 계층 모델로 마이그레이션하지 않으려는 경우에는 사용 중단 전에 모든 키와 서비스 인스턴스가 제거되었는지 확인하십시오. [자세한 정보는 {{site.data.keyword.keymanagementserviceshort}} General Assembly 공지사항을 참조하십시오 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+{{site.data.keyword.keymanagementserviceshort}} 서비스에는 라이트 및 누진 계층의 두 가지 가격 책정 모델이 있습니다. 관리자로서 누진 계층 모델이 선택되었는지 확인하십시오. 계층 모델로 마이그레이션하지 않으려는 경우에는 사용 중단 전에 모든 키와 서비스 인스턴스가 제거되었는지 확인하십시오. [자세한 정보는 {{site.data.keyword.keymanagementserviceshort}} 일반 어셈블리 공지사항을 참조하십시오. ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}
 
 가격 책정 플랜을 변경하려면 다음을 수행하십시오.
 

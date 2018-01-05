@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -13,10 +13,10 @@ lastupdated: "2017-11-08"
 {:pre: .pre}
 {:tip: .tip}
 
-# {{site.data.keyword.keymanagementserviceshort}}-Service bereitstellen
+# Den Service bereitstellen
 {: #provision}
 
-Sie können eine sichere Instanz von {{site.data.keyword.keymanagementservicefull}} bereitstellen, indem Sie die {{site.data.keyword.cloud_notm}}-Konsole oder die {{site.data.keyword.cloud_notm}}-CLI (bx) verwenden.
+Sie können eine Instanz von {{site.data.keyword.keymanagementservicefull}} bereitstellen, indem Sie die {{site.data.keyword.cloud_notm}}-Konsole oder die {{site.data.keyword.cloud_notm}}-CLI (bx) verwenden.
 {: shortdesc}
 
 ## Bereitstellung über {{site.data.keyword.cloud_notm}}-Konsole durchführen
@@ -26,51 +26,93 @@ Zur Bereitstellung einer Instanz von {{site.data.keyword.keymanagementservicesho
 
 1. [Melden Sie sich bei Ihrem {{site.data.keyword.cloud_notm}}-Konto ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/){: new_window} an.
 2. Klicken Sie auf **Katalog**, um die Liste der Services anzuzeigen, die unter {{site.data.keyword.cloud_notm}} zur Verfügung stehen.
-3. Wählen Sie die Kategorie **Services** aus und klicken Sie dann auf die **{{site.data.keyword.keymanagementserviceshort}}**-Kachel.
-5. Wählen Sie einen Serviceplan aus und klicken Sie dann auf **Erstellen**, um eine {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz in der {{site.data.keyword.cloud_notm}}-Organisation und in dem entsprechenden Bereich bereitzustellen, in der bzw. dem Sie angemeldet sind.
+3. Blättern Sie im Navigationsbereich 'Alle Kategorien' zu **Plattform** und klicken Sie auf die Kategorie **Sicherheit**.
+4. Klicken Sie in der Serviceliste auf die **{{site.data.keyword.keymanagementserviceshort}}**-Kachel.
+5. Wählen Sie einen Serviceplan aus und klicken Sie auf **Erstellen**, um eine Instanz von {{site.data.keyword.keymanagementserviceshort}} im Konto, in der Region und in der Ressourcengruppe, bei denen Sie angemeldet sind, bereitzustellen.
 
 ## Bereitstellung über die {{site.data.keyword.cloud_notm}}-CLI (bx)
 {: #cli}
 
-Sie können eine Instanz von {{site.data.keyword.keymanagementserviceshort}} mithilfe der {{site.data.keyword.cloud_notm}}-CLI (bx) bereitstellen. [Laden Sie das Befehlszeilentool auf Ihr System herunter und installieren Sie es](https://clis.ng.bluemix.net/ui/home.html){: new_window}, um die folgenden Schritte auszuführen.
+Sie können eine Instanz von {{site.data.keyword.keymanagementserviceshort}} mithilfe der {{site.data.keyword.cloud_notm}}-CLI (bx) bereitstellen. 
 
-1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-CLI an.
+### Eine Serviceinstanz in Ihrem Konto erstellen
+{: #provision_acct_lvl}
 
-    ```sh
-    bx login [--sso]
-    ```
-    {: codeblock}
-    **Anmerkung**: Der Parameter `--sso` ist für die Anmeldung mit einer eingebundenen ID erforderlich. Rufen Sie bei Verwendung dieser Option den in der CLI-Ausgabe aufgeführten Link auf, um einen einmaligen Kenncode zu generieren.
+Um den Zugriff auf Ihre Verschlüsselungsschlüssel mit [{{site.data.keyword.iamlong}}-Rollen](/docs/iam/users_roles.html#iamusermanpol) zu vereinfachen, können Sie eine oder mehrere Instanzen eines {{site.data.keyword.keymanagementserviceshort}}-Services in einem Konto erstellen, ohne eine Organisation oder einen Bereich anzugeben. 
 
-2. Wählen Sie die {{site.data.keyword.cloud_notm}}-Organisation und den entsprechenden Bereich aus, in der bzw. dem die {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz erstellt werden soll.
-
-    Sie können auch den folgenden Befehl verwenden, um die Zielorganisation und den Zielbereich festzulegen.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} mithilfe der [{{site.data.keyword.cloud_notm}}-CLI (bx) an.](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}
 
     ```sh
-    bx target [-o organization_name] [-s space_name]
+    bx login 
     ```
-    {: codeblock}
+    {: pre}
+    **Hinweis:** Wenn die Anmeldung fehlschlägt, führen Sie den Befehl `bx login --sso` aus, um es erneut zu versuchen. Der Parameter `--sso` ist für die Anmeldung mit einer eingebundenen ID erforderlich. Rufen Sie bei Verwendung dieser Option den in der CLI-Ausgabe aufgeführten Link auf, um einen einmaligen Kenncode zu generieren.
 
-3. Stellen Sie eine Instanz von {{site.data.keyword.keymanagementserviceshort}} in dieser Region, Organisation und in diesem Bereich bereit.
+2. Wählen Sie das Konto, die Region und die Ressourcengruppe aus, für die Sie eine {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz erstellen möchten.
+
+    Sie können auch den folgenden Befehl verwenden, um die die Zielregion und die Ressourcengruppe festzulegen.
 
     ```sh
-    bx service create kms TieredPricing [instance_name]
+    bx target -r <region_name> -g <resource_group_name>
     ```
-    {: codeblock}
+    {: pre}
 
-    Ersetzen Sie _instance_name_ durch einen eindeutigen Alias für Ihre Serviceinstanz.
+3. Stellen Sie eine Instanz von {{site.data.keyword.keymanagementserviceshort}} in diesem Konto und in dieser Ressourcengruppe bereit.
 
-4. Überprüfen Sie, ob die Serviceinstanz erfolgreich erstellt wurde.
+    ```sh
+    bx resource service-instance-create <instance_name> kms tiered-pricing
+    ```
+    {: pre}
+
+    Ersetzen Sie `<instance_name>` mit einem eindeutigen Alias für Ihre Serviceinstanz.
+
+4. Optional: Überprüfen Sie, ob die Serviceinstanz erfolgreich erstellt wurde.
+
+    ```sh
+    bx resource service-instances
+    ```
+    {: pre}
+
+### Eine Serviceinstanz in einer Organisation und in einem Bereich erstellen
+{: #provision_space_lvl}
+
+Um den Zugriff auf Ihre Verschlüsselungsschlüssel mit [Cloud Foundry-Rollen](/docs/iam/users_roles.html#cfroles) zu vereinfachen, können Sie eine Instanz des {{site.data.keyword.keymanagementserviceshort}}-Services in einer Organisation und in einem Bereich erstellen.  
+
+1. Melden Sie sich bei [{{site.data.keyword.cloud_notm}} mithilfe der [{{site.data.keyword.cloud_notm}}-CLI (bx) an.](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}
+
+    ```sh
+    bx login 
+    ```
+    {: pre}
+    **Hinweis:** Wenn die Anmeldung fehlschlägt, führen Sie den Befehl `bx login --sso` aus, um es erneut zu versuchen. Der Parameter `--sso` ist für die Anmeldung mit einer eingebundenen ID erforderlich. Rufen Sie bei Verwendung dieser Option den in der CLI-Ausgabe aufgeführten Link auf, um einen einmaligen Kenncode zu generieren.
+
+2. Wählen Sie das Konto, die Region, die Organisation und den Bereich aus, für die Sie eine {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz erstellen möchten.
+
+    Sie können auch den folgenden Befehl verwenden, um die Zielregion, die Organisation und den Bereich zu erstellen.
+
+    ```sh
+    bx target -r <region> -o <organization_name> -s <space_name>
+    ```
+    {: pre}
+
+3. Stellen Sie eine Instanz von {{site.data.keyword.keymanagementserviceshort}} in diesem Konto, in dieser Region, in dieser Organisation und in diesem Bereich bereit.
+
+    ```sh
+    bx service create kms tiered-pricing <instance_name>
+    ```
+    {: pre}
+
+    Ersetzen Sie `<instance_name>` mit einem eindeutigen Alias für Ihre Serviceinstanz.
+
+4. Optional: Überprüfen Sie, ob die Serviceinstanz erfolgreich erstellt wurde.
 
     ```sh
     bx service list
     ```
-    {: codeblock}
+    {: pre}
 
 
 ### Weitere Schritte
-
-Sie können Ihre Schlüssel nun verwenden, um Ihre Apps und Services zu codieren.
 
 - Zur Anzeige eines Beispiels zur Art und Weise, in der Schlüsselspeicher in {{site.data.keyword.keymanagementserviceshort}} eingesetzt werden können, um Daten zu ver- und entschlüsseln, [überprüfen Sie die Beispielapp in GitHub ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
 - Weitere Informationen zum programmgesteuerten Management Ihrer Schlüssel [finden Sie in der API-Referenzdokumentation von {{site.data.keyword.keymanagementserviceshort}} für Codebeispiele ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window}.

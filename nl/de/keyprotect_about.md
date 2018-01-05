@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -14,23 +14,28 @@ lastupdated: "2017-11-08"
 {:tip: .tip}
 
 # Informationen zu {{site.data.keyword.keymanagementserviceshort}}
+{: #about}
 
-{{site.data.keyword.keymanagementservicefull}} unterstützt Sie bei der Bereitstellung verschlüsselter Schlüssel für die Apps Ihrer {{site.data.keyword.cloud_notm}}-Services. Während des Managements des Lebenszyklus Ihrer Schlüssel können Sie davon profitieren, dass Ihre Schlüssel mithilfe von FIPS 140-2 Level 2-zertifizierten, cloudbasierten Hardwaremodulen (HSMs) gesichert werden, die einen Schutz gegen Informationsdiebstahl bieten.
+{{site.data.keyword.keymanagementservicefull}} unterstützt Sie bei der Bereitstellung verschlüsselter Schlüssel für die Apps Ihrer {{site.data.keyword.cloud_notm}}-Services. Während des Managements des Lebenszyklus Ihrer Schlüssel können Sie davon profitieren, dass Ihre Schlüssel mithilfe von FIPS 140-2 Level 2-zertifizierten, cloudbasierten Hardwaresicherheitsmodulen (HSMs) gesichert werden, die einen Schutz gegen Informationsdiebstahl bieten.
 {: shortdesc}
 
-## {{site.data.keyword.keymanagementserviceshort}}-Anwendungsfälle
+## Gründe für die Verwendung des Service
 {: #kp_reasons}
 
-Im Folgenden sind Anwendungsfälle für {{site.data.keyword.keymanagementserviceshort}} aufgeführt:
+Die Verwaltung von Schlüsseln kommt zum Beispiel in den folgenden Szenarios in Betracht:
 
 <table>
   <tr>
-    <th>Anwendungsfall</th>
-    <th>Lösung</th>
+    <th>Szenario</th>
+    <th>Ursachen</th>
   </tr>
   <tr>
     <td>Sie müssen große Mengen an sensiblen Daten, z. B. Krankenakten, nach individueller Ressource verschlüsseln.</td>
     <td>Sie können den {{site.data.keyword.keymanagementserviceshort}}-Service in Speicherlösungen wie z. B. [{{site.data.keyword.objectstorageshort}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/services/ObjectStorage/index.html) integrieren, um die ruhenden Daten in der Cloud zu verschlüsseln. Jedes Dokument kann durch einen anderen Schlüssel geschützt werden; somit ist eine differenzierte Steuerung Ihrer Daten möglich.</td>
+  </tr>
+  <tr>
+    <td>Sie führen eine Envelope-Verschlüsselung durch, wenn Sie Daten in die Cloud verschieben. Sie benötigen Ihren eigenen Masterverschlüsselungsschlüssel, damit Sie die anderen Schlüssel, mit denen Ihre ruhenden Daten verschlüsselt werden, vollständig steuern können.</td>
+    <td>Sie können mit {{site.data.keyword.keymanagementserviceshort}} Ihre [Datenverschlüsselungsschlüssel in einen sehr sicheren Rootschlüssel einschließen](/docs/services/keymgmt/keyprotect_envelope.html). Sie können Ihre eigenen Rootschlüssel verwenden oder im Service neue Rootschlüssel erstellen.</td>
   </tr>
   <tr>
     <td>Als IT-Administrator für ein Großunternehmen müssen Sie Schlüssel für viele unterschiedliche Serviceangebote integrieren, überwachen und turnusmäßig wechseln.</td>
@@ -45,27 +50,26 @@ Im Folgenden sind Anwendungsfälle für {{site.data.keyword.keymanagementservice
   </tr>
   <tr>
     <td>Für Ihr Entwicklungsteam gelten strenge Richtlinien und sie benötigen eine Methode, um alle 14 Tage Schlüssel zu generieren und zu wechseln.</td>
-    <td>Mit {{site.data.keyword.keymanagementserviceshort}} können Sie innerhalb kurzer Zeit Schlüssel über ein Hardwaresicherheitsmodul (HSM) generieren, um die geltenden Sicherheitsvorgaben zeitgerecht zu erfüllen.</td>
+    <td>Mit {{site.data.keyword.cloud_notm}} können Sie innerhalb kurzer Zeit Schlüssel über ein Hardwaresicherheitsmodul (HSM) generieren, um die geltenden Sicherheitsvorgaben zeitgerecht zu erfüllen.</td>
   </tr>
-  <caption style="caption-side:bottom;">Tabelle 1. Für das Hinzufügen von Schlüsseln über die {{site.data.keyword.keymanagementserviceshort}}-API erforderliche Variablen</caption>
 </table>
 
 ## Funktionsweise von {{site.data.keyword.keymanagementserviceshort}}
 {: #kp_how}
 
-{{site.data.keyword.keymanagementservicelong_notm}} unterstützt Sie bei der Verwaltung von Verschlüsselungsschlüsseln in Ihrer Organisation, und zwar durch die Ausrichtung an {{site.data.keyword.iamshort}}-Rollen.
+{{site.data.keyword.keymanagementservicelong_notm}} unterstützt Sie bei der Verwaltung von Verschlüsselungsschlüsseln in Ihrer Organisation, und zwar durch die Ausrichtung an {{site.data.keyword.cloud_notm}} Identity and Access Management-Rollen.
 
-Ein IT- oder ein Sicherheitsadministrator benötigt erweiterte Berechtigungen, die ein Auditor möglicherweise nicht braucht. Zur Vereinfachung des Zugriffs wird {{site.data.keyword.keymanagementserviceshort}} den {{site.data.keyword.iamshort}}-Rollen zugeordnet, sodass jede Rolle über eine andere Ansicht des Service verfügt. Informationen dazu, welche Ansicht und welche Zugriffsebene für Sie am besten geeignet sind, finden Sie in [Benutzer und Zugriff verwalten](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
+Ein IT- oder ein Sicherheitsadministrator benötigt erweiterte Berechtigungen, die ein Auditor möglicherweise nicht braucht. Zur Vereinfachung des Zugriffs wird {{site.data.keyword.keymanagementserviceshort}} den {{site.data.keyword.cloud_notm}} Identity and Access Management-Rollen zugeordnet, sodass jede Rolle über eine andere Ansicht des Service verfügt. Informationen dazu, welche Ansicht und welche Zugriffsebene für Sie am besten geeignet sind, finden Sie in [Benutzer und Zugriff verwalten](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
 
-Das folgende Diagramm zeigt, wie Administratoren, Anzeigeberechtigte und Editoren mit Schlüsseln interagieren, die im Service verwaltet werden.
+Das folgende Diagramm zeigt, wie Manager, Leseberechtigte und Schreibberechtigte mit Schlüsseln interagieren, die im Service verwaltet werden.
 
 <dl>
   <dt>Serviceintegration</dt>
-    <dd>Administratoren für Ihren {{site.data.keyword.cloud_notm}}-Bereich verwalten die Schlüssel für die Verschlüsselung.</dd>
-  <dt>Ansicht</dt>
-    <dd>Anzeigeberechtigte können auf eine übergeordnete Ansicht der Schlüssel zugreifen und verdächtige Aktivitäten ermitteln.</dd>
+    <dd>Manager für Ihre {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz verwalten die Schlüssel für die Verschlüsselung. </dd>
+  <dt>Prüfungen</dt>
+    <dd>Leseberechtigte können auf eine übergeordnete Ansicht der Schlüssel zugreifen und verdächtige Aktivitäten ermitteln.</dd>
   <dt>Apps</dt>
-    <dd>Editoren verwalten die Schlüssel für die Verschlüsselung, die Sie in Apps codieren.</dd>
+    <dd>Schreibberechtigte verwalten die Schlüssel für die Verschlüsselung, die Sie in Apps codieren. </dd>
 </dl>
 
 ![Das Diagramm zeigt dieselben Komponenten, die auch in der vorhergehenden Definitionsliste beschrieben sind.](images/keys-use-cases.png)

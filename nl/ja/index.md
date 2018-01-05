@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -15,121 +15,95 @@ lastupdated: "2017-11-08"
 
 # {{site.data.keyword.keymanagementserviceshort}} の概説
 
-{{site.data.keyword.keymanagementservicefull}} 内の鍵の生成、入力、および管理を行うために必要な手順を以下に示します。
+{{site.data.keyword.keymanagementservicefull}} は、{{site.data.keyword.cloud_notm}} サービス上のアプリの暗号鍵をプロビジョンするときに役立ちます。 このチュートリアルでは、{{site.data.keyword.keymanagementserviceshort}} ダッシュボードを使用して暗号鍵を作成したり、既存の暗号鍵を追加したりする方法を示し、データ暗号化を中央の 1 カ所から管理できるようにします。
 {: shortdesc}
 
-## 前提条件
-{: #prereqs }
+## 暗号鍵の概説
+{: #get_started_keys}
 
-{{site.data.keyword.keymanagementserviceshort}} をサービスやアプリで使用すると、正しい許可を使用して、{{site.data.keyword.keymanagementserviceshort}} に対する API 呼び出しを行うことができます。鍵を追加する前に、以下のものが必要です。
-- [IBM ID とパスワード](https://console.bluemix.net/docs/admin/adminpublic.html#signing-up-for-bluemix){: new_window}
-- [サービスのインスタンス](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps){: new_window}
+{{site.data.keyword.keymanagementserviceshort}} ダッシュボードでは、暗号化用の新しい鍵を作成したり、既存の鍵をインポートしたりできます。 
 
-## 鍵の追加
-{: #addkey }
+次の 2 つの鍵タイプから選択します。
 
-以下の手順を使用して、新しい鍵を作成するか、既存の鍵をアップロードします。
+<dl>
+  <dt>ルート鍵</dt>
+    <dd>ルート鍵は、ユーザーが {{site.data.keyword.keymanagementserviceshort}} 内で完全に管理する、対称鍵ラップ鍵です。ルート鍵を使用して、拡張暗号化によって他の暗号鍵を保護できます。</dd>
+  <dt>標準鍵</dt>
+    <dd>標準鍵は、暗号化に使用される対称鍵です。標準鍵を使用して、直接、データを暗号化および暗号化解除できます。</dd>
+</dl>
 
-1. [{{site.data.keyword.cloud_notm}} コンソールにログインします。](https://console.bluemix.net/catalog){: new_window}
-2. **「すべてのカテゴリー」**リンクの上にカーソルを移動して、スクロール・バーを表示します。**「サービス」>「セキュリティー」**にスクロールダウンします。アプリおよびサービスのリストが表示されます。
-3. **{{site.data.keyword.keymanagementserviceshort}}** サービス・インスタンスをダブルクリックします。**「アクション」**の下で、サービスの名前変更や削除を行えます。
+## 新しい鍵の作成
+{: #creating_keys}
 
-初めて鍵を入力または生成している場合は、**「新しい鍵の追加 (Add a new key)」**ページが自動的に表示されます。{{site.data.keyword.keymanagementserviceshort}} に真新しい鍵を生成するには**「新しい鍵の生成 (Generate New Key)」**を使用し、既存の鍵をサービスに入力するには**「既存の鍵の入力 (Enter Existing Key)」**を使用します。
+[{{site.data.keyword.keymanagementserviceshort}} のインスタンスを作成すると](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps)、サービスで鍵を指定する準備が整います。 
 
-### 鍵の生成
-{: #genkey }
+最初の暗号鍵を作成するには、以下の手順を実行します。 
 
-以下の手順を使用して、{{site.data.keyword.keymanagementserviceshort}} で新しい鍵を生成します。
+1. {{site.data.keyword.keymanagementserviceshort}} ダッシュボードで、**「管理」** &gt; **「鍵の追加」**をクリックします。
+2. 新しい鍵を作成するには、**「新しい鍵の生成 (Generate a new key)」**ウィンドウを選択します。
 
-1. {{site.data.keyword.keymanagementserviceshort}} で新しい鍵を作成するために、**「新しい鍵の生成 (Generate new key)」**で以下を入力します。<table>
+    鍵の詳細を以下のように指定します。
+
+    <table>
       <tr>
-        <th>フィールド</th>
+        <th>設定</th>
         <th>説明</th>
       </tr>
       <tr>
         <td>名前</td>
-        <td>鍵に割り当てる、人間が読める別名。名前は、鍵の使用目的や鍵が関連付けられているユーザーなど、鍵の識別に役立つものであればどのようなものでも構いません。</td>
+        <td>鍵に割り当てる、人間が理解できる固有の別名。名前は、鍵の使用目的や鍵が関連付けられているユーザーなど、鍵の識別に役立つものであればどのようなものでも構いません。</td>
       </tr>
       <tr>
         <td>鍵のタイプ</td>
-        <td>デフォルトでは「標準」鍵になります。標準鍵は、プレーン・テキスト・データを暗号化して暗号文にするためのデータ暗号化鍵として使用されます。</td>
+        <td>{{site.data.keyword.keymanagementserviceshort}} で管理する[鍵のタイプ](/docs/services/keymgmt/keyprotect_envelope.html#key_types)。</td>
       </tr>
-        <caption style="caption-side:bottom;">表 1. 「新しい鍵の生成 (Generate new key)」の設定の説明</caption>
+      <caption style="caption-side:bottom;">表 1. 「新しい鍵の生成 (Generate new key)」の設定の説明</caption>
     </table>
 
-2. **「鍵の生成 (Generate key)」**ボタンをクリックします。鍵は即時に使用可能になります。新規の鍵は、セキュアな {{site.data.keyword.IBM}} データ・センター内にあるハードウェア・セキュリティー・モジュールによって生成されます。
-3. 鍵の行に参照 ID をコピーします。**ID** 値は、{{site.data.keyword.keymanagementserviceshort}} API で使用する ID です。
+3. 鍵の詳細の記入が完了したら、**「鍵の生成」**をクリックして確認します。 
 
-### 既存の鍵の入力
-{: #existkey }
+サービス内で作成される鍵は、AES-GCM アルゴリズムによってサポートされている、対称 256 ビット鍵です。セキュリティーを強化するために、鍵はセキュアな {{site.data.keyword.cloud_notm}} データ・センターにある FIPS 140-2 レベル 2 認定ハードウェア・セキュリティー・モジュール (HSM) で生成されます。 
 
-以下の手順を使用して、既存の鍵を Key Protect に入力します。
+## 既存の鍵の追加
+{: #adding_keys}
 
-1. **「既存の鍵の入力 (Enter existing key)」**の下で以下を入力します。<table>
+既存の鍵をサービスに導入することにより、独自の鍵の持ち込み (BYOK) によるセキュリティー上の利点を活用できます。 
+
+既存の鍵を追加するには、以下の手順を実行します。
+
+1. {{site.data.keyword.keymanagementserviceshort}} ダッシュボードで、**「管理」** &gt; **「鍵の追加」**をクリックします。
+2. 既存の鍵をアップロードするには、**「既存の鍵の入力 (Enter existing key)」**ウィンドウを選択します。
+
+    鍵の詳細を以下のように指定します。
+
+    <table>
       <tr>
-        <th>フィールド</th>
+        <th>設定</th>
         <th>説明</th>
       </tr>
       <tr>
         <td>名前</td>
-        <td>鍵に割り当てる、人間が読める別名。名前は、鍵の使用目的や鍵が関連付けられているユーザーなど、鍵の識別に役立つものであればどのようなものでも構いません。</td>
+        <td>鍵に割り当てる、人間が理解できる固有の別名。名前は、鍵の使用目的や鍵が関連付けられているユーザーなど、鍵の識別に役立つものであればどのようなものでも構いません。</td>
       </tr>
       <tr>
         <td>鍵のタイプ</td>
-        <td>デフォルトでは「標準」鍵になります。標準鍵は、プレーン・テキスト・データを暗号化して暗号文にするためのデータ暗号化鍵として使用されます。</td>
+        <td>{{site.data.keyword.keymanagementserviceshort}} で管理する[鍵のタイプ](/docs/services/keymgmt/keyprotect_envelope.html#key_types)。</td>
       </tr>
       <tr>
         <td>鍵の素材</td>
-        <td>鍵の素材には、証明書や RSA 鍵など、{{site.data.keyword.keymanagementserviceshort}} サービス内に保管したい任意のタイプのデータを使用できます。</td>
+        <td>既存の鍵を追加する場合にのみ必要です。鍵の素材には、対称鍵など、{{site.data.keyword.keymanagementserviceshort}} サービス内に保管する任意のタイプのデータを使用できます。提供する鍵は、base64 エンコードでなければなりません。</td>
       </tr>
-        <caption style="caption-side:bottom;">表 2. 「既存の鍵の入力 (Enter existing key)」の設定の説明</caption>
+      <caption style="caption-side:bottom;">表 2. 「既存の鍵の入力 (Enter existing key)」の設定の説明</caption>
     </table>
 
-2. **「新しい鍵の追加 (Add a new key)」**ボタンをクリックします。鍵は即時に使用可能になります。
-3. 鍵の行に参照 ID をコピーします。**ID** 値は、{{site.data.keyword.keymanagementserviceshort}} API で使用する ID です。
+3. 鍵の詳細の記入が完了したら、**「新しい鍵の追加 (Add new key)」**をクリックして確認します。 
 
-## 鍵の管理
-{: #managekey }
+{{site.data.keyword.keymanagementserviceshort}} ダッシュボードで、新しい鍵の一般特性を検査できます。 
 
-鍵を生成して入力した後で鍵を確認するには、[「鍵の追加 (Adding a key)」](index.html#addkey)の下で以下の手順を実行します。**「鍵 (Keys)」**ウィンドウが表示されます。鍵は、最新の鍵をリストの先頭にして、作成日順に表示されます。
-<table>
-      <tr>
-        <th>列</th>
-        <th>説明</th>
-      </tr>
-      <tr>
-        <td>名前</td>
-        <td>鍵に割り当てられた、人間が読める別名。</td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>{{site.data.keyword.keymanagementserviceshort}} によって鍵に割り当てられた固有の鍵 ID。</td>
-      </tr>
-      <tr>
-        <td>状況</td>
-        <td>米国連邦情報・技術局 (NIST) の鍵の状態 (アクティベーション前、アクティブ、非アクティブ化、破棄) のいずれか。<td>
-      </tr>
-      <tr>
-        <td>作成</td>
-        <td>鍵が作成された日付と時刻。</td>
-      </tr>
-      <tr>
-        <td>タイプ</td>
-        <td>デフォルトは「標準」鍵です。</td>
-      </tr>
-      <caption style="caption-side:bottom;">表 3. 「鍵 (Keys)」ウィンドウの説明</caption>
-    </table>
-
-### 次に行うこと
+## 次に行うこと
 
 これで、鍵を使用してアプリやサービスをコーディングできるようになりました。
 
-- {{site.data.keyword.keymanagementserviceshort}} に保管されている鍵を使用してデータを暗号化および暗号化解除する方法の例は、[Github にあるサンプル・アプリで確認してください ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}。
-- 鍵のプログラマチックな管理について詳しくは、[{{site.data.keyword.keymanagementserviceshort}} API リファレンス資料](https://console.ng.bluemix.net/apidocs/639)に記載されているコード・サンプルを確認してください。
-
-### 関連リンク
-
-- [{{site.data.keyword.keymanagementserviceshort}} REST API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.ng.bluemix.net/apidocs/639){: new_window}
-- [{{site.data.keyword.keymanagementserviceshort}} 管理 REST API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [{{site.data.keyword.cloud_notm}} HSM オファリング ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
-- [{{site.data.keyword.keymanagementservicelong_notm}}サービス・レベル・アグリーメント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}
+- プログラムでの鍵の管理について詳しくは、[{{site.data.keyword.keymanagementserviceshort}} API リファレンス資料に記載されているコード・サンプル ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.ng.bluemix.net/apidocs/639){: new_window} を確認してください。
+- {{site.data.keyword.keymanagementserviceshort}} に保管されている鍵を使用してデータを暗号化および暗号化解除する方法の例は、[GitHub にあるサンプル・アプリで確認してください ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}。
+- {{site.data.keyword.keymanagementserviceshort}} サービスと他のクラウド・データ・ソリューションとの統合について詳しくは、[統合の資料を確認してください](/docs/services/keymgmt/keyprotect_integration.html)。

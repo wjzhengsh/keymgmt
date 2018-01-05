@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -13,67 +13,104 @@ lastupdated: "2017-11-08"
 {:pre: .pre}
 {:tip: .tip}
 
-# Authentifizierungsnachweise generieren
-{: #authentication}
+# Auf die API zugreifen
+{: #access-api}
 
 {{site.data.keyword.keymanagementservicefull}} stellt eine REST-API bereit, die mit jeder Programmiersprache verwendet werden kann, um Schlüssel zu speichern, abzurufen und zu generieren.
 {: shortdesc}
 
-Um mit der API zu arbeiten, müssen Sie eigene Service- und Authentifizierungsnachweise generieren.
+Um mit der API zu arbeiten, müssen Sie eigene Service- und Authentifizierungsnachweise generieren. 
 
-## Organisations- und Bereichs-GUIDs abrufen
-{: #retrieve_GUIDs}
-
-Sie können die Identifikationsinformationen für Ihre {{site.data.keyword.cloud_notm}}-Organisation und den entsprechenden Bereich mit der [{{site.data.keyword.cloud_notm}}-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started) abrufen.
-
-1. Melden Sie sich über die {{site.data.keyword.cloud_notm}}-CLI (bx) bei {{site.data.keyword.cloud_notm}} an.
-
-    ```
-    bx login [--sso]
-    ```
-    {: codeblock}
-
-    Der Parameter `--sso` ist für die Anmeldung mit einer eingebundenen ID erforderlich. Rufen Sie bei Verwendung dieser Option den in der CLI-Ausgabe aufgeführten Link auf, um einen einmaligen Kenncode zu generieren.
-
-2. Wählen Sie die {{site.data.keyword.cloud_notm}}-Organisation und den entsprechenden Bereich mit Ihrer {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz aus.
-
-    Notieren Sie sich die Namen Ihrer Organisation und Ihres Bereichs in der CLI-Ausgabe. Sie können auch `bx target` ausführen, um diese Informationen anzuzeigen.
-
-3. Rufen Sie Ihre {{site.data.keyword.cloud_notm}}-Organisations- und Bereichs-GUIDs ab.
-
-    ```
-    bx iam org [organization_name] --guid
-    bx iam space [space_name] --guid
-    ```
-    {: codeblock}
-    Ersetzen Sie _organization_name_ und _space_name_ durch den eindeutigen Alias, den Sie Ihrer Organisation und dem entsprechenden Bereich zugewiesen haben.
-
-## Berechtigungstoken abrufen
+## Ein Zugriffstoken abrufen
 {: #retrieve_token}
 
-Mit einem Berechtigungstoken können Sie Ihre Schlüssel programmgesteuert mithilfe der {{site.data.keyword.keymanagementserviceshort}}-API verwalten.
+Die Authentifizierung mit {{site.data.keyword.keymanagementserviceshort}} erfolgt durch das Abrufen eines Zugriffstokens aus {{site.data.keyword.iamshort}}. Sie können mit einer [Service-ID](/docs/iam/serviceid.html) mit der {{site.data.keyword.keymanagementserviceshort}}-API für Ihren Service oder für Ihre Anwendung sowie außerhalb von {{site.data.keyword.cloud_notm}} arbeiten, ohne Ihren persönlichen Benutzerberechtigungsnachweis freizugeben.  
 
-**Hinweis**: Zur Aktivierung der differenzierten Zugriffssteuerung mithilfe von {{site.data.keyword.iamshort}} müssen Sie ein IAM-Token verwenden, um Aufrufe an den Service durchzuführen.
+Bei einer Authentifizierung mit Ihrem Benutzerberechtigungsnachweis können Sie Ihr Token abrufen, indem Sie `bx iam oauth-tokens` in der [{{site.data.keyword.cloud_notm}}-CLI (bx) ausführen ![Symbol für externen Link](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window}.
+{: tip}
 
-1. Wählen Sie in der {{site.data.keyword.cloud_notm}}-CLI die Organisation und den Bereich aus, die Ihren {{site.data.keyword.keymanagementserviceshort}}-Service enthalten.
+Führen Sie die folgenden Schritte aus, um ein Zugriffstoken abzurufen:
 
-2. Rufen Sie Ihre Berechtigungstokens ab und zeigen Sie sie an.
+1. Gehen Sie in der {{site.data.keyword.cloud_notm}}-Konsole zu **Verwalten** &gt; **Sicherheit** &gt; **Identität und Zugriff** &gt; **Service-IDs**. Befolgen Sie die Anweisungen, um [eine Service-ID zu erstellen.](/docs/iam/serviceid.html#creating-a-service-id){: new_window}
+2. Verwenden Sie das Menü **Aktionen**, um [eine Zugriffsrichtlinie für Ihre neue Service-ID zu definieren.](/docs/iam/serviceidaccess.html#assigning-new-access){: new_window} 
+    
+    Weitere Informationen zum Verwalten des Zugriffs für Ihre {{site.data.keyword.keymanagementserviceshort}}-Ressourcen finden Sie in [Rollen und Berechtigungen](/docs/services/keymgmt/keyprotect_manage_access.md#roles).
+3. Verwenden Sie den Abschnitt **API-Schlüssel**, um [einen API-Schlüssel zu erstellen, der der Service-ID zugeordnet wird.](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id){: new_window} Speichern Sie Ihren API-Schlüssel, indem Sie ihn an eine sichere Position herunterladen.
+4. Rufen Sie die {{site.data.keyword.iamshort}}-API auf, um Ihr Zugriffstoken abzurufen.
 
-    ```
-    bx iam oauth-tokens
+    ```cURL
+    curl -X POST \
+      "https://iam.bluemix.net/oidc/token" \
+      -H "Content-Type: application/x-www-form-urlencoded" \
+      -H "Accept: application/json" \
+      -d "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<your_API_key>" \ 
     ```
     {: codeblock}
 
-    Im folgenden gekürzten Beispiel sehen Sie die {{site.data.keyword.cloud_notm}}-Tokenausgabe. Die Variable _Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7_ ist ein Beispiel für ein Zugriffstoken.
+    Ersetzen Sie in der Anforderung `<API_key>` durch den API-Schlüssel, den Sie in Schritt 3 erstellt haben. Das folgende abgeschnittene Beispiel zeigt die Token-Ausgabe:
 
     ```
-    IAM token: Bearer mjEsiCndYsWNDuQ3SnY7.chWsdUnsYsWbDJWxSDW7...
-    UAA token: Bearer mjEyJhbGciOiJIUzI1Ni.chWyW1faWQiOiJJQkWs1...
+    {
+    "access_token": "eyJraWQiOiIyM...",
+    "expiration": 1512161390,
+    "expires_in": 3600,
+    "refresh_token": "J1AzOrtC8yHVlcT...",
+    "token_type": "Bearer"
+    }
     ```
     {: screen}
 
-    Verwenden Sie den Bearerwert `IAM` oder `UAA` zum programmgesteuerten Management von Schlüsseln in Ihrem Service mithilfe der {{site.data.keyword.keymanagementserviceshort}}-API.
+    Verwenden Sie den vollständigen Wert `access_token` mit dem Präfixtyp _Trägertoken_, um die Schlüssel für Ihren Service programmgesteuert mit der {{site.data.keyword.keymanagementserviceshort}}-API zu verwalten. 
+
+## Instanz-ID abrufen
+{: #retrieve_instance_ID}
+
+Sie können die Identifikationsinformationen für Ihre {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz abrufen, wenn Sie die [{{site.data.keyword.cloud_notm}}-CLI (bx) ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](/docs/cloud-platform/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window} nutzen. Verwenden Sie eine Instanz-ID, um Ihre Verschlüsselungsschlüssel in einer bestimmten Instanz von {{site.data.keyword.keymanagementserviceshort}} in Ihrem Konto zu verwalten. 
+
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} über die {{site.data.keyword.cloud_notm}}-CLI (bx) an.
+
+    ```sh
+    bx login 
+    ```
+    {: pre}
+
+    **Hinweis:** Wenn die Anmeldung fehlschlägt, führen Sie den Befehl `bx login --sso` aus, um es erneut zu versuchen. Der Parameter `--sso` ist für die Anmeldung mit einer eingebundenen ID erforderlich. Rufen Sie bei Verwendung dieser Option den in der CLI-Ausgabe aufgeführten Link auf, um einen einmaligen Kenncode zu generieren.
+
+2. Wählen Sie das Konto aus, das Ihre bereitgestellte Instanz von {{site.data.keyword.keymanagementserviceshort}} enthält.
+
+    Führen Sie `bx resource service-instances` aus, um alle Serviceinstanzen aufzulisten, die in Ihrem Konto bereitgestellt sind.
+
+3. Rufen Sie den Cloudressourcennamen (CRN) ab, der Ihre {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz eindeutig identifiziert. 
+
+    ```sh
+    bx resource service-instance <instance_name> --id
+    ```
+    {: pre}
+
+    Ersetzen Sie `<instance_name>` mit dem eindeutigen Alias, den Sie Ihrer Instanz von {{site.data.keyword.keymanagementserviceshort}} zugeordnet haben. Im folgenden gekürzten Beispiel sehen Sie die Bluemix-CLI-Ausgabe. Der Wert _7e8fc048-5606-4259-ad71-92397b0fa3f7_ ist eine Beispielinstanz-ID.
+
+    ```
+    crn:v1:bluemix:public:kms:us-south:a/7e8fc048-5606-4259-ad71-92397b0fa3f7
+    ```
+    {: screen}
+
+## API-Anforderung formulieren
+{: #form_api_request}
+
+Wenn Sie einen API-Aufruf für den Service absetzen, strukturieren Sie Ihre API-Anforderung auf dieselbe Weise, wie Sie Ihre ursprüngliche Instanz von {{site.data.keyword.keymanagementserviceshort}} bereitgestellt haben. 
+
+Um Ihre Anforderung zu erstellen, paaren Sie einen [regionalen Serviceendpunkt](/docs/services/keymgmt/keyprotect_regions.html) mit dem entsprechenden Authentifizierungsnachweis. Beispiel: Wenn Sie eine Serviceinstanz für die Region `us-south` erstellen, verwenden Sie den folgenden Endpunkt und diese API-Header, um die Schlüssel in Ihrem Service zu durchsuchen:
+
+```cURL
+curl -X GET \
+    https://keyprotect.us-south.bluemix.net/api/v2/keys \
+    -H 'accept: application/vnd.ibm.collection+json' \
+    -H 'authorization: Bearer <access_token>' \
+    -H 'bluemix-instance: <instance_ID>' \
+```
+{: codeblock}
 
 ### Weitere Schritte
 
-Rufen Sie die [REST-API-Referenzdokumentation für {{site.data.keyword.keymanagementserviceshort}}![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window} auf, um mit dem Management von Schlüsseln in Ihrem Bereich zu beginnen.
+- Weitere Informationen zum programmgesteuerten Management Ihrer Schlüssel [finden Sie in der API-Referenzdokumentation von {{site.data.keyword.keymanagementserviceshort}} für Codebeispiele ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+- Zur Anzeige eines Beispiels zur Art und Weise, in der Schlüsselspeicher in {{site.data.keyword.keymanagementserviceshort}} eingesetzt werden können, um Daten zu ver- und entschlüsseln, [überprüfen Sie die Beispielapp in GitHub ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.

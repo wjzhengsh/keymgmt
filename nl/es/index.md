@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -15,127 +15,100 @@ lastupdated: "2017-11-08"
 
 # Iniciación a {{site.data.keyword.keymanagementserviceshort}}
 
-A continuación ofrecemos los pasos necesarios para entrar y gestionar claves en {{site.data.keyword.keymanagementservicefull}}.
+{{site.data.keyword.keymanagementservicefull}} le ayuda a suministrar claves cifradas para apps en servicios de {{site.data.keyword.cloud_notm}}. Esta guía de aprendizaje muestra cómo crear y añadir claves criptográficas existentes utilizando el panel de control de {{site.data.keyword.keymanagementserviceshort}}, de modo que pueda gestionar el cifrado de datos desde una ubicación central.
 {: shortdesc}
 
-## Requisitos previos
-{: #prereqs }
+## Iniciación a las claves de cifrado
+{: #get_started_keys}
 
-{{site.data.keyword.keymanagementserviceshort}} está disponible para los servicios y apps que con la autorización adecuada pueden realizar una llamada API a {{site.data.keyword.keymanagementserviceshort}}. Necesitaré lo siguiente antes de añadir una clave.
-- [Un ID de IBM y una contraseña](https://console.bluemix.net/docs/admin/adminpublic.html#signing-up-for-bluemix){: new_window}
-- [Una instancia del servicio](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps){: new_window}
+Desde el panel de control de {{site.data.keyword.keymanagementserviceshort}}, puede crear nuevas claves para el cifrado o importar sus claves.
+ 
 
-## Añadir una clave
-{: #addkey }
+Elija entre dos tipos de clave: 
 
-Utilice los siguientes pasos para crear una nueva clave o subir una clave existente.
+<dl>
+  <dt>Claves raíz</dt>
+    <dd>Las claves raíz son claves que se utilizan para envolver otras claves y que gestiona en su totalidad con {{site.data.keyword.keymanagementserviceshort}}.
+Una clave raíz sirve para proteger otras claves criptográficas con cifrado avanzado.
+</dd>
+  <dt>Claves estándar</dt>
+    <dd>Las claves estándar son claves simétricas que se utilizan para la criptografía. Puede utilizar una clave estándar para cifrar y descifrar datos directamente. </dd>
+</dl>
 
-1. [Inicie la sesión en la consola de {{site.data.keyword.cloud_notm}}.](https://console.bluemix.net/catalog){: new_window}
-2. Pase el cursor sobre el enlace **Todas las categorías** para que aparezca la barra de desplazamiento. Desplácese hacia abajo hasta **Servicios > Seguridad**. Se mostrará una lista de sus apps y servicios.
-3. Efectúe una doble pulsación sobre la instancia de servicio **{{site.data.keyword.keymanagementserviceshort}}**. Tenga en cuenta que en **Acciones** puede renombrar o suprimir el servicio.
+## Creación de nuevas claves
+{: #creating_keys}
 
-Llegará automáticamente a la página **Añadir una nueva clave** si ha entrado o generado una clave por primera vez. **Generar nueva clave** se utiliza para generar una nueva clave en {{site.data.keyword.keymanagementserviceshort}} y **Escriba la clave existente** se utiliza para especificar una clave existente en el servicio.
+[Después de crear una instancia de {{site.data.keyword.keymanagementserviceshort}}](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps), estará preparado para designar claves en el servicio. 
 
-### Generar una clave
-{: #genkey }
+Siga estos pasos para crear su primera clave criptográfica.  
 
-Utilice los siguientes pasos para que {{site.data.keyword.keymanagementserviceshort}} genere una nueva clave.
+1. En el panel de control de {{site.data.keyword.keymanagementserviceshort}}, pulse **Gestionar** &gt; **Añadir clave**.
+2. Para crear una nueva clave, seleccione la ventana **Generar una nueva clave**. 
 
-1. Especifique lo siguiente en **Generar nueva clave** para que {{site.data.keyword.keymanagementserviceshort}} cree una nueva clave.
+    Especifique los detalles de la clave:
+
     <table>
       <tr>
-        <th>Campo</th>
+        <th>Valor</th>
         <th>Descripción</th>
       </tr>
       <tr>
         <td>Nombre</td>
-        <td>Un alias descriptivo para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude
-a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
+        <td>Alias descriptivo único para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
       </tr>
       <tr>
         <td>Tipo de clave</td>
-        <td>Valores predeterminados a clave estándar. Se utiliza una clave estándar como clave de cifrado de datos para cifrar los datos del texto sin formato a texto cifrado.</td>
+        <td>[Tipo de clave](/docs/services/keymgmt/keyprotect_envelope.html#key_types) que desea gestionar en {{site.data.keyword.keymanagementserviceshort}}.</td>
       </tr>
-        <caption style="caption-side:bottom;">Tabla 1. Descripción de cómo Generar valores para nuevas claves</caption>
+      <caption style="caption-side:bottom;">Tabla 1. Descripción de los valores de Generar nueva clave</caption>
     </table>
 
-2. Pulse el botón **Generar clave**. Las claves están disponibles inmediatamente. Se generan nuevas claves por módulos de seguridad de hardware (HSM) que están ubicadas en centros de datos seguros de {{site.data.keyword.IBM}}.
-3. Copie el identificador de referencia en la fila de la clave. El valor de **ID** es el identificador que puede utilizar en la API de {{site.data.keyword.keymanagementserviceshort}}.
+3. Cuando haya terminado de cumplimentar los detalles de la clave, pulse **Generar clave** para confirmar. 
 
-### Especificar una clave existente
-{: #existkey }
+Las claves creadas en el servicio son claves simétricas de 256 bits, soportadas por el algoritmo AES-GCM. Para una mayor seguridad, las claves se generan con módulos de seguridad de hardware (HSM) con certificación FIPS 140-2 Nivel 2 que se ubican en centros de datos seguros de {{site.data.keyword.cloud_notm}}.  
 
-Utilice los pasos siguientes para especificar una clave existente en Key Protect.
+## Adición de claves existentes
+{: #adding_keys}
 
-1. Especifique lo siguiente bajo **Especifique la clave existente**.
+Puede obtener las ventajas que ofrece Bring Your Own Key (BYOK) introduciendo las claves existentes en el servicio. 
+
+Siga estos pasos para añadir una clave existente.
+
+1. En el panel de control de {{site.data.keyword.keymanagementserviceshort}}, pulse **Gestionar** &gt; **Añadir clave**.
+2. Para subir una clave existente, seleccione la ventana **Especificar clave existente**.
+
+
+    Especifique los detalles de la clave:
+
     <table>
       <tr>
-        <th>Campo</th>
+        <th>Valor</th>
         <th>Descripción</th>
       </tr>
       <tr>
         <td>Nombre</td>
-        <td>Un alias descriptivo para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude
-a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
+        <td>Alias descriptivo único para asignarlo a la clave. El nombre puede ser cualquier cosa que le ayude a identificar la clave, como por ejemplo para qué se utiliza la clave o con quién se asocia la clave.</td>
       </tr>
       <tr>
         <td>Tipo de clave</td>
-        <td>Valores predeterminados a clave estándar. Se utiliza una clave estándar como clave de cifrado de datos para cifrar los datos del texto sin formato a texto cifrado.</td>
+        <td>[Tipo de clave](/docs/services/keymgmt/keyprotect_envelope.html#key_types) que desea gestionar en {{site.data.keyword.keymanagementserviceshort}}.</td>
       </tr>
       <tr>
         <td>Material de la clave</td>
-        <td>El material de la clave puede ser cualquier tipo de datos que desee almacenar en el servicio {{site.data.keyword.keymanagementserviceshort}}, como por ejemplo un certificado o una clave RSA.</td>
+        <td>Solo es necesario si está añadiendo una clave existente. El material de la clave puede ser cualquier tipo de datos, como por ejemplo una clave simétrica, que desee almacenar en el servicio de {{site.data.keyword.keymanagementserviceshort}}. La clave que proporcione debe estar codificada en base64. </td>
       </tr>
-        <caption style="caption-side:bottom;">Tabla 2. Descripción de cómo Entrar valores de claves existentes</caption>
+      <caption style="caption-side:bottom;">Tabla 2. Descripción de los valores de Especificar clave existente</caption>
     </table>
 
-2. Pulse el botón **Añadir una nueva clave**. Las claves están disponibles inmediatamente.
-3. Copie el identificador de referencia en la fila de la clave. El valor de **ID** es el identificador que puede utilizar en la API de {{site.data.keyword.keymanagementserviceshort}}.
+3. Cuando haya terminado de cumplimentar los detalles de la clave, pulse **Añadir una nueva clave** para confirmar. 
 
-## Gestión de sus claves
-{: #managekey }
+Desde el panel de control {{site.data.keyword.keymanagementserviceshort}}, puede inspeccionar las características generales de sus nuevas claves.
+ 
 
-Para ver las claves después de generarlas y entrarlas, siga los pasos de [Añadiendo una clave](index.html#addkey). Llegará a la ventana de **Claves**. Sus claves se mostrarán en una orden de fecha de creación con
-la clave más reciente en la parte superior de la lista.
-<table>
-      <tr>
-        <th>Columna</th>
-        <th>Descripción</th>
-      </tr>
-      <tr>
-        <td>Nombre</td>
-        <td>Un alias descriptivo asignado a la clave.</td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>Un ID de clave exclusivo asignado a su clave de {{site.data.keyword.keymanagementserviceshort}}.</td>
-      </tr>
-      <tr>
-        <td>Estado</td>
-        <td>Uno de los estados clave del National Institute of Standards and Technology (NIST): preactivación, activo, desactivado y destruido.<td>
-      </tr>
-      <tr>
-        <td>Creado</td>
-        <td>Fecha y hora de creación de la clave.</td>
-      </tr>
-      <tr>
-        <td>Tipo</td>
-        <td>El valor predeterminado es clave estándar.</td>
-      </tr>
-      <caption style="caption-side:bottom;">Tabla 3. Descripción de la ventana de Claves</caption>
-    </table>
-
-### Qué hacer a continuación
+## Qué hacer a continuación
 
 Ahora puede utilizar sus claves para codificar sus apps y servicios.
 
-- Para ver un ejemplo de cómo pueden funcionar las claves almacenadas en {{site.data.keyword.keymanagementserviceshort}} para cifrar y descodificar datos [consulte la app de ejemplo en Github ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
-- Para encontrar más información sobre cómo gestionar sus claves mediante programación, consulte la [documentación de referencia de la API de {{site.data.keyword.keymanagementserviceshort}}](https://console.ng.bluemix.net/apidocs/639) para ver ejemplos de código.
-
-### Enlaces relacionados
-
-- [API REST de {{site.data.keyword.keymanagementserviceshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.ng.bluemix.net/apidocs/639){: new_window}
-- [API REST admin de {{site.data.keyword.keymanagementserviceshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [Oferta de {{site.data.keyword.cloud_notm}} HSM ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
-- [{{site.data.keyword.keymanagementservicelong_notm}}Acuerdo de nivel de servicio ![Icono al enlace externo](../../icons/launch-glyph.svg "Iconoal enlace externo")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}
-
+- Para saber más sobre de sobre cómo gestionar sus claves mediante programación, [consulte la documentación de referencia de la API de {{site.data.keyword.keymanagementserviceshort}} para ver ejemplos de código ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+- Para ver un ejemplo de cómo se almacenan las claves en {{site.data.keyword.keymanagementserviceshort}} para cifrar y descifrar datos [consulte la app de ejemplo en GitHub ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
+- Para obtener más información sobre la integración del servicio {{site.data.keyword.keymanagementserviceshort}} con otras soluciones de datos en la nube, [consulte el documento de Integraciones](/docs/services/keymgmt/keyprotect_integration.html).

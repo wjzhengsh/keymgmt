@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -15,123 +15,95 @@ lastupdated: "2017-11-08"
 
 # Einführung in {{site.data.keyword.keymanagementserviceshort}}
 
-Im Folgenden sind die Schritte aufgeführt, die zum Generieren, zur Eingabe und zum Management von Schlüsseln in {{site.data.keyword.keymanagementservicefull}} ausgeführt werden müssen.
+{{site.data.keyword.keymanagementservicefull}} unterstützt Sie bei der Bereitstellung verschlüsselter Schlüssel für die Apps Ihrer {{site.data.keyword.cloud_notm}}-Services. Mit diesem Lernprogramm lernen Sie, wie Sie Verschlüsselungsschlüssel mithilfe des {{site.data.keyword.keymanagementserviceshort}}-Dashboards erstellen und hinzufügen, um die Datenverschlüsselung von einem zentralen Ort aus zu verwalten.
 {: shortdesc}
 
-## Voraussetzungen
-{: #prereqs }
+## Einführung in Verschlüsselungsschlüssel
+{: #get_started_keys}
 
-{{site.data.keyword.keymanagementserviceshort}} steht für Services und Apps zur Verfügung, mit denen Sie (sofern die erforderliche Berechtigung vorliegt) API-Aufrufe an {{site.data.keyword.keymanagementserviceshort}} ausführen können. Bevor Sie einen Schlüssel hinzufügen können, benötigen Sie Folgendes.
-- [IBMid und Kennwort](https://console.bluemix.net/docs/admin/adminpublic.html#signing-up-for-bluemix){: new_window}
-- [Instanz des Service](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps){: new_window}
+Mithilfe des {{site.data.keyword.keymanagementserviceshort}}-Dashboards können Sie neue Schlüssel für die Verschlüsselung erstellen bzw. vorhandene Schlüssel importieren. 
 
-## Schlüssel hinzufügen
-{: #addkey }
+Wählen Sie aus zwei Schlüsseltypen aus:
 
-Führen Sie die folgenden Schritte aus, um einen neuen Schlüssel zu erstellen oder einen vorhandenen Schlüssel hochzuladen.
+<dl>
+  <dt>Rootschlüssel</dt>
+    <dd>Rootschlüssel sind symmetrische Key-Wrapping-Schlüssel, die in {{site.data.keyword.keymanagementserviceshort}} vollständig verwaltet werden. Sie können einen Rootschlüssel verwenden, um andere Verschlüsselungsschlüssel mit einer erweiterten Verschlüsselung zu schützen.</dd>
+  <dt>Standardschlüssel</dt>
+    <dd>Standardschlüssel sind symmetrische Schlüssel, die in der Kryptografie verwendet werden. Sie können einen Standardschlüssel verwenden, um Daten direkt zu verschlüsseln und zu entschlüsseln.</dd>
+</dl>
 
-1. [Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole an.](https://console.bluemix.net/catalog){: new_window}
-2. Positionieren Sie den Mauszeiger auf dem Link **Alle Kategorien**, um die Schiebeleiste einzublenden. Blättern Sie nach unten bis zu **Services > Sicherheit**. Daraufhin wird eine Liste Ihrer Apps und Services angezeigt.
-3. Klicken Sie doppelt auf die **{{site.data.keyword.keymanagementserviceshort}}**-Serviceinstanz. Beachten Sie hierbei, dass der Service unter **Aktionen** umbenannt oder gelöscht werden kann.
+## Neue Schlüssel erstellen
+{: #creating_keys}
 
-Wenn Sie einen Schlüssel zum ersten Mal eingeben oder generieren, dann wird automatisch die Seite **Neuen Schlüssel hinzufügen** aufgerufen. Die Option **Neuen Schlüssel generieren** wird verwendet, um einen neuen Schlüssel in {{site.data.keyword.keymanagementserviceshort}} zu generieren, und die Option **Vorhandenen Schlüssel eingeben** wird verwendet, um einen bereits vorhandenen Schlüssel in den Service einzugeben.
+[Nach dem Erstellen einer Instanz von {{site.data.keyword.keymanagementserviceshort}}](https://console.ng.bluemix.net/catalog/services/key-protect/?taxonomyNavigation=apps) können Sie im Service Schlüssel angeben. 
 
-### Schlüssel generieren
-{: #genkey }
+Führen Sie die folgenden Schritte aus, um Ihren ersten Verschlüsselungsschlüssel zu erstellen. 
 
-Führen Sie die folgenden Schritte aus, um einen neuen Schlüssel mit {{site.data.keyword.keymanagementserviceshort}} zu generieren.
+1. Klicken Sie im {{site.data.keyword.keymanagementserviceshort}}-Dashboard auf **Verwalten** &gt; **Schlüssel hinzufügen**.
+2. Um einen neuen Schlüssel zu erstellen, wählen Sie das Fenster **Neuen Schlüssel generieren** aus.
 
-1. Geben Sie unter **Neuen Schlüssel generieren** Folgendes ein, damit {{site.data.keyword.keymanagementserviceshort}} einen neuen Schlüssel generiert.
+    Geben Sie die Schlüsseldetails an:
+
     <table>
       <tr>
-        <th>Feld</th>
+        <th>Einstellung</th>
         <th>Beschreibung</th>
       </tr>
       <tr>
         <td>Name</td>
-        <td>Ein lesbarer Alias, der Ihrem Schlüssel zugewiesen werden soll. Dies kann ein beliebiger Name sein. Er sollte so gewählt sein, dass Sie mit seiner Hilfe den Schlüssel eindeutig erkennen können. Der Name kann z. B. die Art der Schlüsselverwendung bezeichnen oder die Person, der der Schlüssel zugeordnet ist.</td>
+        <td>Ein eindeutiger, lesbarer Alias, der Ihrem Schlüssel zugewiesen werden soll. Dies kann ein beliebiger Name sein. Er sollte so gewählt sein, dass Sie mit seiner Hilfe den Schlüssel eindeutig erkennen können. Der Name kann z. B. die Art der Schlüsselverwendung bezeichnen oder die Person, der der Schlüssel zugeordnet ist.</td>
       </tr>
       <tr>
         <td>Schlüsseltyp</td>
-        <td>Standardmäßig wird der Schlüsseltyp 'Standard' verwendet. Ein Standardschlüssel wird als Datenverschlüsselungsschlüssel zur Verschlüsselung Ihrer unverschlüsselten Daten in verschlüsseltem Text verwendet.</td>
+        <td>Der [Schlüsseltyp](/docs/services/keymgmt/keyprotect_envelope.html#key_types), den Sie in {{site.data.keyword.keymanagementserviceshort}} verwalten möchten. </td>
       </tr>
-        <caption style="caption-side:bottom;">Tabelle 1. Beschreibung der Einstellungen für 'Neuen Schlüssel generieren'</caption>
+      <caption style="caption-side:bottom;">Tabelle 1. Beschreibung der Einstellungen für 'Neuen Schlüssel generieren'</caption>
     </table>
 
-2. Klicken Sie auf die Schaltfläche **Schlüssel generieren**. Schlüssel stehen sofort zur Verfügung. Neue Schlüssel werden von Hardwaresicherheitsmodulen (HSMs) generiert, die sich in geschützten {{site.data.keyword.IBM}} Rechenzentren befinden.
-3. Kopieren Sie die Referenz-ID in der Zeile des Schlüssels. Der **ID**-Wert ist die Kennung, die Sie in der {{site.data.keyword.keymanagementserviceshort}}-API verwenden.
+3. Geben Sie die Details zum Schlüssel ein und klicken Sie dann zum Bestätigen auf **Schlüssel generieren**. 
 
-### Vorhandenen Schlüssel eingeben
-{: #existkey }
+Die im Service generierten Schlüssel sind symmetrische 256-Bit-Schlüssel, die vom AES-GCM-Algorithmus unterstützt werden. Um eine höhere Sicherheit zu erhalten, werden die Schlüssel von FIPS 140-2 Level 2-zertifizierten Hardwaresicherheitsmodulen (HSMs) generiert, die sich in sicheren {{site.data.keyword.cloud_notm}}-Datenzentren befinden. 
 
-Führen Sie die folgenden Schritte aus, um einen vorhandenen Schlüssel in Key Protect einzugeben.
+## Vorhandene Schlüssel hinzufügen
+{: #adding_keys}
 
-1. Geben Sie unter **Vorhandenen Schlüssel eingeben** Folgendes ein.
+Sicherheitsvorteile erhalten Sie auch mit einer BYOK-Unterstützung (Bring Your Own Key), wenn Sie dem Service vorhandene Schlüssel hinzufügen. 
+
+Führen Sie die folgenden Schritte aus, um einen vorhandenen Schlüssel hinzuzufügen.
+
+1. Klicken Sie im {{site.data.keyword.keymanagementserviceshort}}-Dashboard auf **Verwalten** &gt; **Schlüssel hinzufügen**.
+2. Um einen vorhandenen Schlüssel hochzuladen, wählen Sie das Fenster **Vorhandenen Schlüssel eingeben** aus.
+
+    Geben Sie die Schlüsseldetails an:
+
     <table>
       <tr>
-        <th>Feld</th>
+        <th>Einstellung</th>
         <th>Beschreibung</th>
       </tr>
       <tr>
         <td>Name</td>
-        <td>Ein lesbarer Alias, der Ihrem Schlüssel zugewiesen werden soll. Dies kann ein beliebiger Name sein. Er sollte so gewählt sein, dass Sie mit seiner Hilfe den Schlüssel eindeutig erkennen können. Der Name kann z. B. die Art der Schlüsselverwendung bezeichnen oder die Person, der der Schlüssel zugeordnet ist.</td>
+        <td>Ein eindeutiger, lesbarer Alias, der Ihrem Schlüssel zugewiesen werden soll. Dies kann ein beliebiger Name sein. Er sollte so gewählt sein, dass Sie mit seiner Hilfe den Schlüssel eindeutig erkennen können. Der Name kann z. B. die Art der Schlüsselverwendung bezeichnen oder die Person, der der Schlüssel zugeordnet ist.</td>
       </tr>
       <tr>
         <td>Schlüsseltyp</td>
-        <td>Standardmäßig wird der Schlüsseltyp 'Standard' verwendet. Ein Standardschlüssel wird als Datenverschlüsselungsschlüssel zur Verschlüsselung Ihrer unverschlüsselten Daten in verschlüsseltem Text verwendet.</td>
+        <td>Der [Schlüsseltyp](/docs/services/keymgmt/keyprotect_envelope.html#key_types), den Sie in {{site.data.keyword.keymanagementserviceshort}} verwalten möchten. </td>
       </tr>
       <tr>
         <td>Schlüsselinformationen</td>
-        <td>Die Schlüsselinformationen können als Daten eines beliebigen Typs definiert werden, die Sie im {{site.data.keyword.keymanagementserviceshort}}-Service speichern wollen, z. B. als Zertifikat oder RSA-Schlüssel.</td>
+        <td>Nur erforderlich, wenn Sie einen vorhandenen Schlüssel hinzufügen. Bei den Schlüsselinformationen kann es sich um einen beliebigen Typ von Daten handeln (z. B. symmetrischer Schlüssel), die im {{site.data.keyword.keymanagementserviceshort}}-Service gespeichert werden sollen. Der bereitgestellte Schlüssel muss base64-codiert sein.</td>
       </tr>
-        <caption style="caption-side:bottom;">Tabelle 2. Beschreibung der Einstellungen für 'Vorhandenen Schlüssel eingeben'</caption>
+      <caption style="caption-side:bottom;">Tabelle 2. Beschreibung der Einstellungen für 'Vorhandenen Schlüssel eingeben'</caption>
     </table>
 
-2. Klicken Sie auf die Schaltfläche **Neuen Schlüssel hinzufügen**. Schlüssel stehen sofort zur Verfügung.
-3. Kopieren Sie die Referenz-ID in der Zeile des Schlüssels. Der **ID**-Wert ist die Kennung, die Sie in der {{site.data.keyword.keymanagementserviceshort}}-API verwenden.
+3. Geben Sie die Details zum Schlüssel ein und klicken Sie dann zum Bestätigen auf **Neuen Schlüssel hinzufügen**. 
 
-## Schlüssel verwalten
-{: #managekey }
+Mit dem {{site.data.keyword.keymanagementserviceshort}}-Dashboard können Sie die allgemeinen Merkmale Ihrer neuen Schlüssel überprüfen. 
 
-Um die von Ihnen generierten und eingegebenen Schlüssel anzuzeigen, müssen Sie die unter [Schlüssel hinzufügen](index.html#addkey) aufgeführten Schritte ausführen. Dabei befinden Sie sich im Fenster **Schlüssel**. Ihre Schlüssel werden sortiert nach ihrem Erstellungsdatum aufgelistet, wobei der neueste Schlüssel an oberster Stelle der Liste steht.
-<table>
-      <tr>
-        <th>Spalte</th>
-        <th>Beschreibung</th>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>Ein lesbarer Alias, der Ihrem Schlüssel zugewiesen wurde.</td>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>Eine eindeutige Schlüssel-ID, die Ihrem Schlüssel von {{site.data.keyword.keymanagementserviceshort}} zugewiesen wurde.</td>
-      </tr>
-      <tr>
-        <td>Status</td>
-        <td>Einer der NIST-Schlüsselstatus (NIST = National Institute of Standards and Technology). Diese lauten wie folgt: 'Pre-activation' (Vor Aktivierung), 'Active' (Aktiv), 'Deactivated' (Inaktiviert) und 'Destroyed' (Gelöscht).<td>
-      </tr>
-      <tr>
-        <td>Erstellt</td>
-        <td>Der Zeitpunkt (Datum und Uhrzeit), zu dem der Schlüssel erstellt wurde.</td>
-      </tr>
-      <tr>
-        <td>Typ</td>
-        <td>Standardmäßig wird der Schlüsseltyp 'Standard' verwendet.</td>
-      </tr>
-      <caption style="caption-side:bottom;">Tabelle 3. Beschreibung des Fensters 'Schlüssel'</caption>
-    </table>
-
-### Weitere Schritte
+## Weitere Schritte
 
 Sie können Ihre Schlüssel nun verwenden, um Ihre Apps und Services zu codieren.
 
-- Ein Beispiel dafür, wie in {{site.data.keyword.keymanagementserviceshort}} gespeicherte Schlüssel beim Verschlüsseln und Entschlüsseln von Daten funktionieren, finden Sie in der [Beispiel-App in Github ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
-- Weitere Informationen zur programmgestützten Verwaltung Ihrer Schlüssel finden Sie in den Codebeispielen in der [API-Referenzdokumentation zu {{site.data.keyword.keymanagementserviceshort}}](https://console.ng.bluemix.net/apidocs/639).
-
-### Zugehörige Links
-
-- [{{site.data.keyword.keymanagementserviceshort}}-REST-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window}
-- [{{site.data.keyword.keymanagementserviceshort}}-Admin-REST-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs-admin-keyprotect.ng.bluemix.net/){: new_window}
-- [{{site.data.keyword.cloud_notm}}-HSM-Angebot ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www.softlayer.com/ibm-cloud-hsm){: new_window}
-- [{{site.data.keyword.keymanagementservicelong_notm}} Service Level Agreement ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7603-01){: new_window}
+- Weitere Informationen zum programmgesteuerten Management Ihrer Schlüssel [finden Sie in der API-Referenzdokumentation von {{site.data.keyword.keymanagementserviceshort}} für Codebeispiele ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+- Zur Anzeige eines Beispiels zur Art und Weise, in der Schlüsselspeicher in {{site.data.keyword.keymanagementserviceshort}} eingesetzt werden können, um Daten zu ver- und entschlüsseln, [überprüfen Sie die Beispielapp in GitHub ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Bluemix/key-protect-helloworld-python){: new_window}.
+- Weitere Informationen zur Integration des {{site.data.keyword.keymanagementserviceshort}}-Service in andere Clouddaten-Lösungen, finden Sie [in der Integrationsdokumentation](/docs/services/keymgmt/keyprotect_integration.html).

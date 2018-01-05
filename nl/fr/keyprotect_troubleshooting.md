@@ -1,8 +1,8 @@
-﻿---
+---
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -44,7 +44,7 @@ Si vous êtes un utilisateur de la version bêta, vous devez changer votre modè
 
 ### Résolution du problème
 
-Le service {{site.data.keyword.keymanagementserviceshort}} propose deux modèles de tarification : un modèle léger et un modèle de tarification à tranches graduées. En tant qu'administrateur, vérifiez que le modèle à tranches graduées a été sélectionné. Si vous ne souhaitez pas migrer vers le modèle de tarification différenciée, assurez-vous que toutes les clés et instances de service sont supprimées avant qu'elles ne deviennent obsolètes. Pour plus d'informations, consultez l'[annonce de disponibilité générale {{site.data.keyword.keymanagementserviceshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}.
+Le service {{site.data.keyword.keymanagementserviceshort}} propose deux modèles de tarification : un modèle léger et un modèle de tarification à tranches graduées. En tant qu'administrateur, vérifiez que le modèle à tranches graduées a été sélectionné. Si vous ne souhaitez pas migrer vers le modèle de tarification différenciée, assurez-vous que toutes les clés et instances de service sont supprimées avant qu'elles ne deviennent obsolètes. [Pour plus d'informations, voir l'annonce de disponibilité générale de {{site.data.keyword.keymanagementserviceshort}} ![icône Lien externe](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}.
 
 Pour changer de modèle de tarification :
 
