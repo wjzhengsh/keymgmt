@@ -44,7 +44,7 @@ Key Protect
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API Reference](https://console.bluemix.net/apidocs/639){: new_window}
+    [API Reference](https://console.bluemix.net/apidocs/639-ibm-key-protect){: new_window}
     keyprotect_regions.md
     keyprotect_links.md
     {: .navgroup-end}
