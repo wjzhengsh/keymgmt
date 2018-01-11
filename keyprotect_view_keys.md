@@ -73,7 +73,7 @@ You can retrieve the contents of your keys by using the {{site.data.keyword.keym
 For a high-level view, you can browse keys that are managed in your provisioned instance of {{site.data.keyword.keymanagementserviceshort}} by making a `GET` call to the following endpoint:
 
 ```
-https://key-protect.us-south.bluemix.net/api/v2/keys
+https://keyprotect.us-south.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
@@ -82,7 +82,7 @@ https://key-protect.us-south.bluemix.net/api/v2/keys
 
     ```cURL
     curl -X GET \
-    https://key-protect.us-south.bluemix.net/api/v2/keys \
+    https://keyprotect.us-south.bluemix.net/api/v2/keys \
     -H 'accept: application/vnd.ibm.collection+json' \
     -H 'authorization: Bearer <IAM_token>' \
     -H 'bluemix-instance: <instance_ID>' \
@@ -168,7 +168,7 @@ https://key-protect.us-south.bluemix.net/api/v2/keys
 To view detailed information about a specific key, you can make a subsequent `GET` call to the following endpoint:
 
 ```
-https://key-protect.us-south.bluemix.net/api/v2/keys<key_ID>
+https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>
 ```
 {: codeblock}
 
@@ -181,7 +181,7 @@ https://key-protect.us-south.bluemix.net/api/v2/keys<key_ID>
 
     ```cURL
     curl -X GET \
-      https://key-protect.us-south.bluemix.net/api/v2/keys<key_ID> \
+      https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID> \
       -H 'accept: application/vnd.ibm.kms.key+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
