@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -42,7 +42,7 @@ lastupdated: "2017-11-08"
 
 ### 解決問題
 
-{{site.data.keyword.keymanagementserviceshort}} 服務有兩種定價模型：輕量型和累進分層式。身為管理者，請確認已選取累進分層式模型。如果您不想要移轉到分層式模型，請確定所有金鑰和服務實例在淘汰之前已移除。[如需相關資訊，請參閱 {{site.data.keyword.keymanagementserviceshort}} 一般組件公告 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}。
+{{site.data.keyword.keymanagementserviceshort}} 服務有兩種定價模型：輕量型和累進分層式。身為管理者，請確認已選取累進分層式模型。如果您不想要移轉到分層式模型，請確定所有金鑰和服務實例在淘汰之前已移除。[如需相關資訊，請參閱 {{site.data.keyword.keymanagementserviceshort}} 一般組件公告 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}。
 
 若要變更定價方案，請執行下列動作：
 

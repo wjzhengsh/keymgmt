@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -14,23 +14,28 @@ lastupdated: "2017-11-08"
 {:tip: .tip}
 
 # 关于 {{site.data.keyword.keymanagementserviceshort}}
+{: #about}
 
-{{site.data.keyword.keymanagementservicefull}} 可帮助您为 {{site.data.keyword.cloud_notm}} 服务中的应用程序供应加密的密钥。在管理密钥的生命周期时，您应当了解，密钥受已通过 FIPS 140-2 Level 2 认证的基于云的硬件安全模块 (HSM) 的保护，可防止信息被盗。
+{{site.data.keyword.keymanagementservicefull}} 可帮助您为 {{site.data.keyword.cloud_notm}} 服务中的应用程序供应加密的密钥。在管理密钥的生命周期时，您应当了解，密钥受已通过 FIPS 140-2 Level 2 认证的基于云的硬件安全模块 (HSM) 保护，可防止信息被盗。
 {: shortdesc}
 
-## {{site.data.keyword.keymanagementserviceshort}} 用例
+## 使用此服务的理由
 {: #kp_reasons}
 
-以下是 {{site.data.keyword.keymanagementserviceshort}} 的用例：
+在以下场景中，您可能需要管理密钥：
 
 <table>
   <tr>
-    <th>用例</th>
-    <th>解决方案</th>
+    <th>场景</th>
+    <th>理由</th>
   </tr>
   <tr>
     <td>您需要按单个资源对大量敏感数据进行加密，如医疗记录。</td>
     <td>您可以将 {{site.data.keyword.keymanagementserviceshort}} 服务与存储解决方案（如 [{{site.data.keyword.objectstorageshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/docs/services/ObjectStorage/index.html)）相集成，以便对云中驻留的数据进行加密。可以使用不同的密钥保护每个文档，这样就可以精确控制数据。</td>
+  </tr>
+  <tr>
+    <td>您希望在将数据移入云中时执行包络加密。为此，您需要提供自己的主加密密钥，以便可以完全控制用于加密静态数据的其他密钥。</td>
+    <td>通过 {{site.data.keyword.keymanagementserviceshort}}，可以[使用高度安全的根密钥打包数据加密密钥](/docs/services/keymgmt/keyprotect_envelope.html)。可以自带根密钥，也可以在服务中创建根密钥。</td>
   </tr>
   <tr>
     <td>作为大公司的 IT 管理员，您需要对许多不同服务产品的密钥进行集成、跟踪和轮询。</td>
@@ -45,28 +50,26 @@ lastupdated: "2017-11-08"
   </tr>
   <tr>
     <td>您的开发团队制定了严格的策略，每 14 天便需要生成和轮询密钥。</td>
-    <td>借助 {{site.data.keyword.keymanagementserviceshort}}，可快速从硬件安全模块 (HSM) 生成密钥，以持续满足安全需求。</td>
+    <td>借助 {{site.data.keyword.cloud_notm}}，可快速从硬件安全模块 (HSM) 生成密钥，以持续满足安全需求。</td>
   </tr>
-  <caption style="caption-side:bottom;">表 1. 通过 {{site.data.keyword.keymanagementserviceshort}} API 添加密钥所需的变量</caption>
 </table>
 
 ## {{site.data.keyword.keymanagementserviceshort}} 的工作原理
 {: #kp_how}
 
-{{site.data.keyword.keymanagementservicelong_notm}} 与 {{site.data.keyword.iamshort}} 角色相一致，可以帮助您管理整个组织中的加密密钥。
+{{site.data.keyword.keymanagementservicelong_notm}} 与 {{site.data.keyword.cloud_notm}} Identity and Access Management 角色相一致，可以帮助您管理整个组织中的加密密钥。
 
-IT 或安全管理员需要高级权限，而审计员可能不需要。为了简化访问，{{site.data.keyword.keymanagementserviceshort}} 映射到 {{site.data.keyword.iamshort}} 角色，以便每个角色都能查看该服务的不同方面。要获取有关哪些视图和访问权级别最符合您需求的指南，请参阅[管理用户和访问权](/docs/services/keymgmt/keyprotect_manage_access.html#roles)。
+IT 或安全管理员需要高级权限，而审计员可能不需要。为了简化访问，{{site.data.keyword.keymanagementserviceshort}} 映射到 {{site.data.keyword.cloud_notm}} Identity and Access Management 角色，以便每个角色都能查看该服务的不同方面。要获取有关哪些视图和访问权级别最符合您需求的指南，请参阅[管理用户和访问权](/docs/services/keymgmt/keyprotect_manage_access.html#roles)。
 
-下图说明了管理员、查看者和编辑者如何与在该服务中管理的密钥进行交互。
+下图显示管理员、读者和作者如何与在该服务中管理的密钥进行交互。
 
 <dl>
   <dt>服务集成</dt>
-    <dd>{{site.data.keyword.cloud_notm}} 空间的管理员管理加密的密钥。</dd>
-  <dt>视图</dt>
-    <dd>查看者访问密钥的高级视图并识别可疑活动。
-</dd>
+    <dd>{{site.data.keyword.keymanagementserviceshort}} 服务实例的管理员可管理用于加密的密钥。</dd>
+  <dt>审计</dt>
+    <dd>读者可访问密钥的高级视图并识别可疑活动。</dd>
   <dt>应用程序</dt>
-    <dd>编辑者管理其编码到应用程序的密码的密钥。</dd>
+    <dd>作者可管理自己编码到应用程序的用于加密的密钥。</dd>
 </dl>
 
 ![该图显示与之前定义列表中所述相同的组件。](images/keys-use-cases.png)

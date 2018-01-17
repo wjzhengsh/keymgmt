@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -42,7 +42,7 @@ Beta 用户需要更改为标准定价模型，才能继续使用 {{site.data.ke
 
 ### 解决问题
 
-{{site.data.keyword.keymanagementserviceshort}} 服务具有两个定价模型：Lite 和累进分层。以管理员身份，验证是否选择了累进分层模型。如果不想迁移到分层模型，请确保在弃用之前除去所有密钥和服务实例。[请参阅 {{site.data.keyword.keymanagementserviceshort}} 通用版本声明以获取更多信息。![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")]("https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/" "https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/"){: new_window}。
+{{site.data.keyword.keymanagementserviceshort}} 服务具有两个定价模型：Lite 和累进分层。以管理员身份，验证是否选择了累进分层模型。如果不想迁移到分层模型，请确保在弃用之前除去所有密钥和服务实例。[请参阅 {{site.data.keyword.keymanagementserviceshort}} 通用版本声明以获取更多信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}。
 
 要更改定价套餐，请执行以下操作：
 

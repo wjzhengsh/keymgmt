@@ -11,6 +11,9 @@ Key Protect
     {: .topicgroup}
     概念
         keyprotect_states.md
+        keyprotect_envelope.md
+
+    keyprotect_integration.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -23,12 +26,30 @@ Key Protect
         keyprotect_manage_access_api.md
 
     {: .topicgroup}
+    建立金鑰
+        keyprotect_create_root.md
+        keyprotect_create_standard.md
+    
+    {: .topicgroup}
+    匯入金鑰
+        keyprotect_import_root.md
+        keyprotect_import_standard.md
+
+    {: .topicgroup}
     管理金鑰
-        keyprotect_create_keys.md
         keyprotect_view_keys.md
+        keyprotect_wrap_keys.md
+        keyprotect_unwrap_keys.md
         keyprotect_delete_keys.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API 參考資料](https://console.bluemix.net/apidocs/639){: new_window}
+    keyprotect_regions.md
+    keyprotect_links.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     keyprotect_troubleshooting.md
+    keyprotect_FAQs.md
     {: .navgroup-end}

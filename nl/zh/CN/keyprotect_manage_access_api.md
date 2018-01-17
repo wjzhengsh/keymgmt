@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -16,14 +16,14 @@ lastupdated: "2017-11-08"
 # 使用 API 管理密钥的访问权
 {: #managing-access-api}
 
-使用 {{site.data.keyword.iamlong}} 可以通过创建和修改访问策略，对密钥资源启用精确的访问控制。
+使用 {{site.data.keyword.iamlong}} 可以通过创建和修改访问策略，对加密密钥启用精确的访问控制。
 {: shortdesc}
 
 此页面将引导您完成几个方案，以使用[访问管理 API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}，来管理密钥资源的访问权。
 
 
 开始之前：
-- [检索 IAM 令牌和空间 GUID](/docs/services/keymgmt/keyprotect_authentication.html)
+- [检索 IAM 令牌和实例标识](/docs/services/keymgmt/keyprotect_authentication.html)
 - [检索密钥标识以指定资源](/docs/services/keymgmt/keyprotect_view_keys.html)
 - [检索帐户标识以指定访问作用域](keyprotect_manage_access_api.html#retrieve_account_ID)
 - [检索要修改其访问权的用户的用户标识](keyprotect_manage_access_api.html#retrieve_user_ID)
@@ -35,7 +35,7 @@ lastupdated: "2017-11-08"
 
 ```cURL
 curl -X POST \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
@@ -48,24 +48,27 @@ curl -X POST \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-将 `<account_ID>`, `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<space_GUID>` 和 `<key_ID>` 替换为相应的值。
+如果需要管理对指定 Cloud Foundry 组织和空间内密钥的访问权，请将 `serviceInstance` 替换为 `organizationId` 和 `spaceId`。要了解更多信息，请参阅 [Access Management API 参考文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}。
+{: tip}
+
+将 `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` 和 `<key_ID>` 替换为相应的值。
 
 **可选：**验证已成功创建策略。
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -79,7 +82,7 @@ curl -X GET \
 
 ```cURL
 curl -X PUT \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'If-Match': <ETag_ID> \
   -H 'Content-Type: application/json' \
@@ -93,24 +96,24 @@ curl -X PUT \
   "resources": [
     {
       "serviceName": "IBM Key Protect",
-      "region": "us-south",
-      "resourceType": "key",
-      "resource": "<key_ID>",
       "accountId": "<account_ID>",
-      "spaceId": "<space_GUID>"
+      "region": "us-south",
+      "serviceInstance": "<instance_ID>",
+      "resourceType": "key",
+      "resource": "<key_ID>"
     }
   ]
 }'
 ```
 {: codeblock}
 
-将 `<account_ID>`, `<user_ID>`, `<policy_ID>`, `<Admin_IAM_token>`, `<ETag_ID>`, `<IAM_role>`, `<space_GUID>` 和 `<key_ID>` 替换为相应的值。
+将 `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` 和 `<key_ID>` 替换为相应的值。
 
 **可选：**验证已成功更新策略。
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -123,7 +126,7 @@ curl -X GET \
 
 ```cURL
 curl -X DELETE \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies/<policy_ID> \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies/<policy_ID> \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -135,7 +138,7 @@ curl -X DELETE \
 
 ```cURL
 curl -X GET \
-  https://iampap.ng.bluemix.net/acms/v1/scopes/a%2<account_ID>/users/<user_ID>/policies \
+  https://iam.bluemix.net/acms/v1/scopes/a/<account_ID>/users/<user_ID>/policies \
   -H 'Authorization: Bearer <Admin_IAM_token>' \
   -H 'Accept: application/json' \
 ```
@@ -144,7 +147,7 @@ curl -X GET \
 ## 检索帐户标识
 {: #retrieve_account_id}
 
-1. 登录到 Bluemix CLI。
+1. 登录到 {{site.data.keyword.cloud_notm}} (bx) CLI。
     ```sh
     bx login [--sso]
     ```
