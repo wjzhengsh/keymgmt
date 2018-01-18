@@ -33,7 +33,7 @@ You can protect a specified data encryption key (DEK) with a root key that you m
 [After you designate a root key in the service](/docs/services/keymgmt/keyprotect_create_keys.html), you can wrap a DEK with advanced encryption by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=wrap
+https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
 ```
 {: codeblock}
 
@@ -49,7 +49,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=wrap
 
     ```cURL
     curl -X POST \
-      'https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=wrap' \
+      'https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap' \
       -H 'accept: application/vnd.ibm.kms.key_action+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -75,7 +75,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=wrap
       </tr>
       <tr>
         <td><em>key_ID</em></td>
-        <td>The unique identifier for the root key that you want to use for wrapping. The root key must be 256, 384 or 512 bits so that the wrap call can succeed.</td>
+        <td>The unique identifier for the root key that you want to use for wrapping.</td>
       </tr>
       <tr>
         <td><em>IAM_token</em></td>
@@ -108,7 +108,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=wrap
 
     ```
     {
-      "plaintext": "s~Rz@kN9Fzv\\/hP*r3LY-?O@!!qdtj:L",
+      "plaintext": "VGhpcyBpcyBhIHNlY3JldCBtZXNzYWdlLg==",
       "ciphertext": "eyJjaXBoZXJ0ZXh0Ijoic3VLSDNRcmdEZjdOZUw4Rkc4L2FKYjFPTWcyd3A2eDFvZlA4MEc0Z1B2RmNrV2g3cUlidHphYXU0eHpKWWoxZyIsImhhc2giOiJiMmUyODdkZDBhZTAwZGZlY2Q3OGJmMDUxYmNmZGEyNWJkNGUzMjBkYjBhN2FjNzVhMWYzZmNkMDZlMjAzZWYxNWM5MTY4N2JhODg2ZWRjZGE2YWVlMzFjYzk2MjNkNjA5YTRkZWNkN2E5Y2U3ZDc5ZTRhZGY1MWUyNWFhYWM5MjhhNzg3NmZjYjM2NDFjNTQzMTZjMjMwOGY2MThlZGM2OTE3MjAyYjA5YTdjMjA2YzkxNTBhOTk1NmUxYzcxMTZhYjZmNmQyYTQ4MzZiZTM0NTk0Y2IwNzJmY2RmYTk2ZSJ9"
       "aad": ["data1", "data2"]
     }

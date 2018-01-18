@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-03"
+lastupdated: "2018-01-18"
 
 ---
 
@@ -26,6 +26,7 @@ Additional resources to help you learn about managing encryption with {{site.dat
 ## Blogs
 {: #blogs}
 
+- [Announcing {{site.data.keyword.keymanagementservicelong_notm}} London Region Release on {{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/12/announcing-ibm-key-protect-london-region-release-ibm-cloud/){: new_window}
 - [{{site.data.keyword.keymanagementserviceshort}} Goes From Beta to GA in Dallas ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2016/12/dallas-key-protect-ga/){: new_window}
 
 ## Service terms

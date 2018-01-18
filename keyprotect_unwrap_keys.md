@@ -27,7 +27,7 @@ To learn how key wrapping helps you control the security of at-rest data in the 
 [After you make a wrap call to the service](/docs/services/keymgmt/keyprotect_wrap_keys.html), you can unwrap a specified data encryption key (DEK) to access its contents by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys<key_id>?action=unwrap
+https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_id>?action=unwrap
 ```
 {: codeblock}
 
@@ -43,7 +43,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_id>?action=unwrap
 
     ```cURL
     curl -X POST \
-      'https://keyprotect.us-south.bluemix.net/api/v2/keys<key_ID>?action=unwrap' \
+      'https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=unwrap' \
       -H 'accept: application/vnd.ibm.kms.key_action+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -57,7 +57,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_id>?action=unwrap
     ```
     {: codeblock}
 
-    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.
@@ -101,7 +101,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys<key_id>?action=unwrap
 
     ```
     {
-      "plaintext": "s~Rz@kN9Fzv\\/hP*r3LY-?O@!!qdtj:L"
+      "plaintext": "VGhpcyBpcyBhIHNlY3JldCBtZXNzYWdlLg=="
     }
     ```
     {:screen}

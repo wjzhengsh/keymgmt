@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-03"
+lastupdated: "2018-01-18"
 
 ---
 
@@ -22,9 +22,9 @@ lastupdated: "2018-01-03"
 ## Key states and transitions
 {: #key_transitions}
 
-A key can move through a series of four states in its lifecycle.
+Cryptographic keys, in their lifetime, transition through several states that are a function of how long the keys are in existence and whether data is protected. 
 
-The following diagram shows how a key passes through several states between its generation and its destruction.
+{{site.data.keyword.keymanagementserviceshort}} provides a graphical user interface and a REST API for tracking keys as they move through several states in their lifecycle. The following diagram shows how a key passes through states between its generation and its destruction.
 
 ![The diagram shows the same components as described in the following definition table.](images/key-states.png)
 
@@ -35,7 +35,7 @@ The following diagram shows how a key passes through several states between its 
   </tr>
   <tr>
     <td>Pre-activation</td>
-    <td>Keys are initially created in the <i>pre-activation</i> state. Other than for proof-of-possession or key confirmation purposes, a pre-active key cannot be used to cryptographically protect data.</td>
+    <td>Keys are initially created in the <i>pre-activation</i> state. A pre-active key cannot be used to cryptographically protect data.</td>
   </tr>
   <tr>
     <td>Active</td>
