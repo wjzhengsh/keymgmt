@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -22,10 +22,33 @@ You can connect your applications with the {{site.data.keyword.keymanagementserv
 ## Available regions
 {: #regions}
 
-{{site.data.keyword.keymanagementserviceshort}} is available in the following regions:
+{{site.data.keyword.keymanagementserviceshort}} is available in the following regions and locations:
 
-- US South
-- United Kingdom  
+<table>
+    <tr>
+        <th>Region</th>
+        <th>Location</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>US South</td>
+        <td>dal10, dal12</td>
+        <td>Dallas</td>
+    </tr>
+    <tr>
+        <td>UK South</td>
+        <td>lon02, lon04</td>
+        <td>London</td>
+    </tr>
+    <tr>
+        <td>AP South</td>
+        <td>syd01, syd04</td>
+        <td>Sydney</td>
+    </tr>
+    <caption style="caption-side:bottom;">Table 1. Available regions and locations for the {{site.data.keyword.keymanagementserviceshort}} service</caption>
+</table>
+
+**Note:** Locations are data centers that are available within a region.
 
 ## Service endpoints
 {: #endpoints}
@@ -44,9 +67,15 @@ If you are managing your {{site.data.keyword.keymanagementserviceshort}} resourc
         </td>
     </tr>
     <tr>
-        <td>United Kingdom</td>
+        <td>UK South</td>
         <td>
             <code>https://keyprotect.eu-gb.bluemix.net</code>
+        </td>
+    </tr>
+    <tr>
+        <td>AP South</td>
+        <td>
+            <code>https://keyprotect.au-syd.bluemix.net</code>
         </td>
     </tr>
     <caption style="caption-side:bottom;">Table 2. Available endpoints for the {{site.data.keyword.keymanagementserviceshort}} API</caption>

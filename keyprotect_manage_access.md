@@ -66,7 +66,7 @@ The following table shows how identity and access roles map to {{site.data.keywo
     </td>
   </tr>
   <tr>
-    <td>Managers</td>
+    <td>Manager</td>
     <td>A manager can perform all actions that a reader and writer can perform, including the ability to delete keys, invite new users, and assign access policies for other users.</td>
     <td>
       <ul>
