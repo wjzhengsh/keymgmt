@@ -34,7 +34,7 @@ Complete the following steps to retrieve an access token:
 1. In the {{site.data.keyword.cloud_notm}} console, go to **Manage** &gt; **Security** &gt; **Identity and Access** &gt; **Service IDs**. Follow the process to [create a service ID.](/docs/iam/serviceid.html#creating-a-service-id){: new_window}
 2. Use the **Actions** menu to [define an access policy for your new service ID.](/docs/iam/serviceidaccess.html#assigning-new-access){: new_window} 
     
-    For more information about managing access for your {{site.data.keyword.keymanagementserviceshort}} resources, see [Roles and permissions](/docs/services/keymgmt/keyprotect_manage_access.md#roles).
+    For more information about managing access for your {{site.data.keyword.keymanagementserviceshort}} resources, see [Roles and permissions](/docs/services/keymgmt/keyprotect_manage_access.html#roles).
 3. Use the **API keys** section to [create an API key to associate with the service ID.](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id){: new_window} Save your API key by downloading it to a secure location.
 4. Call the {{site.data.keyword.iamshort}} API to retrieve your access token.
 
