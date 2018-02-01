@@ -87,10 +87,10 @@ You can retrieve the identifying information for your {{site.data.keyword.keyman
     ```
     {: pre}
 
-    Replace `<instance_name>` with the unique alias that you assigned to your instance of {{site.data.keyword.keymanagementserviceshort}}. The following truncated example shows the CLI output. The _7e8fc048-5606-4259-ad71-92397b0fa3f7_ value is an example instance ID.
+    Replace `<instance_name>` with the unique alias that you assigned to your instance of {{site.data.keyword.keymanagementserviceshort}}. The following truncated example shows the CLI output. The _42454b3b-5b06-407b-a4b3-34d9ef323901_ value is an example instance ID.
 
     ```
-    crn:v1:bluemix:public:kms:us-south:a/7e8fc048-5606-4259-ad71-92397b0fa3f7
+    crn:v1:bluemix:public:kms:us-south:a/f047b55a3362ac06afad8a3f2f5586ea:42454b3b-5b06-407b-a4b3-34d9ef323901::
     ```
     {: screen}
 
