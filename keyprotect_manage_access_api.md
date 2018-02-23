@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -49,7 +49,7 @@ curl -X POST \
     {
       "serviceName": "IBM Key Protect",
       "accountId": "<account_ID>",
-      "region": "us-south",
+      "region": "<region>",
       "serviceInstance": "<instance_ID>",
       "resourceType": "key",
       "resource": "<key_ID>"
@@ -62,7 +62,7 @@ curl -X POST \
 If you need to manage access to keys within a specified Cloud Foundry org and space, replace `serviceInstance` with `organizationId` and `spaceId`. To learn more, see the [Access Management API reference doc ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://iampap.ng.bluemix.net/v1/docs/#!/Access_Policies/){: new_window}. 
 {: tip}
 
-Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
+Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<region>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
 
 **Optional:** Verify that the policy was successfully created.
 
@@ -97,7 +97,7 @@ curl -X PUT \
     {
       "serviceName": "IBM Key Protect",
       "accountId": "<account_ID>",
-      "region": "us-south",
+      "region": "<region>",
       "serviceInstance": "<instance_ID>",
       "resourceType": "key",
       "resource": "<key_ID>"
@@ -107,7 +107,7 @@ curl -X PUT \
 ```
 {: codeblock}
 
-Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
+Replace `<user_ID>`, `<Admin_IAM_token>`, `<IAM_role>`, `<region>`, `<account_ID>`, `<instance_ID>` and `<key_ID>` with the appropriate values.
 
 **Optional:** Verify that the policy was successfully updated.
 

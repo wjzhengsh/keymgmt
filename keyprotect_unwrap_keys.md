@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -27,7 +27,7 @@ To learn how key wrapping helps you control the security of at-rest data in the 
 [After you make a wrap call to the service](/docs/services/keymgmt/keyprotect_wrap_keys.html), you can unwrap a specified data encryption key (DEK) to access its contents by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_id>?action=unwrap
+https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_id>?action=unwrap
 ```
 {: codeblock}
 
@@ -43,7 +43,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_id>?action=unwrap
 
     ```cURL
     curl -X POST \
-      'https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=unwrap' \
+      'https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_ID>?action=unwrap' \
       -H 'accept: application/vnd.ibm.kms.key_action+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -67,16 +67,16 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_id>?action=unwrap
         <th>Description</th>
       </tr>
       <tr>
-        <td><em>key_ID</em></td>
-        <td>The unique identifier for the root key that you used for wrapping. To ensure that your unwrap request succeeds, provide the same root key that you used during the initial wrap request.</td>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
       </tr>
       <tr>
         <td><em>IAM_token</em></td>
-        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">see Retrieving an access token</a>.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">see Retrieving an instance ID</a>.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -88,7 +88,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_id>?action=unwrap
       </tr>
       <tr>
         <td><em>additional_data</em></td>
-        <td>Optional: The additional authentication data (AAD) that is used to further secure the key. Each string can hold up to 255 characters.<br></br>Important: If you supply AAD when you make a wrap call to the service, you must specify the same AAD during the unwrap call.</td>
+        <td>Optional: The additional authentication data (AAD) that is used to further secure the key. Each string can hold up to 255 characters. If you supply AAD when you make a wrap call to the service, you must specify the same AAD during the unwrap call.</td>
       </tr>
       <tr>
         <td><em>encrypted_data_key</em></td>

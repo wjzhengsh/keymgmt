@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -54,7 +54,7 @@ You can create a standard encryption key with the {{site.data.keyword.keymanagem
 Create a standard key by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys
+https://keyprotect.<region>.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
@@ -64,7 +64,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
 
     ```cURL
     curl -X POST \
-      https://keyprotect.us-south.bluemix.net/api/v2/keys \
+      https://keyprotect.<region>.bluemix.net/api/v2/keys \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
       -H 'content-type: application/vnd.ibm.kms.key+json' \
@@ -98,12 +98,16 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
         <th>Description</th>
       </tr>
       <tr>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
+      </tr>
+      <tr>
         <td><em>IAM_token</em></td>
-        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">see Retrieving an access token</a>.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">see Retrieving an instance ID</a>.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>

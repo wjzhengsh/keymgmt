@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -73,7 +73,7 @@ You can retrieve the contents of your keys by using the {{site.data.keyword.keym
 For a high-level view, you can browse keys that are managed in your provisioned instance of {{site.data.keyword.keymanagementserviceshort}} by making a `GET` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys
+https://keyprotect.<region>.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
@@ -82,7 +82,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
 
     ```cURL
     curl -X GET \
-    https://keyprotect.us-south.bluemix.net/api/v2/keys \
+    https://keyprotect.<region>.bluemix.net/api/v2/keys \
     -H 'accept: application/vnd.ibm.collection+json' \
     -H 'authorization: Bearer <IAM_token>' \
     -H 'bluemix-instance: <instance_ID>' \
@@ -90,7 +90,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
     ```
     {: codeblock}
 
-    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.
@@ -100,12 +100,16 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
         <th>Description</th>
       </tr>
       <tr>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
+      </tr>
+      <tr>
         <td><em>IAM_token</em></td>
-        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">see Retrieving an access token</a>.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">see Retrieving an instance ID</a>.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -114,7 +118,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
       <caption style="caption-side:bottom;">Table 2. Describes the variables needed to view keys with the {{site.data.keyword.keymanagementserviceshort}} API.</caption>
     </table>
 
-    A successful `POST /v2/keys/` request returns a collection of keys available in your {{site.data.keyword.keymanagementserviceshort}} service instance.
+    A successful `GET /v2/keys` request returns a collection of keys available in your {{site.data.keyword.keymanagementserviceshort}} service instance.
 
     ```
     {
@@ -168,20 +172,20 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
 To view detailed information about a specific key, you can make a subsequent `GET` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>
+https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_ID>
 ```
 {: codeblock}
 
 1. [Retrieve your service and authentication credentials to work with keys in the service.](/docs/services/keymgmt/keyprotect_authentication.html)
 2. Retrieve the ID of the key you would like to access or manage.
 
-    The ID value is used to access detailed information about the key, such as the key material itself. You can retrieve the ID for a specified key by making a `GET v2/keys` request, or by accessing the {{site.data.keyword.keymanagementserviceshort}} GUI.
+    The ID value is used to access detailed information about the key, such as the key material itself. You can retrieve the ID for a specified key by making a `GET /v2/keys` request, or by accessing the {{site.data.keyword.keymanagementserviceshort}} GUI.
 
 3. Run the following cURL command to get details about your key and the key material.
 
     ```cURL
     curl -X GET \
-      https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID> \
+      https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_ID> \
       -H 'accept: application/vnd.ibm.kms.key+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -197,12 +201,16 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>
         <th>Description</th>
       </tr>
       <tr>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
+      </tr>
+      <tr>
         <td><em>IAM_token</em></td>
-        <td>Your authorization token. Include the full contents of the `IAM` token, including the Bearer value, in the cURL request.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. </td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -247,4 +255,4 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>
     ```
     {:screen}
 
-    For a detailed description of the available parameters, see the {{site.data.keyword.keymanagementserviceshort}} [REST API reference doc ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    For a detailed description of the available parameters, see the {{site.data.keyword.keymanagementserviceshort}} [REST API reference doc ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.

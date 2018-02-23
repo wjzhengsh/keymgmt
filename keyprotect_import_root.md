@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -67,17 +67,17 @@ Root keys are symmetric key-wrapping keys used to protect the security of encryp
 Add your existing root key by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys
+https://keyprotect.<region>.bluemix.net/api/v2/keys
 ```
 {: codeblock}
 
 1. [Retrieve your service and authentication credentials to work with keys in the service](/docs/services/keymgmt/keyprotect_authentication.html).
 
-2. Call the [{{site.data.keyword.keymanagementserviceshort}} API](https://console.ng.bluemix.net/apidocs/639) with the following cURL command.
+2. Call the [{{site.data.keyword.keymanagementserviceshort}} API](https://console.bluemix.net/apidocs/639) with the following cURL command.
 
     ```cURL
     curl -X POST \
-      https://keyprotect.us-south.bluemix.net/api/v2/keys \
+      https://keyprotect.<region>.bluemix.net/api/v2/keys \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
       -H 'content-type: application/vnd.ibm.kms.key+json' \
@@ -94,14 +94,14 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
        "description": "<key_description>",
        "expirationDate": "<YYYY-MM-DDTHH:MM:SS.SSZ>",
        "payload": "<key_material>",
-       "extractable": false
+       "extractable": <key_type>
        }
      ]
     }'
     ```
     {: codeblock}
 
-    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.
@@ -111,12 +111,16 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
         <th>Description</th>
       </tr>
       <tr>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
+      </tr>
+      <tr>
         <td><em>IAM_token</em></td>
-        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">see Retrieving an access token</a>.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">see Retrieving an instance ID</a>.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -138,11 +142,11 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
         <td><em>key_material</em></td>
         <td>
           <p>The base64 encoded key material, such as an existing key-wrapping key, that you want to store and manage in the service.</p>
-        <p>Ensure that your key material meets the following requirements:</p>
-        <p><ul>
-            <li>The key must be 256, 384, or 512 bits.</li>
-            <li>The bytes of data, for example 32 bytes for 256 bits, must be encoded by using base64 encoding.</li>
-          </ul></p>
+          <p>Ensure that your key material meets the following requirements:</p>
+          <p><ul>
+              <li>The key must be 256, 384, or 512 bits.</li>
+              <li>The bytes of data, for example 32 bytes for 256 bits, must be encoded by using base64 encoding.</li>
+            </ul></p>
         </td>
       </tr>
       <tr>
@@ -161,7 +165,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
 
     ```cURL
     curl -X GET \
-      https://keyprotect.us-south.bluemix.net/api/v2/keys \
+      https://keyprotect.<region>.bluemix.net/api/v2/keys \
       -H 'accept: application/vnd.ibm.collection+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -174,4 +178,4 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys
 ### What's next
 
 - To find out more about protecting keys with envelope encryption, check out [Wrapping keys](/docs/services/keymgmt/keyprotect_wrap_keys.html).
-- To find out more about programmatically managing your keys, [check out the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+- To find out more about programmatically managing your keys, [check out the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.

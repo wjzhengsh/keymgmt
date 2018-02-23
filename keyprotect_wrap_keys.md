@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-23"
 
 ---
 
@@ -33,7 +33,7 @@ You can protect a specified data encryption key (DEK) with a root key that you m
 [After you designate a root key in the service](/docs/services/keymgmt/keyprotect_create_keys.html), you can wrap a DEK with advanced encryption by making a `POST` call to the following endpoint:
 
 ```
-https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
+https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_ID>?action=wrap
 ```
 {: codeblock}
 
@@ -49,7 +49,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
 
     ```cURL
     curl -X POST \
-      'https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap' \
+      'https://keyprotect.<region>.bluemix.net/api/v2/keys/<key_ID>?action=wrap' \
       -H 'accept: application/vnd.ibm.kms.key_action+json' \
       -H 'authorization: Bearer <IAM_token>' \
       -H 'bluemix-instance: <instance_ID>' \
@@ -63,7 +63,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
     ```
     {: codeblock}
 
-    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/apidocs/639){: new_window}.
+    To work with keys within a specified Cloud Foundry org and space in your account, replace `Bluemix-Instance` with the appropriate `Bluemix-org` and `Bluemix-space` headers. [See the {{site.data.keyword.keymanagementserviceshort}} API reference doc for code samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/639){: new_window}.
     {: tip}
 
     Replace the variables in the example request according to the following table.
@@ -74,16 +74,20 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
         <th>Description</th>
       </tr>
       <tr>
+        <td><em>region</em></td>
+        <td>The region abbreviation, such as <code>us-south</code> or <code>eu-gb</code>, that represents the geographic area where your {{site.data.keyword.keymanagementserviceshort}} service instance resides. See <a href="/docs/keyprotect_regions.html#endpoints">Regional service endpoints</a> for more information.</td>
+      </tr>
+      <tr>
         <td><em>key_ID</em></td>
         <td>The unique identifier for the root key that you want to use for wrapping.</td>
       </tr>
       <tr>
         <td><em>IAM_token</em></td>
-        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">see Retrieving an access token</a>.</td>
+        <td>Your {{site.data.keyword.cloud_notm}} access token. Include the full contents of the <code>IAM</code> token, including the Bearer value, in the cURL request. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_token">Retrieving an access token</a>.</td>
       </tr>
       <tr>
         <td><em>instance_ID</em></td>
-        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">see Retrieving an instance ID</a>.</td>
+        <td>The unique identifier that is assigned to your {{site.data.keyword.keymanagementserviceshort}} service instance. For more information, see <a href="/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID">Retrieving an instance ID</a>.</td>
       </tr>
       <tr>
         <td><em>correlation_ID</em></td>
@@ -99,7 +103,7 @@ https://keyprotect.us-south.bluemix.net/api/v2/keys/<key_ID>?action=wrap
       </tr>
       <tr>
         <td><em>additional_data</em></td>
-        <td>Optional: The additional authentication data (AAD) that is used to further secure the key. Each string can hold up to 255 characters. If you supply AAD when you make a wrap call to the service, you must specify the same AAD during the subsequent unwrap call.</td>
+        <td>Optional: The additional authentication data (AAD) that is used to further secure the key. Each string can hold up to 255 characters. If you supply AAD when you make a wrap call to the service, you must specify the same AAD during the subsequent unwrap call.<br></br>Important: The {{site.data.keyword.keymanagementserviceshort}} service does not save additional authentication data. If you supply AAD, save the data to a secure location to ensure that you can access and provide the same AAD during subsequent unwrap requests.</td>
       </tr>
       <caption style="caption-side:bottom;">Table 1. Describes the variables needed to wrap a specified key in {{site.data.keyword.keymanagementserviceshort}}.</caption>
     </table>
